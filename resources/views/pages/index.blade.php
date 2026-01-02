@@ -3,11 +3,6 @@
 @section('hero')
 <!-- Hero Section -->
     <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Custom Navbar with Bootstrap 5</h1>
-            <p class="lead mb-4">This navbar uses your custom CSS variables with a beautiful purple color scheme</p>
-            <a href="#colors" class="btn btn-primary-custom btn-lg">View Color Palette</a>
-        </div>
     </section>
 @endsection
 
