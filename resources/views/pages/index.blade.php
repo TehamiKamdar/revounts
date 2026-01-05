@@ -145,8 +145,12 @@
 
 
     <section class="carousel-container">
-        <h2 class="section-title">Featured Collections</h2>
-
+        <div class="section-heading">
+            <h2 class="section-title">Featured Collections</h2>
+        <p class="section-subtitle">
+            Best Discount Code, Deals & Coupons – Australia’s #1 Online Hub
+        </p>
+        </div>
         <div class="modern-carousel">
             <div class="slide-counter d-none">
                 <span id="current-slide">1</span> / <span id="total-slides">4</span>
@@ -191,7 +195,7 @@
                         </div> --}}
 
                         <div class="image-content">
-                            <img src="https://placehold.co/1030x300/450077/9984d4"
+                            <img src="https://placehold.co/1320x450/450077/9984d4"
                                  alt="Electronics"
                                  class="slide-image">
                         </div>
@@ -227,7 +231,7 @@
                         </div> --}}
 
                         <div class="image-content">
-                            <img src="https://placehold.co/1030x300/450077/9984d4"
+                            <img src="https://placehold.co/1320x450/450077/9984d4"
                                  alt="Home Decor"
                                  class="slide-image">
                         </div>
@@ -263,7 +267,7 @@
                         </div> --}}
 
                         <div class="image-content">
-                            <img src="https://placehold.co/1030x300/450077/9984d4"
+                            <img src="https://placehold.co/1320x450/450077/9984d4"
                                  alt="Fashion"
                                  class="slide-image">
                         </div>
@@ -299,7 +303,7 @@
                         </div> --}}
 
                         <div class="image-content">
-                            <img src="https://placehold.co/1030x300/450077/9984d4"
+                            <img src="https://placehold.co/1320x450/450077/9984d4"
                                  alt="Beauty Products"
                                  class="slide-image">
                         </div>
