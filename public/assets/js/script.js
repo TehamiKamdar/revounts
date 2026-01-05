@@ -159,4 +159,87 @@ document.addEventListener('DOMContentLoaded', function () {
             alert(`Navigating to ${this.closest('.carousel-slide').querySelector('.slide-title').textContent}`);
         });
     });
+
+
+
+    // Owl Carousel
+    $("#brandsCarousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 10
+            },
+            576: {
+                items: 2,
+                margin: 15
+            },
+            768: {
+                items: 3,
+                margin: 20
+            },
+            1200: {
+                items: 4,
+                margin: 20
+            }
+        }
+    });
+
+    // Custom Navigation
+    $('#customNext').click(function () {
+        $("#brandsCarousel").trigger('next.owl.carousel');
+    });
+
+    $('#customPrev').click(function () {
+        $("#brandsCarousel").trigger('prev.owl.carousel');
+    });
+
+    // Brand card click functionality
+    $('.explore-btn').click(function (e) {
+        e.stopPropagation();
+        const brandName = $(this).closest('.brand-card').find('.brand-name').text();
+        alert(`Exploring ${brandName} brand...`);
+    });
+
+    // View All Button
+    $('.view-all-btn').click(function () {
+        alert('Loading all brands...');
+        $(this).html('<i class="bi bi-hourglass-split"></i> Loading...');
+        setTimeout(() => {
+            $(this).html('<span>View All Brands</span> <i class="bi bi-chevron-right"></i>');
+        }, 2000);
+    });
+
+    // Brand card hover effects
+    $('.brand-card').hover(
+        function () {
+            $(this).css('transform', 'translateY(-15px)');
+        },
+        function () {
+            $(this).css('transform', 'translateY(0)');
+        }
+    );
+
+    // Add animation on page load
+    setTimeout(() => {
+        $('.section-title').addClass('animated');
+        $('.brand-card').each(function (index) {
+            $(this).delay(index * 100).queue(function (next) {
+                $(this).css('opacity', '1');
+                next();
+            });
+        });
+    }, 500);
+
+    // Initially hide cards for animation
+    $('.brand-card').css({
+        'opacity': '0',
+        'transition': 'opacity 0.6s ease, transform 0.4s ease'
+    });
 });
