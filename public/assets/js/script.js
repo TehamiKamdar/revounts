@@ -160,86 +160,130 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Brand data - Using placehold.co with your color scheme
+    const brands = [
+        { id: 1, name: "TechCorp", color1: "450077", color2: "9984d4" },
+        { id: 2, name: "StyleHub", color1: "450077", color2: "9984d4" },
+        { id: 3, name: "AutoDrive", color1: "450077", color2: "9984d4" },
+        { id: 4, name: "Foodie", color1: "450077", color2: "9984d4" },
+        { id: 5, name: "HomeEssentials", color1: "450077", color2: "9984d4" },
+        { id: 6, name: "SportPro", color1: "450077", color2: "9984d4" },
+        { id: 7, name: "BeautyLuxe", color1: "450077", color2: "9984d4" },
+        { id: 8, name: "GadgetZone", color1: "450077", color2: "9984d4" },
+        { id: 9, name: "EcoLife", color1: "450077", color2: "9984d4" },
+        { id: 10, name: "SmartHome", color1: "450077", color2: "9984d4" },
+        { id: 11, name: "Fashionista", color1: "450077", color2: "9984d4" },
+        { id: 12, name: "HealthPlus", color1: "450077", color2: "9984d4" }
+    ];
 
+    // Initialize carousel
+    function initCarousel() {
+        const carouselTrack = document.querySelector('.carousel-track-brands');
 
-    // Owl Carousel
-    $("#brandsCarousel").owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: false,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1,
-                margin: 10
-            },
-            576: {
-                items: 2,
-                margin: 15
-            },
-            768: {
-                items: 3,
-                margin: 20
-            },
-            1200: {
-                items: 4,
-                margin: 20
-            }
+        // Clear existing content
+        carouselTrack.innerHTML = '';
+
+        // Create two sets for seamless scrolling
+        const totalSets = 2;
+
+        for (let set = 0; set < totalSets; set++) {
+            brands.forEach((brand, index) => {
+                // Create brand item
+                const brandItem = document.createElement('div');
+                brandItem.className = 'brand-logo-item';
+                brandItem.dataset.index = index;
+
+                // Create rectangle container
+                const rectangle = document.createElement('div');
+                rectangle.className = 'logo-rectangle';
+
+                // Create image (using placehold.co)
+                const img = document.createElement('img');
+                img.className = 'brand-logo';
+                // Using 200x100 size for placeholder (matches rectangle size)
+                img.src = `https://placehold.co/220x120/${brand.color1}/${brand.color2}`;
+                img.alt = brand.name;
+                img.loading = 'lazy';
+
+                // Assemble
+                rectangle.appendChild(img);
+                brandItem.appendChild(rectangle);
+                carouselTrack.appendChild(brandItem);
+
+                // Add click event to logo
+                rectangle.addEventListener('click', function () {
+                    alert(`Clicked on ${brand.name}`);
+                });
+            });
         }
-    });
 
-    // Custom Navigation
-    $('#customNext').click(function () {
-        $("#brandsCarousel").trigger('next.owl.carousel');
-    });
+        // Setup hover pause functionality
+        setupHoverPause();
+    }
 
-    $('#customPrev').click(function () {
-        $("#brandsCarousel").trigger('prev.owl.carousel');
-    });
+    // Jump to specific brand
+    function jumpToBrand(index) {
+        const track = document.querySelector('.carousel-track-brands');
+        const itemWidth = 220; // Should match CSS width + gap
+        const offset = -(index * itemWidth);
 
-    // Brand card click functionality
-    $('.explore-btn').click(function (e) {
-        e.stopPropagation();
-        const brandName = $(this).closest('.brand-card').find('.brand-name').text();
-        alert(`Exploring ${brandName} brand...`);
-    });
+        // Pause animation temporarily
+        track.style.animationPlayState = 'paused';
+        track.style.transform = `translateX(${offset}px)`;
 
-    // View All Button
-    $('.view-all-btn').click(function () {
-        alert('Loading all brands...');
-        $(this).html('<i class="bi bi-hourglass-split"></i> Loading...');
+        // Resume animation after 3 seconds
         setTimeout(() => {
-            $(this).html('<span>View All Brands</span> <i class="bi bi-chevron-right"></i>');
-        }, 2000);
-    });
+            track.style.animationPlayState = 'running';
+        }, 3000);
+    }
 
-    // Brand card hover effects
-    $('.brand-card').hover(
-        function () {
-            $(this).css('transform', 'translateY(-15px)');
-        },
-        function () {
-            $(this).css('transform', 'translateY(0)');
-        }
-    );
+    // Setup hover pause functionality
+    function setupHoverPause() {
+        const track = document.querySelector('.carousel-track-brands');
+        const container = document.querySelector('.carousel-container');
 
-    // Add animation on page load
-    setTimeout(() => {
-        $('.section-title').addClass('animated');
-        $('.brand-card').each(function (index) {
-            $(this).delay(index * 100).queue(function (next) {
-                $(this).css('opacity', '1');
-                next();
+        // Pause on container hover
+        container.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            track.style.animationPlayState = 'running';
+        });
+
+        // Individual logo hover effects
+        document.querySelectorAll('.logo-rectangle').forEach(logo => {
+            logo.addEventListener('mouseenter', function () {
+                // Add pulsing effect
+                this.style.animation = 'pulse 2s infinite';
+            });
+
+            logo.addEventListener('mouseleave', function () {
+                this.style.animation = '';
             });
         });
-    }, 500);
+    }
 
-    // Initially hide cards for animation
-    $('.brand-card').css({
-        'opacity': '0',
-        'transition': 'opacity 0.6s ease, transform 0.4s ease'
+    // Add CSS for pulsing effect
+    const style = document.createElement('style');
+    style.textContent = `
+        `;
+    document.head.appendChild(style);
+
+    // Initialize on load
+    initCarousel();
+
+    // Handle window resize
+    window.addEventListener('resize', function () {
+        // Adjust animation speed based on screen width
+        const track = document.querySelector('.carousel-track-brands');
+        if (track) {
+            // Restart animation to apply new keyframes
+            track.style.animation = 'none';
+            setTimeout(() => {
+                track.style.animation = 'scroll 35s linear infinite';
+                track.style.animationPlayState = 'running';
+            }, 10);
+        }
     });
 });
