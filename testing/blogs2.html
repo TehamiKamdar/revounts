@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Blogs & Articles</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --primary-light: #9984d4;
+            --primary: #592e83;
+            --primary-dark: #450077;
+            --dark-amethyst: #150132;
+            --font-family: "Archivo", Helvetica, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background: #fefefe;
+            padding: 30px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content-wrapper {
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        /* Header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(153, 132, 212, 0.1);
+        }
+        
+        .title-container h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .title-container .subtitle {
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 400;
+        }
+        
+        .view-all {
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .view-all:hover {
+            gap: 8px;
+            color: var(--primary-dark);
+        }
+        
+        /* Two Column Layout */
+        .columns-container {
+            display: flex;
+            gap: 30px;
+        }
+        
+        /* Left Column - Blogs */
+        .blogs-column {
+            flex: 1;
+        }
+        
+        /* Blog Card */
+        .blog-card {
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        
+        .blog-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .blog-date {
+            font-size: 0.75rem;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+            line-height: 1.4;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+        }
+        
+        .blog-card:hover .blog-title {
+            color: var(--primary);
+        }
+        
+        .blog-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+        
+        .read-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .read-time {
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .read-link {
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+        
+        .read-link:hover {
+            gap: 8px;
+            color: var(--primary-dark);
+        }
+        
+        /* Right Column - Articles */
+        .articles-column {
+            flex: 1;
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 25px;
+        }
+        
+        .articles-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .articles-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+        }
+        
+        .articles-count {
+            font-size: 0.85rem;
+            color: var(--primary);
+            background: rgba(153, 132, 212, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* Articles List */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .article-item {
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .article-item:hover {
+            padding-left: 8px;
+        }
+        
+        .article-item:hover .article-title {
+            color: var(--primary);
+        }
+        
+        .article-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            border-radius: 1px;
+        }
+        
+        .article-item:hover::before {
+            opacity: 1;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .article-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(153, 132, 212, 0.1);
+            padding: 3px 8px;
+            border-radius: 10px;
+            letter-spacing: 0.3px;
+        }
+        
+        .article-time {
+            font-size: 0.7rem;
+            color: #999;
+        }
+        
+        .article-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+            line-height: 1.4;
+            margin-bottom: 6px;
+            transition: color 0.2s ease;
+        }
+        
+        .article-stats {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: #999;
+        }
+        
+        .stat-item i {
+            font-size: 0.7rem;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(153, 132, 212, 0.3), transparent);
+            margin: 25px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .columns-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .articles-column {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .blog-image {
+                height: 180px;
+            }
+            
+            .articles-column {
+                padding: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .blog-image {
+                height: 160px;
+            }
+            
+            .blog-title {
+                font-size: 1.2rem;
+            }
+            
+            .articles-column {
+                padding: 16px;
+            }
+            
+            .article-item {
+                padding-bottom: 15px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .blog-card, .article-item {
+            animation: fadeInUp 0.4s ease forwards;
+            opacity: 0;
+        }
+        
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .article-item:nth-child(1) { animation-delay: 0.15s; }
+        .article-item:nth-child(2) { animation-delay: 0.2s; }
+        .article-item:nth-child(3) { animation-delay: 0.25s; }
+        .article-item:nth-child(4) { animation-delay: 0.3s; }
+        .article-item:nth-child(5) { animation-delay: 0.35s; }
+        .article-item:nth-child(6) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="section-header">
+            <div class="title-container">
+                <h1>Insights & Articles</h1>
+                <div class="subtitle">Latest perspectives and industry thoughts</div>
+            </div>
+            <a href="#" class="view-all">
+                <span>View all</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <!-- Two Column Layout -->
+        <div class="columns-container">
+            <!-- Left Column - Blogs -->
+            <div class="blogs-column">
+                <!-- Blog 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="AI Technology">
+                    </div>
+                    
+                    <div class="blog-meta">
+                        <div class="blog-category">Technology</div>
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>Nov 15, 2023</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="blog-title">AI Integration in Modern Workflows</h3>
+                    <p class="blog-excerpt">
+                        How artificial intelligence is reshaping daily operations and creating new efficiencies across industries.
+                    </p>
+                    
+                    <div class="read-indicator">
+                        <div class="read-time">
+                            <i class="far fa-clock"></i>
+                            <span>5 min read</span>
+                        </div>
+                        <a href="#" class="read-link">
+                            <span>Read article</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing">
+                    </div>
+                    
+                    <div class="blog-meta">
+                        <div class="blog-category">Marketing</div>
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>Nov 12, 2023</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="blog-title">Minimalist Marketing Strategies</h3>
+                    <p class="blog-excerpt">
+                        Focused approaches that cut through the noise and deliver meaningful engagement with target audiences.
+                    </p>
+                    
+                    <div class="read-indicator">
+                        <div class="read-time">
+                            <i class="far fa-clock"></i>
+                            <span>4 min read</span>
+                        </div>
+                        <a href="#" class="read-link">
+                            <span>Read article</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Divider -->
+                <div class="divider"></div>
+                
+                <!-- Blog 3 -->
+                <div class="blog-card">
+                    <div class="blog-meta">
+                        <div class="blog-category">Design</div>
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i>
+                            <span>Nov 10, 2023</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="blog-title">Sleek UI Patterns for 2024</h3>
+                    <p class="blog-excerpt">
+                        Emerging interface design trends that prioritize clarity, speed, and user satisfaction.
+                    </p>
+                    
+                    <div class="read-indicator">
+                        <div class="read-time">
+                            <i class="far fa-clock"></i>
+                            <span>6 min read</span>
+                        </div>
+                        <a href="#" class="read-link">
+                            <span>Read article</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Articles -->
+            <div class="articles-column">
+                <div class="articles-header">
+                    <h3 class="articles-title">Related Reads</h3>
+                    <div class="articles-count">6 articles</div>
+                </div>
+                
+                <div class="articles-list">
+                    <!-- Article 1 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Tech</div>
+                            <div class="article-time">Today</div>
+                        </div>
+                        <h4 class="article-title">Cloud Infrastructure Optimization</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>1.2K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>42</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Business</div>
+                            <div class="article-time">2 days ago</div>
+                        </div>
+                        <h4 class="article-title">Remote Team Productivity</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>2.8K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>87</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Design</div>
+                            <div class="article-time">3 days ago</div>
+                        </div>
+                        <h4 class="article-title">Minimalist Color Palettes</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>1.5K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>31</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 4 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Strategy</div>
+                            <div class="article-time">5 days ago</div>
+                        </div>
+                        <h4 class="article-title">Data-Driven Decision Making</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>3.4K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>112</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 5 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Innovation</div>
+                            <div class="article-time">1 week ago</div>
+                        </div>
+                        <h4 class="article-title">Sustainable Tech Solutions</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>2.1K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>56</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 6 -->
+                    <div class="article-item">
+                        <div class="article-header">
+                            <div class="article-tag">Future</div>
+                            <div class="article-time">2 weeks ago</div>
+                        </div>
+                        <h4 class="article-title">Next-Gen Interfaces</h4>
+                        <div class="article-stats">
+                            <div class="stat-item">
+                                <i class="far fa-eye"></i>
+                                <span>1.8K</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="far fa-comment"></i>
+                                <span>48</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click events to all links
+            const allLinks = document.querySelectorAll('.read-link, .view-all, .blog-card, .article-item');
+            
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.classList.contains('read-link') || this.classList.contains('view-all')) {
+                        e.preventDefault();
+                    }
+                    
+                    let title = '';
+                    
+                    if (this.classList.contains('blog-card')) {
+                        title = this.querySelector('.blog-title').textContent;
+                    } else if (this.classList.contains('article-item')) {
+                        title = this.querySelector('.article-title').textContent;
+                    } else if (this.classList.contains('view-all')) {
+                        title = 'All Articles';
+                    } else {
+                        title = this.querySelector('span').textContent;
+                    }
+                    
+                    // Visual feedback
+                    if (this.classList.contains('article-item')) {
+                        this.style.background = 'rgba(153, 132, 212, 0.05)';
+                        setTimeout(() => {
+                            this.style.background = '';
+                        }, 500);
+                    }
+                    
+                    console.log(`Clicked: ${title}`);
+                    
+                    // In a real app, this would navigate to the article
+                    // For demo, just show a subtle effect
+                });
+            });
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    
+                    const articles = document.querySelectorAll('.article-item');
+                    const currentFocus = document.activeElement;
+                    let currentIndex = -1;
+                    
+                    articles.forEach((article, index) => {
+                        if (article === currentFocus || article.contains(currentFocus)) {
+                            currentIndex = index;
+                        }
+                    });
+                    
+                    if (e.key === 'ArrowDown' && currentIndex < articles.length - 1) {
+                        articles[currentIndex + 1].focus();
+                    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                        articles[currentIndex - 1].focus();
+                    }
+                }
+            });
+            
+            // Make articles focusable
+            document.querySelectorAll('.article-item').forEach(article => {
+                article.setAttribute('tabindex', '0');
+            });
+            
+            // Add fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all cards and items
+            document.querySelectorAll('.blog-card, .article-item').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
