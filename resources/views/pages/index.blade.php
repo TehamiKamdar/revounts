@@ -716,13 +716,13 @@
                 </div>
             </div>
         </div>
+        <div class="newsletter-section">
+            <video id="newsletterVideo" muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
+                <source src="{{ asset('assets/subscribe.mp4') }}" type="video/mp4">
+            </video>
+        </div>
     </main>
 
-    <div class="newsletter-section">
-        <video id="newsletterVideo" muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
-            <source src="{{ asset('assets/subscribe.mp4') }}" type="video/mp4">
-        </video>
-    </div>
 
 
 @endsection
