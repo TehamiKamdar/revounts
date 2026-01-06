@@ -21,13 +21,13 @@
             --dark-amethyst: #150132;
             --font-family: "Archivo", Helvetica, sans-serif;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: var(--font-family);
             background: linear-gradient(135deg, #f8f9ff 0%, #f5f7ff 100%);
@@ -38,13 +38,13 @@
             justify-content: center;
             overflow-x: hidden;
         }
-        
+
         .coupon-blog-wrapper {
             width: 100%;
             max-width: 1400px;
             position: relative;
         }
-        
+
         /* Animated Background */
         .coupon-bg {
             position: absolute;
@@ -56,7 +56,7 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .coupon-tag {
             position: absolute;
             background: rgba(255, 255, 255, 0.95);
@@ -74,38 +74,38 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .coupon-tag-1 {
             top: 15%;
             right: 5%;
             animation-delay: 0s;
         }
-        
+
         .coupon-tag-2 {
             top: 40%;
             left: 3%;
             animation-delay: 5s;
         }
-        
+
         .coupon-tag-3 {
             bottom: 20%;
             right: 15%;
             animation-delay: 10s;
         }
-        
+
         .coupon-tag-4 {
             bottom: 10%;
             left: 10%;
             animation-delay: 15s;
         }
-        
+
         /* Header */
         .blog-header {
             text-align: center;
             margin-bottom: 60px;
             position: relative;
         }
-        
+
         .header-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -120,7 +120,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .header-badge::after {
             content: '';
             position: absolute;
@@ -132,7 +132,7 @@
             transform: rotate(45deg);
             animation: shine 3s infinite;
         }
-        
+
         .blog-title {
             font-size: 3.2rem;
             font-weight: 800;
@@ -144,7 +144,7 @@
             letter-spacing: -1px;
             line-height: 1.1;
         }
-        
+
         .blog-subtitle {
             color: #666;
             font-size: 1.2rem;
@@ -152,7 +152,7 @@
             margin: 0 auto 40px;
             line-height: 1.6;
         }
-        
+
         /* Categories Filter */
         .categories-filter {
             display: flex;
@@ -161,7 +161,7 @@
             flex-wrap: wrap;
             margin-bottom: 50px;
         }
-        
+
         .category-btn {
             padding: 12px 28px;
             border-radius: 12px;
@@ -176,7 +176,7 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .category-btn.active {
             background: var(--primary);
             color: white;
@@ -184,24 +184,24 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(89, 46, 131, 0.3);
         }
-        
+
         .category-btn:hover:not(.active) {
             border-color: var(--primary-light);
             color: var(--primary);
             transform: translateY(-2px);
         }
-        
+
         /* Two Column Layout */
         .blog-columns {
             display: flex;
             gap: 40px;
         }
-        
+
         /* Left Column - Featured Blogs */
         .featured-blogs {
             flex: 1;
         }
-        
+
         .featured-blog-card {
             background: white;
             border-radius: 24px;
@@ -211,31 +211,31 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             margin-bottom: 40px;
         }
-        
+
         .featured-blog-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 60px rgba(89, 46, 131, 0.15);
             border-color: rgba(153, 132, 212, 0.3);
         }
-        
+
         .featured-blog-image {
             height: 280px;
             width: 100%;
             overflow: hidden;
             position: relative;
         }
-        
+
         .featured-blog-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .featured-blog-card:hover .featured-blog-image img {
             transform: scale(1.1);
         }
-        
+
         .featured-blog-badge {
             position: absolute;
             top: 20px;
@@ -253,11 +253,11 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .featured-blog-content {
             padding: 35px;
         }
-        
+
         .featured-blog-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -265,14 +265,14 @@
             margin-bottom: 15px;
             line-height: 1.3;
         }
-        
+
         .featured-blog-excerpt {
             color: #666;
             font-size: 1.05rem;
             line-height: 1.6;
             margin-bottom: 25px;
         }
-        
+
         .blog-meta-row {
             display: flex;
             justify-content: space-between;
@@ -281,13 +281,13 @@
             padding-bottom: 25px;
             border-bottom: 1px solid rgba(153, 132, 212, 0.1);
         }
-        
+
         .blog-author {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .author-avatar {
             width: 48px;
             height: 48px;
@@ -301,47 +301,47 @@
             font-size: 1rem;
             box-shadow: 0 6px 15px rgba(153, 132, 212, 0.3);
         }
-        
+
         .author-info {
             display: flex;
             flex-direction: column;
         }
-        
+
         .author-name {
             font-weight: 700;
             font-size: 1rem;
             color: var(--dark-amethyst);
         }
-        
+
         .blog-date {
             font-size: 0.9rem;
             color: #999;
         }
-        
+
         .blog-stats {
             display: flex;
             gap: 25px;
         }
-        
+
         .blog-stat {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
+
         .stat-value {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
         }
-        
+
         .stat-label {
             font-size: 0.8rem;
             color: #999;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .read-blog-btn {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -359,7 +359,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .read-blog-btn::before {
             content: '';
             position: absolute;
@@ -370,21 +370,21 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.6s ease;
         }
-        
+
         .read-blog-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(89, 46, 131, 0.4);
         }
-        
+
         .read-blog-btn:hover::before {
             left: 100%;
         }
-        
+
         /* Right Column - Articles & Tips */
         .articles-sidebar {
             flex: 1;
         }
-        
+
         .sidebar-header {
             display: flex;
             justify-content: space-between;
@@ -393,14 +393,14 @@
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(153, 132, 212, 0.2);
         }
-        
+
         .sidebar-title {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--dark-amethyst);
             position: relative;
         }
-        
+
         .sidebar-title::after {
             content: '';
             position: absolute;
@@ -411,7 +411,7 @@
             left: 0;
             border-radius: 2px;
         }
-        
+
         .sidebar-count {
             font-size: 0.9rem;
             color: var(--primary);
@@ -420,14 +420,14 @@
             border-radius: 20px;
             font-weight: 600;
         }
-        
+
         /* Articles List */
         .articles-list {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
-        
+
         .article-card {
             background: white;
             border-radius: 20px;
@@ -438,13 +438,13 @@
             overflow: hidden;
             cursor: pointer;
         }
-        
+
         .article-card:hover {
             transform: translateX(10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             border-color: rgba(153, 132, 212, 0.3);
         }
-        
+
         .article-card::before {
             content: '';
             position: absolute;
@@ -457,18 +457,18 @@
             transition: transform 0.4s ease;
             transform-origin: top;
         }
-        
+
         .article-card:hover::before {
             transform: scaleY(1);
         }
-        
+
         .article-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
         }
-        
+
         .article-category {
             font-size: 0.75rem;
             font-weight: 700;
@@ -478,7 +478,7 @@
             border-radius: 15px;
             letter-spacing: 0.5px;
         }
-        
+
         .article-time {
             font-size: 0.8rem;
             color: #999;
@@ -486,7 +486,7 @@
             align-items: center;
             gap: 6px;
         }
-        
+
         .article-title {
             font-size: 1.2rem;
             font-weight: 700;
@@ -494,7 +494,7 @@
             margin-bottom: 12px;
             line-height: 1.4;
         }
-        
+
         .article-excerpt {
             color: #666;
             font-size: 0.95rem;
@@ -505,19 +505,19 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
+
         .article-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .article-author {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         .author-initial {
             width: 32px;
             height: 32px;
@@ -530,18 +530,18 @@
             font-size: 0.85rem;
             font-weight: 700;
         }
-        
+
         .author-name-small {
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--dark-amethyst);
         }
-        
+
         .article-actions {
             display: flex;
             gap: 20px;
         }
-        
+
         .article-action {
             background: transparent;
             border: none;
@@ -553,11 +553,11 @@
             align-items: center;
             gap: 6px;
         }
-        
+
         .article-action:hover {
             color: var(--primary);
         }
-        
+
         /* Tips Section */
         .tips-section {
             background: linear-gradient(135deg, rgba(153, 132, 212, 0.1), rgba(89, 46, 131, 0.05));
@@ -566,7 +566,7 @@
             margin-top: 50px;
             border: 1px solid rgba(153, 132, 212, 0.2);
         }
-        
+
         .tips-title {
             font-size: 1.4rem;
             font-weight: 700;
@@ -576,7 +576,7 @@
             align-items: center;
             gap: 12px;
         }
-        
+
         .tips-title i {
             color: var(--primary);
             background: white;
@@ -588,19 +588,19 @@
             justify-content: center;
             box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
         }
-        
+
         .tips-list {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-        
+
         .tip-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
         }
-        
+
         .tip-number {
             width: 32px;
             height: 32px;
@@ -614,24 +614,24 @@
             font-size: 0.9rem;
             flex-shrink: 0;
         }
-        
+
         .tip-content {
             flex: 1;
         }
-        
+
         .tip-title {
             font-weight: 600;
             color: var(--dark-amethyst);
             margin-bottom: 5px;
             font-size: 1rem;
         }
-        
+
         .tip-desc {
             color: #666;
             font-size: 0.9rem;
             line-height: 1.5;
         }
-        
+
         /* Animations */
         @keyframes floatTag {
             0% {
@@ -650,7 +650,7 @@
                 transform: translate(0, 0) rotate(360deg);
             }
         }
-        
+
         @keyframes badgeGlow {
             0%, 100% {
                 box-shadow: 0 10px 30px rgba(89, 46, 131, 0.3);
@@ -659,7 +659,7 @@
                 box-shadow: 0 10px 40px rgba(89, 46, 131, 0.5);
             }
         }
-        
+
         @keyframes shine {
             0% {
                 transform: translateX(-100%) translateY(-100%) rotate(45deg);
@@ -668,7 +668,7 @@
                 transform: translateX(100%) translateY(100%) rotate(45deg);
             }
         }
-        
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -679,112 +679,112 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* Staggered animations */
         .featured-blog-card {
             animation: slideIn 0.6s ease-out;
         }
-        
+
         .article-card:nth-child(1) { animation: slideIn 0.6s ease-out 0.1s both; }
         .article-card:nth-child(2) { animation: slideIn 0.6s ease-out 0.2s both; }
         .article-card:nth-child(3) { animation: slideIn 0.6s ease-out 0.3s both; }
         .article-card:nth-child(4) { animation: slideIn 0.6s ease-out 0.4s both; }
         .article-card:nth-child(5) { animation: slideIn 0.6s ease-out 0.5s both; }
         .article-card:nth-child(6) { animation: slideIn 0.6s ease-out 0.6s both; }
-        
+
         /* Responsive */
         @media (max-width: 1200px) {
             .blog-columns {
                 gap: 30px;
             }
-            
+
             .featured-blog-image {
                 height: 250px;
             }
         }
-        
+
         @media (max-width: 992px) {
             .blog-columns {
                 flex-direction: column;
             }
-            
+
             .featured-blog-image {
                 height: 300px;
             }
-            
+
             .categories-filter {
                 gap: 10px;
             }
-            
+
             .category-btn {
                 padding: 10px 20px;
                 font-size: 0.9rem;
             }
         }
-        
+
         @media (max-width: 768px) {
             body {
                 padding: 30px 15px;
             }
-            
+
             .blog-title {
                 font-size: 2.5rem;
             }
-            
+
             .blog-subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .featured-blog-content {
                 padding: 25px;
             }
-            
+
             .featured-blog-title {
                 font-size: 1.5rem;
             }
-            
+
             .blog-meta-row {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 20px;
             }
-            
+
             .blog-stats {
                 width: 100%;
                 justify-content: space-around;
             }
-            
+
             .article-card {
                 padding: 20px;
             }
-            
+
             .tips-section {
                 padding: 25px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .blog-title {
                 font-size: 2rem;
             }
-            
+
             .header-badge {
                 padding: 8px 20px;
                 font-size: 0.9rem;
             }
-            
+
             .featured-blog-image {
                 height: 220px;
             }
-            
+
             .featured-blog-title {
                 font-size: 1.3rem;
             }
-            
+
             .article-title {
                 font-size: 1.1rem;
             }
-            
+
             .coupon-tag {
                 display: none;
             }
@@ -808,7 +808,7 @@
                 <i class="fas fa-gift"></i> FREE SHIPPING
             </div>
         </div>
-        
+
         <!-- Header -->
         <div class="blog-header">
             <div class="header-badge">
@@ -818,7 +818,7 @@
             <p class="blog-subtitle">
                 Expert tips, guides, and articles to help you find the best deals, maximize savings, and shop smarter.
             </p>
-            
+
             <!-- Categories Filter -->
             <div class="categories-filter">
                 <button class="category-btn active">
@@ -847,7 +847,7 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Two Column Layout -->
         <div class="blog-columns">
             <!-- Left Column - Featured Blogs -->
@@ -860,13 +860,13 @@
                         </div>
                         <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Shopping Tips">
                     </div>
-                    
+
                     <div class="featured-blog-content">
                         <h2 class="featured-blog-title">The Ultimate Guide to Stacking Coupons for Maximum Savings</h2>
                         <p class="featured-blog-excerpt">
                             Discover advanced techniques for combining multiple discounts, cashback offers, and loyalty rewards to save up to 80% on your purchases. Learn how to identify stackable deals and time your purchases perfectly.
                         </p>
-                        
+
                         <div class="blog-meta-row">
                             <div class="blog-author">
                                 <div class="author-avatar">SD</div>
@@ -875,7 +875,7 @@
                                     <div class="blog-date">November 18, 2023 • 12 min read</div>
                                 </div>
                             </div>
-                            
+
                             <div class="blog-stats">
                                 <div class="blog-stat">
                                     <div class="stat-value">2.4K</div>
@@ -891,7 +891,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <button class="read-blog-btn">
                             <span>Read Complete Guide</span>
                             <i class="fas fa-arrow-right"></i>
@@ -899,14 +899,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Right Column - Articles & Tips -->
             <div class="articles-sidebar">
                 <div class="sidebar-header">
                     <h3 class="sidebar-title">Latest Articles</h3>
                     <div class="sidebar-count">6 Articles</div>
                 </div>
-                
+
                 <!-- Articles List -->
                 <div class="articles-list">
                     <!-- Article 1 -->
@@ -936,7 +936,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Article 2 -->
                     <div class="article-card">
                         <div class="article-header">
@@ -964,7 +964,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Article 3 -->
                     <div class="article-card">
                         <div class="article-header">
@@ -992,7 +992,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Article 4 -->
                     <div class="article-card">
                         <div class="article-header">
@@ -1020,7 +1020,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Article 5 -->
                     <div class="article-card">
                         <div class="article-header">
@@ -1048,7 +1048,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Article 6 -->
                     <div class="article-card">
                         <div class="article-header">
@@ -1077,14 +1077,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Tips Section -->
                 <div class="tips-section">
                     <h3 class="tips-title">
                         <i class="fas fa-lightbulb"></i>
                         <span>Quick Shopping Tips</span>
                     </h3>
-                    
+
                     <div class="tips-list">
                         <div class="tip-item">
                             <div class="tip-number">1</div>
@@ -1093,7 +1093,42 @@
                                 <div class="tip-desc">Use browser extensions to track price history and get alerts when items drop in price.</div>
                             </div>
                         </div>
-                        
+
                         <div class="tip-item">
-                            <div class="tip-number">2</div>
-                            <div
+                            <div class="tip-number">1</div>
+                            <div class="tip-content">
+                                <div class="tip-title">Price Drop Alerts</div>
+                                <div class="tip-desc">Use browser extensions to track price history and get alerts when items drop in price.</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-item">
+                            <div class="tip-number">1</div>
+                            <div class="tip-content">
+                                <div class="tip-title">Price Drop Alerts</div>
+                                <div class="tip-desc">Use browser extensions to track price history and get alerts when items drop in price.</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-item">
+                            <div class="tip-number">1</div>
+                            <div class="tip-content">
+                                <div class="tip-title">Price Drop Alerts</div>
+                                <div class="tip-desc">Use browser extensions to track price history and get alerts when items drop in price.</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-item">
+                            <div class="tip-number">1</div>
+                            <div class="tip-content">
+                                <div class="tip-title">Price Drop Alerts</div>
+                                <div class="tip-desc">Use browser extensions to track price history and get alerts when items drop in price.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
