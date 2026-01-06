@@ -48,6 +48,7 @@ h6,
     color: var(--white) !important;
     font-weight: 700;
     font-size: 1.8rem;
+    font-family: var(--heading-font-family);
     letter-spacing: -0.5px;
     transition: all 0.3s ease;
 }
@@ -274,8 +275,8 @@ h6,
 footer {
     background-color: var(--dark-amethyst);
     color: var(--white);
-    padding: 2rem;
-    text-align: center;
+    padding: 1rem;
+    text-align: end;
     margin-top: 3rem;
 }
 
@@ -836,6 +837,11 @@ section {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.brands-section-header{
+    min-height: 80px;
+    max-width: 1320px;
 }
 
 /* Custom Owl Carousel Container */

@@ -25,7 +25,7 @@
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                Brand<span>Name</span>
+                <span>Revounts</span>
             </a>
 
             <!-- Toggle Button for Mobile -->
@@ -37,21 +37,16 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#">Reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#">
-                            Products
-                        </a>
+                        <a class="nav-link" href="#">Coupons</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Seasonal</a>
                     </li>
                 </ul>
 
@@ -72,15 +67,12 @@
         </div>
     </nav>
 
-    @yield('hero')
 
-    <main class="container content-section">
-        @yield('content')
-    </main>
+    @yield('content')
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="mb-0">Navbar created with Bootstrap 5 using custom CSS variables</p>
+            <p class="mb-0">Revounts.com.au © 2026 - Registered in Australia - ABN: 63 624 845 405 - All Rights Reserved.</p>
         </div>
     </footer>
 

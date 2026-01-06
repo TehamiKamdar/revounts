@@ -286,4 +286,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10);
         }
     });
+
+
+    // Newsletter Video
+    const video = document.getElementById("newsletterVideo");
+    let hasPlayed = false;
+    const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasPlayed) {
+                    video.play();
+                    observerInstance.disconnect()
+                }
+            });
+        },
+        {
+            threshold: 0.7 // Video will run when 70% of section is visible
+        }
+    );
+
+    observer.observe(video);
 });
