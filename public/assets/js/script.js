@@ -288,22 +288,86 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // Newsletter Video
-    const video = document.getElementById("newsletterVideo");
-    let hasPlayed = false;
-    const observer = new IntersectionObserver(
-        (entries, observerInstance) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasPlayed) {
-                    video.play();
-                    observerInstance.disconnect()
-                }
-            });
-        },
-        {
-            threshold: 0.7 // Video will run when 70% of section is visible
-        }
-    );
+    // Newsletter
+    document.addEventListener('DOMContentLoaded', function() {
+            const newsletterForm = document.getElementById('simpleNewsletter');
+            const emailInput = newsletterForm.querySelector('.email-input');
+            const subscribeBtn = newsletterForm.querySelector('.subscribe-btn');
+            const messageElement = document.getElementById('subMessage');
 
-    observer.observe(video);
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+
+                // Simple email validation
+                if (!email.includes('@') || !email.includes('.')) {
+                    // Visual feedback for invalid email
+                    emailInput.style.boxShadow = '0 0 0 3px rgba(255, 71, 87, 0.3)';
+                    setTimeout(() => {
+                        emailInput.style.boxShadow = '';
+                    }, 1000);
+                    return;
+                }
+
+                // Show loading state
+                const originalText = subscribeBtn.innerHTML;
+                subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Subscribing...</span>';
+                subscribeBtn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    // Show success message
+                    messageElement.classList.add('show');
+
+                    // Reset form
+                    emailInput.value = '';
+                    subscribeBtn.innerHTML = originalText;
+                    subscribeBtn.disabled = false;
+
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageElement.classList.remove('show');
+                    }, 5000);
+
+                    // Add animation to button
+                    subscribeBtn.style.background = '#27ae60';
+                    subscribeBtn.style.color = 'white';
+                    setTimeout(() => {
+                        subscribeBtn.style.background = '';
+                        subscribeBtn.style.color = '';
+                    }, 2000);
+
+                }, 1000);
+            });
+
+            // Input focus effect
+            emailInput.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-1px)';
+            });
+
+            emailInput.addEventListener('blur', function() {
+                this.style.transform = '';
+            });
+
+            // Add subtle animation to dots
+            const dots = document.querySelectorAll('.bg-dot');
+            dots.forEach((dot, index) => {
+                dot.style.animation = `float ${3 + index}s infinite ease-in-out`;
+            });
+
+            // Add float animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
 });

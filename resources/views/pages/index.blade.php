@@ -57,7 +57,8 @@
                             </div> --}}
 
                             <div class="image-content">
-                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Electronics" class="slide-image">
+                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Electronics"
+                                    class="slide-image">
                             </div>
                         </div>
                     </div>
@@ -69,7 +70,8 @@
                                 <span class="slide-tag">New Arrivals</span>
                                 <h2 class="slide-title">Modern Home Decor Essentials</h2>
                                 <p class="slide-description">
-                                    Transform your living space with contemporary furniture and decor pieces. Minimalist designs
+                                    Transform your living space with contemporary furniture and decor pieces. Minimalist
+                                    designs
                                     meet functional elegance for the modern home.
                                 </p>
 
@@ -175,14 +177,15 @@
             </div>
         </section>
     </main>
-        <!-- Hero Section -->
-        <div class="hero-section text-center">
-        </div>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+    </div>
     <main class="container content-section">
         <section class="coupon-section">
             <div class="section-heading">
                 <h2 class="section-title">Free coupons to redeem</h2>
-                <p class="section-subtitle">Enjoy these grocery coupons that are available for you. Just clip, print and save.
+                <p class="section-subtitle">Enjoy these grocery coupons that are available for you. Just clip, print and
+                    save.
                     Please note these coupons are valid only for use in the USA.</p>
             </div>
             <div class="coupons-row">
@@ -257,7 +260,8 @@
 
                     <div class="coupon-content">
                         <p class="coupon-description">
-                            Upgrade your living space with premium home appliances and decor items. Perfect for home renovation
+                            Upgrade your living space with premium home appliances and decor items. Perfect for home
+                            renovation
                             or adding modern touches to your interior.
                         </p>
 
@@ -288,7 +292,8 @@
 
                     <div class="coupon-content">
                         <p class="coupon-description">
-                            Discover premium beauty products and skincare essentials. This offer includes cosmetics, fragrances,
+                            Discover premium beauty products and skincare essentials. This offer includes cosmetics,
+                            fragrances,
                             and personal care items from luxury brands.
                         </p>
 
@@ -298,7 +303,8 @@
                         </div> --}}
 
                         <div class="image-container">
-                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Beauty Products" class="product-image">
+                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Beauty Products"
+                                class="product-image">
                         </div>
                     </div>
 
@@ -391,7 +397,8 @@
                             <h2 class="featured-blog-title">The Ultimate Guide to Stacking Coupons for Maximum Savings</h2>
                             <p class="featured-blog-excerpt">
                                 Discover advanced techniques for combining multiple discounts, cashback offers, and loyalty
-                                rewards to save up to 80% on your purchases. Learn how to identify stackable deals and time your
+                                rewards to save up to 80% on your purchases. Learn how to identify stackable deals and time
+                                your
                                 purchases perfectly.
                             </p>
 
@@ -441,7 +448,8 @@
                                 <div class="tip-number">1</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Stack Coupons Legally</div>
-                                    <div class="tip-desc">Combine store coupons with manufacturer coupons and promo codes for
+                                    <div class="tip-desc">Combine store coupons with manufacturer coupons and promo codes
+                                        for
                                         maximum savings. Most stores allow this!</div>
                                 </div>
                             </div>
@@ -459,7 +467,8 @@
                                 <div class="tip-number">3</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Holiday Sale Calendar</div>
-                                    <div class="tip-desc">Plan purchases around major holidays when specific categories go on
+                                    <div class="tip-desc">Plan purchases around major holidays when specific categories go
+                                        on
                                         sale (e.g., electronics on Black Friday).</div>
                                 </div>
                             </div>
@@ -468,7 +477,8 @@
                                 <div class="tip-number">4</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Cashback Apps</div>
-                                    <div class="tip-desc">Install cashback apps that automatically apply coupon codes and give
+                                    <div class="tip-desc">Install cashback apps that automatically apply coupon codes and
+                                        give
                                         you money back on purchases.</div>
                                 </div>
                             </div>
@@ -486,7 +496,8 @@
                                 <div class="tip-number">6</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Abandon Cart Strategy</div>
-                                    <div class="tip-desc">Leave items in your cart for 24 hours - many retailers will send you
+                                    <div class="tip-desc">Leave items in your cart for 24 hours - many retailers will send
+                                        you
                                         discount codes to complete purchase.</div>
                                 </div>
                             </div>
@@ -495,7 +506,8 @@
                                 <div class="tip-number">7</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Newsletter Signup</div>
-                                    <div class="tip-desc">Subscribe to brand newsletters - they often send exclusive discount
+                                    <div class="tip-desc">Subscribe to brand newsletters - they often send exclusive
+                                        discount
                                         codes to new subscribers.</div>
                                 </div>
                             </div>
@@ -513,7 +525,8 @@
                                 <div class="tip-number">9</div>
                                 <div class="tip-content">
                                     <div class="tip-title">Student/Military Discounts</div>
-                                    <div class="tip-desc">Always check for special discounts for students, teachers, military
+                                    <div class="tip-desc">Always check for special discounts for students, teachers,
+                                        military
                                         personnel, and seniors.</div>
                                 </div>
                             </div>
@@ -578,7 +591,8 @@
                                 </div>
                             </div>
                             <h4 class="article-title">Cashback Apps Comparison: Which Ones Really Pay?</h4>
-                            <p class="article-excerpt">Detailed analysis of top 5 cashback apps with real user experiences and
+                            <p class="article-excerpt">Detailed analysis of top 5 cashback apps with real user experiences
+                                and
                                 payout success rates.</p>
                             <div class="article-footer">
                                 <div class="article-author">
@@ -636,7 +650,8 @@
                                 </div>
                             </div>
                             <h4 class="article-title">How to Save 40% on Groceries with Digital Coupons</h4>
-                            <p class="article-excerpt">Step-by-step guide to using digital coupons and loyalty programs at major
+                            <p class="article-excerpt">Step-by-step guide to using digital coupons and loyalty programs at
+                                major
                                 grocery chains.</p>
                             <div class="article-footer">
                                 <div class="article-author">
@@ -665,7 +680,8 @@
                                 </div>
                             </div>
                             <h4 class="article-title">Secret Flight Booking Hacks for 70% Off Airfare</h4>
-                            <p class="article-excerpt">Insider tips on finding hidden discounts and error fares that airlines
+                            <p class="article-excerpt">Insider tips on finding hidden discounts and error fares that
+                                airlines
                                 don't advertise.</p>
                             <div class="article-footer">
                                 <div class="article-author">
@@ -716,10 +732,42 @@
                 </div>
             </div>
         </div>
+
+        {{-- Newsletter --}}
         <div class="newsletter-section">
-            <video id="newsletterVideo" muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
-                <source src="{{ asset('assets/subscribe.mp4') }}" type="video/mp4">
-            </video>
+            <!-- Background Dots -->
+            <div class="newsletter-bg">
+                <div class="bg-dot dot-1"></div>
+                <div class="bg-dot dot-2"></div>
+                <div class="bg-dot dot-3"></div>
+                <div class="bg-dot dot-4"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="newsletter-content">
+                <!-- Left Text -->
+                <div class="text-content">
+                    <h3 class="newsletter-title">Get Exclusive Coupons</h3>
+                    <p class="newsletter-subtitle">
+                        Subscribe to get weekly coupon codes and special offers directly in your inbox.
+                    </p>
+                </div>
+
+                <!-- Right Email Form -->
+                <form class="email-form" id="simpleNewsletter">
+                    <input type="email" class="email-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Subscribe</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Subscription Message (Initially Hidden) -->
+            <div class="subscription-message" id="subMessage">
+                <i class="fas fa-check-circle"></i>
+                <span>Thank you for subscribing! Check your email for confirmation.</span>
+            </div>
         </div>
     </main>
 
