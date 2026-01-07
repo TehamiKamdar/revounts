@@ -337,7 +337,6 @@
             </div>
         </section>
 
-
         {{-- Current Deals Section --}}
         <section class="deals-wrapper">
             <!-- Section Header -->
@@ -442,6 +441,154 @@
                                 $43
                             </div>
                             <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- Stores Section --}}
+        <section class="store-wrapper">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Shop by Brand Category</h2>
+                <p class="section-subtitle">
+                    Explore top brands across different categories. Click any brand to visit their store and discover exclusive deals.
+                </p>
+            </div>
+
+            <!-- 5 Categories Grid -->
+            <div class="categories-grid">
+                <!-- Category 1: Electronics -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="category-title">Electronics</h3>
+                    </div>
+
+                    <div class="brands-list">
+                        <!-- Brand 1 -->
+                        <div class="brand-item">
+                            <div class="brand-logo">
+                                <img src="https://placehold.co/100x100/592e83/ffffff?text=ELEC1" alt="Electronics Brand">
+                            </div>
+                            <div class="brand-info">
+                                <div class="brand-name">TechPro Solutions</div>
+                                <div class="store-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Visit Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Fashion -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="category-title">Fashion</h3>
+                    </div>
+
+                    <div class="brands-list">
+                        <!-- Repeat 10 fashion brands with unique placehold.co images -->
+                        <!-- Brand 1-10 -->
+                        <div class="brand-item">
+                            <div class="brand-logo">
+                                <img src="https://placehold.co/100x100/9984d4/ffffff?text=FSH1" alt="Fashion Brand">
+                            </div>
+                            <div class="brand-info">
+                                <div class="brand-name">StyleCraft Fashion</div>
+                                <div class="store-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Visit Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Home & Kitchen -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="category-title">Home & Kitchen</h3>
+                    </div>
+
+                    <div class="brands-list">
+                        <!-- 10 home brands with placehold.co -->
+                        <!-- Using unique colors for each category -->
+                        <div class="brand-item">
+                            <div class="brand-logo">
+                                <img src="https://placehold.co/100x100/450077/ffffff?text=HOME1" alt="Home Brand">
+                            </div>
+                            <div class="brand-info">
+                                <div class="brand-name">Cozy Living Spaces</div>
+                                <div class="store-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Visit Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Beauty & Health -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="category-title">Beauty & Health</h3>
+                    </div>
+
+                    <div class="brands-list">
+                        <!-- 10 beauty brands -->
+                        <!-- Using different color for placehold.co -->
+                        <div class="brand-item">
+                            <div class="brand-logo">
+                                <img src="https://placehold.co/100x100/150132/ffffff?text=BTY1" alt="Beauty Brand">
+                            </div>
+                            <div class="brand-info">
+                                <div class="brand-name">Glow Beauty Labs</div>
+                                <div class="store-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Visit Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: Sports & Outdoors -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="category-title">Sports & Outdoors</h3>
+                    </div>
+
+                    <div class="brands-list">
+                        <!-- 10 sports brands -->
+                        <!-- Using different color -->
+                        <div class="brand-item">
+                            <div class="brand-logo">
+                                <img src="https://placehold.co/100x100/592e83/9984d4?text=SPT1" alt="Sports Brand">
+                            </div>
+                            <div class="brand-info">
+                                <div class="brand-name">Active Gear Pro</div>
+                                <div class="store-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Visit Store</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
