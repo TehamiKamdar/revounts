@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's In It - Complete Section</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/playlist" rel="stylesheet">
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --font-family: "Archivo", Helvetica, sans-serif;
+            --pink-main: #f262ff;
+            --pink-light: rgba(242, 98, 255, 0.1);
+            --pink-border: #f262ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: #f8f9fa;
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-wrapper {
+            width: 100%;
+        }
+
+        /* Main Section with Background & Border */
+        /* Section background & styling */
+        .whats-in-section {
+            /* background: linear-gradient(135deg, #BC1719 0%, #26887C 100%); */
+            background-color: #ffe2e2;
+            border: 2px dashed #BC1719;
+            border-radius: 25px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            /* default text color */
+        }
+
+        /* Header Split */
+        .header-split {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        /* Split image card (responsive) */
+        .split-image {
+            position: relative;
+            max-width: 280px;
+            /* original max width */
+            width: 100%;
+            /* full width of parent container */
+            aspect-ratio: 28 / 10;
+            /* maintain original 280x100 ratio */
+            overflow: visible;
+            /* clip overflow if any */
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .split-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            /* keeps aspect ratio, crops if necessary */
+            display: block;
+        }
+
+
+        .split-image .overlay-text {
+            position: absolute;
+            bottom: 10px;
+            right: -10px;
+            color: #BC1719;
+            font-weight: bold;
+            font-size: 26px;
+            font-family: "Playlist", sans-serif;
+            transform: rotate(-15deg);
+            transform-origin: bottom right;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+        }
+
+        /* Image Layout Cards */
+        .image-layout {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .image-col {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Card styling for images */
+        .image-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .layout-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover .layout-image {
+            transform: scale(1.05);
+        }
+
+        /* Column widths */
+        .col-3-left,
+        .col-3-right {
+            flex: 0 0 25%;
+        }
+
+        .col-6-center {
+            flex: 0 0 50%;
+        }
+
+        .small-image {
+            height: 250px;
+        }
+
+        .large-image {
+            height: 525px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .header-split {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .split-image {
+                width: 100%;
+                height: auto;
+            }
+
+            .image-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .image-col {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .col-3-left,
+            .col-6-center,
+            .col-3-right {
+                flex: 0 0 100%;
+            }
+
+            .col-3-left .image-container,
+            .col-3-right .image-container {
+                flex: 1 1 calc(50% - 10px);
+                height: 200px;
+            }
+
+            .large-image {
+                height: 300px;
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whats-in-section {
+                padding: 35px 25px;
+                border-radius: 20px;
+            }
+
+            .col-3-left .image-container,
+            .col-3-right .image-container {
+                height: 180px;
+            }
+
+            .large-image {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .col-3-left .image-container,
+            .col-3-right .image-container {
+                height: 160px;
+                flex: 1 1 100%;
+            }
+
+            .large-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section-wrapper">
+        <div class="whats-in-section">
+
+            <div class="header-split">
+                <div class="split-image">
+                    <img src="./section-image.png" alt="Header Image">
+                    <div class="overlay-text">FOR JANUARY</div>
+                </div>
+            </div>
+
+
+            <!-- Image Layout -->
+            <div class="image-layout">
+                <!-- Left Col-3 (2 images) -->
+                <div class="image-col col-3-left">
+                    <div class="image-container small-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Electronics" class="layout-image">
+                    </div>
+                    <div class="image-container small-image">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Smart Watch" class="layout-image">
+                    </div>
+                </div>
+
+                <!-- Center Col-6 (1 large image) -->
+                <div class="image-col col-6-center">
+                    <div class="image-container large-image">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+                            alt="Featured Product" class="layout-image">
+                    </div>
+                </div>
+
+                <!-- Right Col-3 (2 images) -->
+                <div class="image-col col-3-right">
+                    <div class="image-container small-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Home Appliances" class="layout-image">
+                    </div>
+                    <div class="image-container small-image">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Fashion" class="layout-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Simple image loading check
+            const images = document.querySelectorAll('.layout-image');
+
+            images.forEach(img => {
+                img.onload = function () {
+                    console.log('Image loaded:', img.alt);
+                };
+
+                img.onerror = function () {
+                    console.log('Error loading image:', img.alt);
+                    // Set a fallback background color
+                    img.parentElement.style.backgroundColor = '#e9ecef';
+                };
+            });
+
+            // Optional: Add click functionality if needed
+            const containers = document.querySelectorAll('.image-container');
+            containers.forEach(container => {
+                container.addEventListener('click', function () {
+                    const img = this.querySelector('img');
+                    console.log('Clicked image:', img.alt);
+                });
+            });
+
+            // Add subtle animation to header icon
+            const headerIcon = document.querySelector('.header-icon');
+            if (headerIcon) {
+                headerIcon.style.transition = 'transform 0.3s ease';
+                headerIcon.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                });
+
+                headerIcon.addEventListener('mouseleave', function () {
+                    this.style.transform = '';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

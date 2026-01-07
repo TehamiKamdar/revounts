@@ -279,7 +279,6 @@ footer {
     color: var(--white);
     padding: 1rem;
     text-align: end;
-    margin-top: 3rem;
 }
 
 @media (max-width: 992px) {
@@ -2761,5 +2760,213 @@ section {
 @media (max-width: 576px) {
     .accordion-header {
         padding: 18px 15px;
+    }
+}
+
+/* Notice */
+.notice-wrapper p {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.notice-wrapper p a {
+    color: #7a43d3 !important;
+}
+
+/* Whats INIT */
+.section-wrapper {
+    width: 100%;
+}
+
+/* Main Section with Background & Border */
+/* Section background & styling */
+.whats-in-section {
+    /* background: linear-gradient(135deg, #BC1719 0%, #26887C 100%); */
+    background-color: #ffe2e2;
+    border: 2px dashed #BC1719;
+    border-radius: 25px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    /* default text color */
+}
+
+/* Header Split */
+.header-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* Split image card (responsive) */
+.split-image {
+    position: relative;
+    max-width: 280px;
+    /* original max width */
+    width: 100%;
+    /* full width of parent container */
+    aspect-ratio: 28 / 10;
+    /* maintain original 280x100 ratio */
+    overflow: visible;
+    /* clip overflow if any */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* keeps aspect ratio, crops if necessary */
+    display: block;
+}
+
+
+.split-image .overlay-text {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    color: #BC1719;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: "Playlist", sans-serif;
+    transform: rotate(-15deg);
+    transform-origin: bottom right;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+/* Image Layout Cards */
+.image-layout {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.image-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Card styling for images */
+.image-container {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.layout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .layout-image {
+    transform: scale(1.05);
+}
+
+/* Column widths */
+.col-3-left,
+.col-3-right {
+    flex: 0 0 25%;
+}
+
+.col-6-center {
+    flex: 0 0 50%;
+}
+
+.small-image {
+    height: 250px;
+}
+
+.large-image {
+    height: 525px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header-split {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .split-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .col-3-left,
+    .col-6-center,
+    .col-3-right {
+        flex: 0 0 100%;
+    }
+
+    .col-3-left .image-container,
+    .col-3-right .image-container {
+        flex: 1 1 calc(50% - 10px);
+        height: 200px;
+    }
+
+    .large-image {
+        height: 300px;
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .whats-in-section {
+        padding: 35px 25px;
+        border-radius: 20px;
+    }
+
+    .col-3-left .image-container,
+    .col-3-right .image-container {
+        height: 180px;
+    }
+
+    .large-image {
+        height: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .col-3-left .image-container,
+    .col-3-right .image-container {
+        height: 160px;
+        flex: 1 1 100%;
+    }
+
+    .large-image {
+        height: 250px;
     }
 }

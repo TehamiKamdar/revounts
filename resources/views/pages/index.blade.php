@@ -180,7 +180,7 @@
     <!-- Hero Section -->
     <div class="hero-section text-center">
     </div>
-    <main class="container content-section">
+    <main class="container content-section mb-0 pb-0">
         <section class="coupon-wrapper">
             <div class="section-heading">
                 <h2 class="section-title">Free coupons to redeem</h2>
@@ -843,40 +843,52 @@
             </div>
         </section>
 
-        {{-- Newsletter --}}
-        <section class="newsletter-wrapper">
-            <!-- Background Dots -->
-            <div class="newsletter-bg">
-                <div class="bg-dot dot-1"></div>
-                <div class="bg-dot dot-2"></div>
-                <div class="bg-dot dot-3"></div>
-                <div class="bg-dot dot-4"></div>
-            </div>
+        {{-- Whats Init --}}
+        <section class="section-wrapper">
+            <div class="whats-in-section">
 
-            <!-- Content -->
-            <div class="newsletter-content">
-                <!-- Left Text -->
-                <div class="text-content">
-                    <h3 class="newsletter-title">Get Exclusive Coupons</h3>
-                    <p class="newsletter-subtitle">
-                        Subscribe to get weekly coupon codes and special offers directly in your inbox.
-                    </p>
+                <div class="header-split">
+                    <div class="split-image">
+                        <img src="{{ asset('assets/images/section-image.png') }}" alt="Header Image">
+                        <div class="overlay-text">FOR JANUARY</div>
+                    </div>
                 </div>
 
-                <!-- Right Email Form -->
-                <form class="email-form" id="simpleNewsletter">
-                    <input type="email" class="email-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="subscribe-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>Subscribe</span>
-                    </button>
-                </form>
-            </div>
 
-            <!-- Subscription Message (Initially Hidden) -->
-            <div class="subscription-message" id="subMessage">
-                <i class="fas fa-check-circle"></i>
-                <span>Thank you for subscribing! Check your email for confirmation.</span>
+                <!-- Image Layout -->
+                <div class="image-layout">
+                    <!-- Left Col-3 (2 images) -->
+                    <div class="image-col col-3-left">
+                        <div class="image-container small-image">
+                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                                alt="Electronics" class="layout-image">
+                        </div>
+                        <div class="image-container small-image">
+                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                                alt="Smart Watch" class="layout-image">
+                        </div>
+                    </div>
+
+                    <!-- Center Col-6 (1 large image) -->
+                    <div class="image-col col-6-center">
+                        <div class="image-container large-image">
+                            <img src="https://placehold.co/610x525/BC1719/ffe2e2"
+                                alt="Featured Product" class="layout-image">
+                        </div>
+                    </div>
+
+                    <!-- Right Col-3 (2 images) -->
+                    <div class="image-col col-3-right">
+                        <div class="image-container small-image">
+                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                                alt="Home Appliances" class="layout-image">
+                        </div>
+                        <div class="image-container small-image">
+                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                                alt="Fashion" class="layout-image">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1009,6 +1021,48 @@
                     <span>Contact Support</span>
                 </button>
             </div>
+        </section>
+
+        {{-- Newsletter --}}
+        <section class="newsletter-wrapper">
+            <!-- Background Dots -->
+            <div class="newsletter-bg">
+                <div class="bg-dot dot-1"></div>
+                <div class="bg-dot dot-2"></div>
+                <div class="bg-dot dot-3"></div>
+                <div class="bg-dot dot-4"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="newsletter-content">
+                <!-- Left Text -->
+                <div class="text-content">
+                    <h3 class="newsletter-title">Get Exclusive Coupons</h3>
+                    <p class="newsletter-subtitle">
+                        Subscribe to get weekly coupon codes and special offers directly in your inbox.
+                    </p>
+                </div>
+
+                <!-- Right Email Form -->
+                <form class="email-form" id="simpleNewsletter">
+                    <input type="email" class="email-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Subscribe</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Subscription Message (Initially Hidden) -->
+            <div class="subscription-message" id="subMessage">
+                <i class="fas fa-check-circle"></i>
+                <span>Thank you for subscribing! Check your email for confirmation.</span>
+            </div>
+        </section>
+
+        {{-- Notice --}}
+        <section class="notice-wrapper pb-0 mb-3">
+            <p>*Disclosure: When you buy something using the retail links in our <a href="">stores</a>, <a href="">reviews</a>, or <a href="blogs"></a>, We may earn a small affiliate commission at no additional cost for you. We recommend brands and products that we genuinely like and are only promoted through <a href="">coupon codes</a>, promo codes, discounts & editorial reviews on Revounts. Learn more about our <a href="">terms & conditions</a>.</p>
         </section>
     </main>
 
