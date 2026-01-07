@@ -2856,6 +2856,11 @@ section {
 
     .section-title {
         font-size: 1.4rem;
+        margin-bottom: 14px;
+    }
+
+    .section-subtitle{
+        font-size: 0.8rem;
     }
 }
 
