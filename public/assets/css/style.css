@@ -1511,7 +1511,7 @@ section {
 .section-subtitle {
     color: #666;
     font-size: 1.2rem;
-    max-width: 700px;
+    width: 100%;
     margin: 0 auto 40px;
     line-height: 1.6;
 }
@@ -2562,5 +2562,204 @@ section {
 
     .section-title {
         font-size: 1.4rem;
+    }
+}
+
+/* FAQ */
+
+
+.faq-wrapper {
+    width: 100%;
+}
+
+/* Header */
+.faq-wrapper .faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-wrapper .faq-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
+}
+
+/* Modern Accordions */
+.faq-wrapper .accordions-container {
+    background: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(153, 132, 212, 0.1);
+}
+
+/* Accordion Item */
+.faq-wrapper .accordion-item {
+    border-bottom: 1px solid rgba(153, 132, 212, 0.2);
+    overflow: hidden;
+}
+
+.faq-wrapper .accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* Accordion Header */
+.faq-wrapper .accordion-header {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-wrapper .accordion-header:hover {
+    background: rgba(153, 132, 212, 0.03);
+}
+
+.faq-wrapper .accordion-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-amethyst);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+    padding-right: 40px;
+}
+
+.faq-wrapper .accordion-header:hover .accordion-title {
+    color: var(--primary);
+}
+
+.faq-wrapper .accordion-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-wrapper .accordion-icon span {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.faq-wrapper .horizontal {
+    width: 20px;
+    height: 2px;
+    left: 2px;
+    top: 11px;
+}
+
+.faq-wrapper .vertical {
+    width: 2px;
+    height: 20px;
+    left: 11px;
+    top: 2px;
+    transform: rotate(90deg);
+}
+
+.faq-wrapper .accordion-item.active .vertical {
+    transform: rotate(0deg);
+}
+
+.faq-wrapper .accordion-item.active .horizontal {
+    background: var(--primary-dark);
+}
+
+.faq-wrapper .accordion-item.active .accordion-title {
+    color: var(--primary);
+}
+
+/* Accordion Content */
+.faq-wrapper .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-wrapper .accordion-body {
+    padding: 0 20px 25px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Contact Section */
+.faq-wrapper .contact-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(153, 132, 212, 0.05), rgba(89, 46, 131, 0.02));
+    border-radius: 20px;
+    border: 1px solid rgba(153, 132, 212, 0.1);
+}
+
+.faq-wrapper .contact-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-amethyst);
+    margin-bottom: 10px;
+}
+
+.faq-wrapper .contact-text {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.faq-wrapper .contact-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.faq-wrapper .contact-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .accordion-header {
+        padding: 20px 15px;
+    }
+
+    .accordion-title {
+        font-size: 1rem;
+        padding-right: 30px;
+    }
+
+    .accordion-body {
+        padding: 0 15px 20px;
+        font-size: 0.9rem;
+    }
+
+    .contact-section {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .accordion-header {
+        padding: 18px 15px;
     }
 }

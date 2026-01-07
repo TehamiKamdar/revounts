@@ -53,111 +53,151 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Carousel JS
+
+
     const track = document.getElementById('carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
+    let slides = document.querySelectorAll('.carousel-slide');
+
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const dotsContainer = document.getElementById('carousel-dots');
     const currentSlideSpan = document.getElementById('current-slide');
     const totalSlidesSpan = document.getElementById('total-slides');
 
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+    const originalSlidesCount = slides.length;
 
-    // Initialize total slides counter
-    totalSlidesSpan.textContent = totalSlides;
+    /* ==========================
+       CLONE SLIDES (INFINITE)
+    ========================== */
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
 
-    // Create dots
-    slides.forEach((_, index) => {
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
+    slides = document.querySelectorAll('.carousel-slide');
+
+    let currentIndex = 1;
+    let autoSlideInterval = null;
+    const slideDuration = 5000;
+
+    totalSlidesSpan.textContent = originalSlidesCount;
+
+    /* ==========================
+       INITIAL POSITION
+    ========================== */
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    /* ==========================
+       CREATE DOTS
+    ========================== */
+    for (let i = 0; i < originalSlidesCount; i++) {
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
+        if (i === 0) dot.classList.add('active');
 
-    // Update slide position
-    function updateSlidePosition() {
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-        // Update dots
-        document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+        dot.addEventListener('click', () => {
+            currentIndex = i + 1;
+            updateSlide(true);
         });
 
-        // Update counter
-        currentSlideSpan.textContent = currentSlide + 1;
+        dotsContainer.appendChild(dot);
     }
 
-    // Go to specific slide
-    function goToSlide(slideIndex) {
-        currentSlide = slideIndex;
-        updateSlidePosition();
+    /* ==========================
+       UPDATE SLIDE
+    ========================== */
+    function updateSlide(animate = true) {
+        track.style.transition = animate ? 'transform 0.6s ease' : 'none';
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        updateDotsAndCounter();
     }
 
-    // Next slide
+    function updateDotsAndCounter() {
+        let displayIndex = currentIndex - 1;
+
+        if (displayIndex < 0) displayIndex = originalSlidesCount - 1;
+        if (displayIndex >= originalSlidesCount) displayIndex = 0;
+
+        currentSlideSpan.textContent = displayIndex + 1;
+
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === displayIndex);
+        });
+    }
+
+    /* ==========================
+       NEXT / PREV
+    ========================== */
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlidePosition();
+        currentIndex++;
+        updateSlide(true);
     }
 
-    // Previous slide
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlidePosition();
+        currentIndex--;
+        updateSlide(true);
     }
 
-    // Event listeners
-    prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
 
-    // Auto slide (optional)
-    let autoSlideInterval = setInterval(nextSlide, 5000);
+    /* ==========================
+       TRANSITION END (SEAMLESS LOOP)
+    ========================== */
+    track.addEventListener('transitionend', () => {
 
-    // Pause auto slide on hover
-    const carousel = document.querySelector('.modern-carousel');
-    carousel.addEventListener('mouseenter', () => {
+        if (currentIndex === 0) {
+            currentIndex = originalSlidesCount;
+            updateSlide(false);
+        }
+
+        if (currentIndex === originalSlidesCount + 1) {
+            currentIndex = 1;
+            updateSlide(false);
+        }
+    });
+
+    /* ==========================
+       AUTO SLIDE
+    ========================== */
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    function stopAutoSlide() {
         clearInterval(autoSlideInterval);
-    });
+    }
 
-    carousel.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    });
+    startAutoSlide();
 
-    // Touch/swipe support
+    /* ==========================
+       PAUSE ON HOVER
+    ========================== */
+    const carousel = document.querySelector('.modern-carousel');
+
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    /* ==========================
+       TOUCH / SWIPE
+    ========================== */
     let startX = 0;
     let endX = 0;
 
-    track.addEventListener('touchstart', (e) => {
+    track.addEventListener('touchstart', e => {
         startX = e.touches[0].clientX;
     });
 
-    track.addEventListener('touchmove', (e) => {
+    track.addEventListener('touchmove', e => {
         endX = e.touches[0].clientX;
     });
 
     track.addEventListener('touchend', () => {
         const threshold = 50;
-        if (startX - endX > threshold) {
-            nextSlide(); // Swipe left
-        } else if (endX - startX > threshold) {
-            prevSlide(); // Swipe right
-        }
-    });
-
-    // Initialize
-    updateSlidePosition();
-
-    // Button click effects
-    document.querySelectorAll('.slide-button').forEach(button => {
-        button.addEventListener('click', function () {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 200);
-
-            alert(`Navigating to ${this.closest('.carousel-slide').querySelector('.slide-title').textContent}`);
-        });
+        if (startX - endX > threshold) nextSlide();
+        if (endX - startX > threshold) prevSlide();
     });
 
     // Brand data - Using placehold.co with your color scheme
@@ -289,76 +329,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Newsletter
-    document.addEventListener('DOMContentLoaded', function() {
-            const newsletterForm = document.getElementById('simpleNewsletter');
-            const emailInput = newsletterForm.querySelector('.email-input');
-            const subscribeBtn = newsletterForm.querySelector('.subscribe-btn');
-            const messageElement = document.getElementById('subMessage');
+    document.addEventListener('DOMContentLoaded', function () {
+        const newsletterForm = document.getElementById('simpleNewsletter');
+        const emailInput = newsletterForm.querySelector('.email-input');
+        const subscribeBtn = newsletterForm.querySelector('.subscribe-btn');
+        const messageElement = document.getElementById('subMessage');
 
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+        newsletterForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                const email = emailInput.value.trim();
+            const email = emailInput.value.trim();
 
-                // Simple email validation
-                if (!email.includes('@') || !email.includes('.')) {
-                    // Visual feedback for invalid email
-                    emailInput.style.boxShadow = '0 0 0 3px rgba(255, 71, 87, 0.3)';
-                    setTimeout(() => {
-                        emailInput.style.boxShadow = '';
-                    }, 1000);
-                    return;
-                }
-
-                // Show loading state
-                const originalText = subscribeBtn.innerHTML;
-                subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Subscribing...</span>';
-                subscribeBtn.disabled = true;
-
-                // Simulate API call
+            // Simple email validation
+            if (!email.includes('@') || !email.includes('.')) {
+                // Visual feedback for invalid email
+                emailInput.style.boxShadow = '0 0 0 3px rgba(255, 71, 87, 0.3)';
                 setTimeout(() => {
-                    // Show success message
-                    messageElement.classList.add('show');
-
-                    // Reset form
-                    emailInput.value = '';
-                    subscribeBtn.innerHTML = originalText;
-                    subscribeBtn.disabled = false;
-
-                    // Hide message after 5 seconds
-                    setTimeout(() => {
-                        messageElement.classList.remove('show');
-                    }, 5000);
-
-                    // Add animation to button
-                    subscribeBtn.style.background = '#27ae60';
-                    subscribeBtn.style.color = 'white';
-                    setTimeout(() => {
-                        subscribeBtn.style.background = '';
-                        subscribeBtn.style.color = '';
-                    }, 2000);
-
+                    emailInput.style.boxShadow = '';
                 }, 1000);
-            });
+                return;
+            }
 
-            // Input focus effect
-            emailInput.addEventListener('focus', function() {
-                this.style.transform = 'translateY(-1px)';
-            });
+            // Show loading state
+            const originalText = subscribeBtn.innerHTML;
+            subscribeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Subscribing...</span>';
+            subscribeBtn.disabled = true;
 
-            emailInput.addEventListener('blur', function() {
-                this.style.transform = '';
-            });
+            // Simulate API call
+            setTimeout(() => {
+                // Show success message
+                messageElement.classList.add('show');
 
-            // Add subtle animation to dots
-            const dots = document.querySelectorAll('.bg-dot');
-            dots.forEach((dot, index) => {
-                dot.style.animation = `float ${3 + index}s infinite ease-in-out`;
-            });
+                // Reset form
+                emailInput.value = '';
+                subscribeBtn.innerHTML = originalText;
+                subscribeBtn.disabled = false;
 
-            // Add float animation
-            const style = document.createElement('style');
-            style.textContent = `
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageElement.classList.remove('show');
+                }, 5000);
+
+                // Add animation to button
+                subscribeBtn.style.background = '#27ae60';
+                subscribeBtn.style.color = 'white';
+                setTimeout(() => {
+                    subscribeBtn.style.background = '';
+                    subscribeBtn.style.color = '';
+                }, 2000);
+
+            }, 1000);
+        });
+
+        // Input focus effect
+        emailInput.addEventListener('focus', function () {
+            this.style.transform = 'translateY(-1px)';
+        });
+
+        emailInput.addEventListener('blur', function () {
+            this.style.transform = '';
+        });
+
+        // Add subtle animation to dots
+        const dots = document.querySelectorAll('.bg-dot');
+        dots.forEach((dot, index) => {
+            dot.style.animation = `float ${3 + index}s infinite ease-in-out`;
+        });
+
+        // Add float animation
+        const style = document.createElement('style');
+        style.textContent = `
                 @keyframes float {
                     0%, 100% {
                         transform: translateY(0);
@@ -368,6 +408,104 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             `;
-            document.head.appendChild(style);
+        document.head.appendChild(style);
+    });
+
+
+    // FAQ
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    // Set first accordion as active by default
+    accordionItems[0].classList.add('active');
+
+    // Accordion functionality
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        // Set initial height for active item
+        if (item.classList.contains('active')) {
+            const body = item.querySelector('.accordion-body');
+            content.style.maxHeight = body.scrollHeight + 40 + 'px';
+        }
+
+        header.addEventListener('click', function () {
+            const isActive = item.classList.contains('active');
+
+            // Close all accordions
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.accordion-content').style.maxHeight = '0';
+            });
+
+            // If clicked item wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                const body = item.querySelector('.accordion-body');
+                content.style.maxHeight = body.scrollHeight + 40 + 'px';
+
+                // Smooth scroll to keep item in view
+                item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
+
+        // Update height on window resize
+        window.addEventListener('resize', function () {
+            if (item.classList.contains('active')) {
+                const body = item.querySelector('.accordion-body');
+                content.style.maxHeight = body.scrollHeight + 40 + 'px';
+            }
+        });
+    });
+
+    // Hover effects for accordion icons
+    accordionItems.forEach(item => {
+        const icon = item.querySelector('.accordion-icon');
+
+        item.addEventListener('mouseenter', function () {
+            if (!this.classList.contains('active')) {
+                icon.style.transform = 'scale(1.1)';
+                const spans = icon.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.style.background = 'var(--primary-light)';
+                });
+            }
+        });
+
+        item.addEventListener('mouseleave', function () {
+            if (!this.classList.contains('active')) {
+                icon.style.transform = '';
+                const spans = icon.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.style.background = 'var(--primary)';
+                });
+            }
+        });
+    });
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+
+            const activeIndex = Array.from(accordionItems).findIndex(item =>
+                item.classList.contains('active')
+            );
+
+            let newIndex;
+            if (e.key === 'ArrowDown') {
+                newIndex = (activeIndex + 1) % accordionItems.length;
+            } else {
+                newIndex = (activeIndex - 1 + accordionItems.length) % accordionItems.length;
+            }
+
+            // Trigger click on new accordion
+            accordionItems[newIndex].querySelector('.accordion-header').click();
+        }
+    });
+
+    // Make accordions focusable for accessibility
+    accordionItems.forEach(item => {
+        item.querySelector('.accordion-header').setAttribute('tabindex', '0');
+    });
 });
