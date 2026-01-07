@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern FAQ Section</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Archivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --primary-light: #9984d4;
+            --primary: #592e83;
+            --primary-dark: #450077;
+            --dark-amethyst: #150132;
+            --font-family: "Archivo", Helvetica, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: #f8f9fa;
+            padding: 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-wrapper {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Header */
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-amethyst);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .faq-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Modern Accordions */
+        .accordions-container {
+            background: white;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(153, 132, 212, 0.1);
+        }
+
+        /* Accordion Item */
+        .accordion-item {
+            border-bottom: 1px solid rgba(153, 132, 212, 0.2);
+            overflow: hidden;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Accordion Header */
+        .accordion-header {
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(153, 132, 212, 0.03);
+        }
+
+        .accordion-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+            line-height: 1.4;
+            transition: color 0.3s ease;
+            padding-right: 40px;
+        }
+
+        .accordion-header:hover .accordion-title {
+            color: var(--primary);
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-icon span {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .horizontal {
+            width: 20px;
+            height: 2px;
+            left: 2px;
+            top: 11px;
+        }
+
+        .vertical {
+            width: 2px;
+            height: 20px;
+            left: 11px;
+            top: 2px;
+            transform: rotate(90deg);
+        }
+
+        .accordion-item.active .vertical {
+            transform: rotate(0deg);
+        }
+
+        .accordion-item.active .horizontal {
+            background: var(--primary-dark);
+        }
+
+        .accordion-item.active .accordion-title {
+            color: var(--primary);
+        }
+
+        /* Accordion Content */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-body {
+            padding: 0 20px 25px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(153, 132, 212, 0.05), rgba(89, 46, 131, 0.02));
+            border-radius: 20px;
+            border: 1px solid rgba(153, 132, 212, 0.1);
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-amethyst);
+            margin-bottom: 10px;
+        }
+
+        .contact-text {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 15px;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .accordion-header {
+                padding: 20px 15px;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+                padding-right: 30px;
+            }
+
+            .accordion-body {
+                padding: 0 15px 20px;
+                font-size: 0.9rem;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .faq-subtitle {
+                font-size: 1rem;
+            }
+
+            .accordion-header {
+                padding: 18px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-wrapper">
+        <!-- Header -->
+        <div class="faq-header">
+            <div class="faq-badge">
+                <i class="far fa-question-circle"></i> FAQ
+            </div>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">
+                Find answers to common questions about our coupons, offers, and how to save more on your purchases.
+            </p>
+        </div>
+
+        <!-- Modern Accordions -->
+        <div class="accordions-container">
+            <!-- FAQ 1 -->
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">How do I use coupon codes on this website?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content" style="max-height: 200px;">
+                    <div class="accordion-body">
+                        Simply click on the "Copy Code" button next to any coupon, then paste it during checkout on the retailer's website. Make sure to check the coupon's terms and conditions for any restrictions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">Are these coupons verified and working?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Yes, all coupons are verified daily to ensure they're working. Our team constantly updates expired codes and adds new ones. If you find a coupon that's not working, please report it using the "Report Issue" button.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">How often are new coupons added?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        New coupons are added daily, with major updates every Monday and Thursday. We recommend checking back regularly or subscribing to our newsletter to receive new coupon alerts directly in your inbox.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">Can I stack multiple coupons on one purchase?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        This depends on the retailer's policy. Some stores allow stacking of store coupons with manufacturer coupons, while others don't. Each coupon listing includes information about whether it can be stacked. Look for the "stackable" tag.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">Do these coupons work for international orders?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Most coupons are region-specific. We clearly label each coupon with its applicable region (US, UK, EU, etc.). Make sure to check the region tag before using a coupon. International shipping coupons are also available for select retailers.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="accordion-title">Is there a limit to how many coupons I can use?</h3>
+                    <div class="accordion-icon">
+                        <span class="horizontal"></span>
+                        <span class="vertical"></span>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        Generally, there's no limit to how many coupons you can collect or save. However, each individual coupon typically has usage limits (like one per customer, per household, or per transaction). These limits are specified in each coupon's terms.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3 class="contact-title">Still have questions?</h3>
+            <p class="contact-text">Can't find the answer you're looking for? Our support team is here to help.</p>
+            <button class="contact-btn">
+                <i class="far fa-envelope"></i>
+                <span>Contact Support</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            // Set first accordion as active by default
+            accordionItems[0].classList.add('active');
+
+            // Accordion functionality
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+
+                // Set initial height for active item
+                if (item.classList.contains('active')) {
+                    const body = item.querySelector('.accordion-body');
+                    content.style.maxHeight = body.scrollHeight + 40 + 'px';
+                }
+
+                header.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all accordions
+                    accordionItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.accordion-content').style.maxHeight = '0';
+                    });
+
+                    // If clicked item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        const body = item.querySelector('.accordion-body');
+                        content.style.maxHeight = body.scrollHeight + 40 + 'px';
+
+                        // Smooth scroll to keep item in view
+                        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+
+                // Update height on window resize
+                window.addEventListener('resize', function() {
+                    if (item.classList.contains('active')) {
+                        const body = item.querySelector('.accordion-body');
+                        content.style.maxHeight = body.scrollHeight + 40 + 'px';
+                    }
+                });
+            });
+
+            // Contact button functionality
+            const contactBtn = document.querySelector('.contact-btn');
+            contactBtn.addEventListener('click', function() {
+                // Animation
+                this.style.transform = 'scale(0.95)';
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Loading...</span>';
+
+                setTimeout(() => {
+                    this.style.transform = '';
+                    this.innerHTML = '<i class="far fa-envelope"></i><span>Contact Support</span>';
+                    alert('Opening contact form...');
+                }, 1000);
+            });
+
+            // Hover effects for accordion icons
+            accordionItems.forEach(item => {
+                const icon = item.querySelector('.accordion-icon');
+
+                item.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        icon.style.transform = 'scale(1.1)';
+                        const spans = icon.querySelectorAll('span');
+                        spans.forEach(span => {
+                            span.style.background = 'var(--primary-light)';
+                        });
+                    }
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        icon.style.transform = '';
+                        const spans = icon.querySelectorAll('span');
+                        spans.forEach(span => {
+                            span.style.background = 'var(--primary)';
+                        });
+                    }
+                });
+            });
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+
+                    const activeIndex = Array.from(accordionItems).findIndex(item =>
+                        item.classList.contains('active')
+                    );
+
+                    let newIndex;
+                    if (e.key === 'ArrowDown') {
+                        newIndex = (activeIndex + 1) % accordionItems.length;
+                    } else {
+                        newIndex = (activeIndex - 1 + accordionItems.length) % accordionItems.length;
+                    }
+
+                    // Trigger click on new accordion
+                    accordionItems[newIndex].querySelector('.accordion-header').click();
+                }
+            });
+
+            // Make accordions focusable for accessibility
+            accordionItems.forEach(item => {
+                item.querySelector('.accordion-header').setAttribute('tabindex', '0');
+            });
+        });
+    </script>
+</body>
+</html>

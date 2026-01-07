@@ -338,7 +338,122 @@
         </div>
 
 
-        <div class="coupon-blog-wrapper">
+        {{-- Current Deals Section --}}
+        <div class="deals-wrapper">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">Current Hot Deals</h2>
+                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corrupti nemo doloremque? Suscipit, consectetur accusantium!</p>
+            </div>
+
+            <!-- 5 Cards Grid -->
+            <div class="deals-grid">
+                <!-- Deal 1 -->
+                <div class="deal-card">
+                    <div class="card-image">
+                        <div class="deal-badge">40% OFF</div>
+                        <img src="https://placehold.co/250x180/450077/9984d4"
+                            alt="Headphones">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Wireless Noise Cancelling Headphones</h3>
+                        <p class="card-body">Premium sound quality with 30hr battery life and comfortable over-ear design.
+                        </p>
+                        <div class="card-footer">
+                            <div class="price">
+                                <span class="original-price">$199</span>
+                                $119
+                            </div>
+                            <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 2 -->
+                <div class="deal-card">
+                    <div class="card-image">
+                        <div class="deal-badge">35% OFF</div>
+                        <img src="https://placehold.co/250x180/450077/9984d4"
+                            alt="Smart Watch">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fitness Smart Watch Series 5</h3>
+                        <p class="card-body">Track workouts, heart rate, sleep patterns with 7-day battery life.</p>
+                        <div class="card-footer">
+                            <div class="price">
+                                <span class="original-price">$249</span>
+                                $162
+                            </div>
+                            <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="deal-card">
+                    <div class="card-image">
+                        <div class="deal-badge">50% OFF</div>
+                        <img src="https://placehold.co/250x180/450077/9984d4"
+                            alt="Coffee Maker">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Programmable Coffee Machine</h3>
+                        <p class="card-body">Automatic coffee maker with thermal carafe and multiple brew settings.</p>
+                        <div class="card-footer">
+                            <div class="price">
+                                <span class="original-price">$89</span>
+                                $45
+                            </div>
+                            <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 4 -->
+                <div class="deal-card">
+                    <div class="card-image">
+                        <div class="deal-badge">30% OFF</div>
+                        <img src="https://placehold.co/250x180/450077/9984d4"
+                            alt="Sneakers">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Premium Running Sneakers</h3>
+                        <p class="card-body">Lightweight athletic shoes with advanced cushioning and breathable mesh.</p>
+                        <div class="card-footer">
+                            <div class="price">
+                                <span class="original-price">$129</span>
+                                $90
+                            </div>
+                            <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 5 -->
+                <div class="deal-card">
+                    <div class="card-image">
+                        <div class="deal-badge">45% OFF</div>
+                        <img src="https://placehold.co/250x180/450077/9984d4"
+                            alt="Backpack">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Waterproof Travel Backpack</h3>
+                        <p class="card-body">Durable backpack with laptop compartment and multiple organizational pockets.
+                        </p>
+                        <div class="card-footer">
+                            <div class="price">
+                                <span class="original-price">$79</span>
+                                $43
+                            </div>
+                            <button class="action-btn">View Deal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="blog-wrapper">
 
             <!-- Header -->
             <div class="blog-header">
@@ -389,7 +504,7 @@
                             <div class="featured-blog-badge">
                                 <i class="fas fa-crown"></i> FEATURED GUIDE
                             </div>
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+                            <img src="https://placehold.co/640x280/450077/9984d4"
                                 alt="Shopping Tips">
                         </div>
 
@@ -734,7 +849,7 @@
         </div>
 
         {{-- Newsletter --}}
-        <div class="newsletter-section">
+        <div class="newsletter-wrapper">
             <!-- Background Dots -->
             <div class="newsletter-bg">
                 <div class="bg-dot dot-1"></div>
@@ -769,6 +884,8 @@
                 <span>Thank you for subscribing! Check your email for confirmation.</span>
             </div>
         </div>
+
+        
     </main>
 
 
