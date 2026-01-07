@@ -51,7 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
+    // MonthName and Year JS
+    const now = new Date();
+    const month = now.getMonth();
+    const year = now.getFullYear();
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthName = monthNames[month];
+    document.getElementById("month").innerText = monthName.toUpperCase();
+    document.getElementById("year").innerText = year;
     // Carousel JS
 
 

@@ -850,7 +850,7 @@
                 <div class="header-split">
                     <div class="split-image">
                         <img src="{{ asset('assets/images/section-image.png') }}" alt="Header Image">
-                        <div class="overlay-text">FOR JANUARY</div>
+                        <div class="overlay-text">FOR <span id="month"></span></div>
                     </div>
                 </div>
 

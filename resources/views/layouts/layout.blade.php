@@ -153,7 +153,7 @@
 
             <!-- Copyright -->
             <div class="footer-copy">
-                Revounts.com.au © 2026 - Registered in Australia - ABN: 63 624 845 405 - All Rights Reserved.
+                Revounts.com.au © <span id="year"></span> - Registered in Australia - ABN: 63 624 845 405 - All Rights Reserved.
             </div>
 
         </div>
