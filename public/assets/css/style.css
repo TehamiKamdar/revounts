@@ -299,7 +299,7 @@ footer {
 }
 
 /* coupons section */
-.coupon-section {
+.coupon-wrapper {
     margin: 0 auto;
 }
 
@@ -835,18 +835,18 @@ section {
 }
 
 /* featured brands */
-.brands-section {
+.brands-wrapper {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 5rem;
 }
 
-.brands-section-header {
+.brands-wrapper-header {
     width: 100%;
     max-width: 1320px;
 }
 
-.brands-section-header img {
+.brands-wrapper-header img {
     width: 100%;
     height: auto;
     display: block;

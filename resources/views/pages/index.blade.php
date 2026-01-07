@@ -181,7 +181,7 @@
     <div class="hero-section text-center">
     </div>
     <main class="container content-section">
-        <section class="coupon-section">
+        <section class="coupon-wrapper">
             <div class="section-heading">
                 <h2 class="section-title">Free coupons to redeem</h2>
                 <p class="section-subtitle">Enjoy these grocery coupons that are available for you. Just clip, print and
@@ -318,9 +318,9 @@
             </div>
         </section>
 
-
-        <div class="brands-section">
-            <div class="brands-section-header">
+        {{-- Brands --}}
+        <div class="brands-wrapper">
+            <div class="brands-wrapper-header">
                 <img src="{{ asset('assets/images/banner_1320x80.png') }}" loading="lazy" alt="">
             </div>
 
@@ -343,7 +343,8 @@
             <!-- Section Header -->
             <div class="section-header">
                 <h2 class="section-title">Current Hot Deals</h2>
-                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corrupti nemo doloremque? Suscipit, consectetur accusantium!</p>
+                <p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corrupti
+                    nemo doloremque? Suscipit, consectetur accusantium!</p>
             </div>
 
             <!-- 5 Cards Grid -->
@@ -352,8 +353,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">40% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4"
-                            alt="Headphones">
+                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Headphones">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Wireless Noise Cancelling Headphones</h3>
@@ -373,8 +373,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">35% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4"
-                            alt="Smart Watch">
+                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Smart Watch">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Fitness Smart Watch Series 5</h3>
@@ -393,8 +392,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">50% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4"
-                            alt="Coffee Maker">
+                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Coffee Maker">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Programmable Coffee Machine</h3>
@@ -413,8 +411,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">30% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4"
-                            alt="Sneakers">
+                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Sneakers">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Premium Running Sneakers</h3>
@@ -433,8 +430,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">45% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4"
-                            alt="Backpack">
+                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Backpack">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Waterproof Travel Backpack</h3>
@@ -452,7 +448,7 @@
             </div>
         </div>
 
-
+        {{-- Blogs --}}
         <div class="blog-wrapper">
 
             <!-- Header -->
@@ -504,8 +500,7 @@
                             <div class="featured-blog-badge">
                                 <i class="fas fa-crown"></i> FEATURED GUIDE
                             </div>
-                            <img src="https://placehold.co/640x280/450077/9984d4"
-                                alt="Shopping Tips">
+                            <img src="https://placehold.co/640x280/450077/9984d4" alt="Shopping Tips">
                         </div>
 
                         <div class="featured-blog-content">
@@ -884,8 +879,6 @@
                 <span>Thank you for subscribing! Check your email for confirmation.</span>
             </div>
         </div>
-
-        
     </main>
 
 
