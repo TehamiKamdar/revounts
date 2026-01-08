@@ -29,7 +29,7 @@
         <div class="container">
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                <span>Revounts</span>
+                <span id="navbrand">Revounts</span>
             </a>
 
             <!-- Toggle Button for Mobile -->

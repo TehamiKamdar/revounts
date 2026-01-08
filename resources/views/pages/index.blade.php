@@ -23,40 +23,48 @@
                 <div class="carousel-track" id="carousel-track">
                     <!-- Slide 1 -->
                     <div class="carousel-slide">
-                        <div class="slide-content">
-                            <div class="image-content">
-                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Electronics"
-                                    class="slide-image">
+                        <a href="#" class="slide-link">
+                            <div class="slide-content">
+                                <div class="image-content">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Electronics"
+                                        class="slide-image">
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Slide 2 -->
                     <div class="carousel-slide">
-                        <div class="slide-content">
-                            <div class="image-content">
-                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Home Decor" class="slide-image">
+                        <a href="#" class="slide-link">
+                            <div class="slide-content">
+                                <div class="image-content">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Home Decor" class="slide-image">
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Slide 3 -->
                     <div class="carousel-slide">
-                        <div class="slide-content">
-                            <div class="image-content">
-                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Fashion" class="slide-image">
+                        <a href="#" class="slide-link">
+                            <div class="slide-content">
+                                <div class="image-content">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Fashion" class="slide-image">
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Slide 4 -->
                     <div class="carousel-slide">
-                        <div class="slide-content">
-                            <div class="image-content">
-                                <img src="https://placehold.co/1320x450/450077/9984d4" alt="Beauty Products"
-                                    class="slide-image">
+                        <a href="#" class="slide-link">
+                            <div class="slide-content">
+                                <div class="image-content">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Beauty Products"
+                                        class="slide-image">
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -91,13 +99,8 @@
                             devices. Limited time offer on premium brands.
                         </p>
 
-                        {{-- <div class="code-section">
-                            <div class="coupon-code">TECH25</div>
-                            <button class="copy-btn" data-code="TECH25">Copy</button>
-                        </div> --}}
-
                         <div class="image-container">
-                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Electronics" class="product-image">
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Electronics" class="product-image">
                         </div>
                     </div>
 
@@ -122,13 +125,8 @@
                             accessories from top designers and brands.
                         </p>
 
-                        {{-- <div class="code-section">
-                            <div class="coupon-code">STYLE40</div>
-                            <button class="copy-btn" data-code="STYLE40">Copy</button>
-                        </div> --}}
-
                         <div class="image-container">
-                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Fashion" class="product-image">
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Fashion" class="product-image">
                         </div>
                     </div>
 
@@ -154,13 +152,8 @@
                             or adding modern touches to your interior.
                         </p>
 
-                        {{-- <div class="code-section">
-                            <div class="coupon-code">HOME30</div>
-                            <button class="copy-btn" data-code="HOME30">Copy</button>
-                        </div> --}}
-
                         <div class="image-container">
-                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Home Goods" class="product-image">
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Home Goods" class="product-image">
                         </div>
                     </div>
 
@@ -186,13 +179,8 @@
                             and personal care items from luxury brands.
                         </p>
 
-                        {{-- <div class="code-section">
-                            <div class="coupon-code">GLOW35</div>
-                            <button class="copy-btn" data-code="GLOW35">Copy</button>
-                        </div> --}}
-
                         <div class="image-container">
-                            <img src="https://placehold.co/240x100/450077/9984d4" alt="Beauty Products"
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Beauty Products"
                                 class="product-image">
                         </div>
                     </div>
