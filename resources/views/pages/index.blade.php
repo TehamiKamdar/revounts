@@ -6,12 +6,6 @@
 
     <main class="content-section mb-0 pb-0 d-flex justify-content-center">
         <section class="carousel-container m-0 p-0">
-            {{-- <div class="section-heading">
-                <h2 class="section-title">Featured Collections</h2>
-                <p class="section-subtitle">
-                    Best Discount Code, Deals & Coupons – Australia’s #1 Online Hub
-                </p>
-            </div> --}}
             <div class="modern-carousel">
                 <div class="slide-counter d-none">
                     <span id="current-slide">1</span> / <span id="total-slides">4</span>
