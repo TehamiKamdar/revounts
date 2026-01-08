@@ -2373,6 +2373,7 @@ section {
     text-align: center;
     font-style: italic;
     font-size: 14px;
+    font-family: var(--font-family);
 }
 
 .notice-wrapper p a {
@@ -2488,11 +2489,11 @@ section {
 }
 
 .small-image {
-    height: 250px;
+    aspect-ratio: 305 / 250;
 }
 
 .large-image {
-    height: 525px;
+    aspect-ratio: 608 / 525;
 }
 
 /* Responsive */
@@ -2742,6 +2743,10 @@ section {
     .whats-in-section {
         padding: 35px 25px;
         border-radius: 20px;
+    }
+
+    .image-layout .image-container{
+        max-height: 280px;
     }
 
     .col-3-left .image-container,
@@ -3126,7 +3131,7 @@ section {
 
     .col-3-left .image-container,
     .col-3-right .image-container {
-        height: 160px;
+        height: 200px;
         flex: 1 1 100%;
     }
 
@@ -3144,6 +3149,10 @@ section {
 
     .slide-content{
         min-height: 100px;
+    }
+
+    .notice-wrapper p{
+        font-size: 0.5rem;
     }
 }
 

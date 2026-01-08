@@ -873,7 +873,7 @@
 
                 <div class="header-split">
                     <div class="split-image">
-                        <img src="{{ asset('assets/images/section-image.png') }}" alt="Header Image">
+                        <img src="{{ asset('assets/images/banner_560x200.png') }}" alt="Header Image">
                         <div class="overlay-text">FOR <span id="month"></span></div>
                     </div>
                 </div>
@@ -884,11 +884,11 @@
                     <!-- Left Col-3 (2 images) -->
                     <div class="image-col col-3-left">
                         <div class="image-container small-image">
-                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                            <img src="{{ asset('assets/images/banner_610x500_1.png') }}"
                                 alt="Electronics" class="layout-image">
                         </div>
                         <div class="image-container small-image">
-                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                            <img src="{{ asset('assets/images/banner_610x500_2.png') }}"
                                 alt="Smart Watch" class="layout-image">
                         </div>
                     </div>
@@ -896,7 +896,7 @@
                     <!-- Center Col-6 (1 large image) -->
                     <div class="image-col col-6-center">
                         <div class="image-container large-image">
-                            <img src="https://placehold.co/610x525/BC1719/ffe2e2"
+                            <img src="{{ asset('assets/images/banner_1280x1024.png') }}"
                                 alt="Featured Product" class="layout-image">
                         </div>
                     </div>
@@ -904,11 +904,11 @@
                     <!-- Right Col-3 (2 images) -->
                     <div class="image-col col-3-right">
                         <div class="image-container small-image">
-                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                            <img src="{{ asset('assets/images/banner_610x500_3.png') }}"
                                 alt="Home Appliances" class="layout-image">
                         </div>
                         <div class="image-container small-image">
-                            <img src="https://placehold.co/305x250/BC1719/ffe2e2"
+                            <img src="{{ asset('assets/images/banner_610x500_4.png') }}"
                                 alt="Fashion" class="layout-image">
                         </div>
                     </div>
