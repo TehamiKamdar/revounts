@@ -502,7 +502,7 @@ footer .footer-img img{
 
     .section-title {
         font-size: 2.2rem;
-        margin-bottom: 25px !important;
+        margin-bottom: 25px;
     }
 
     .blog-columns {
@@ -911,7 +911,6 @@ section {
     height: 100%;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
     position: relative;
 }
 
@@ -3066,11 +3065,12 @@ section {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 15px;
     }
 
     .section-subtitle {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
 
     .featured-blog-content {
@@ -3106,14 +3106,6 @@ section {
         margin: 0 auto;
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-
     .brand-item {
         padding: 10px;
     }
@@ -3132,11 +3124,6 @@ section {
         width: 220px;
         height: 120px;
         padding: 0px;
-    }
-
-    .section-title {
-        font-size: 1.7rem;
-        margin-bottom: 15px !important;
     }
 
     @keyframes scroll {
@@ -3211,10 +3198,6 @@ section {
     .nav-btn {
         width: 40px;
         height: 40px;
-    }
-
-    .section-title {
-        font-size: 2rem;
     }
 
     .section-description {

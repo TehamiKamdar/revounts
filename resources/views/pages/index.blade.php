@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <main class="container content-section mb-0 pb-0 d-flex justify-content-center">
+    <main class="content-section mb-0 pb-0 d-flex justify-content-center">
         <section class="carousel-container m-0 p-0">
             {{-- <div class="section-heading">
                 <h2 class="section-title">Featured Collections</h2>
@@ -449,7 +449,7 @@
         </section>
 
         {{-- Stores Section --}}
-        <section class="store-wrapper">
+        {{-- <section class="store-wrapper">
             <!-- Section Header -->
             <div class="section-header">
                 <h2 class="section-title">Shop by Brand Category</h2>
@@ -594,7 +594,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         {{-- Blogs --}}
         <section class="blog-wrapper">
