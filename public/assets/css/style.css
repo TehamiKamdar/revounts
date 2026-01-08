@@ -679,25 +679,22 @@ section {
 
 /* Carousel Slide */
 .carousel-slide {
-    min-width: 100%;
+    flex: 0 0 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* Slide Content - Split Layout */
 .slide-content {
     display: flex;
-    min-width: 1024px;
+    width: 100%;
     min-height: 300px;
     align-items: center;
     gap: 60px;
-}
-
-.text-content {
-    flex: 1;
-    padding-right: 20px;
 }
 
 .image-content {
@@ -712,82 +709,12 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.8s ease;
 }
 
 .image-content:hover .slide-image {
     transform: scale(1.05);
-}
-
-/* Slide Elements */
-.slide-tag {
-    display: inline-block;
-    background: rgba(153, 132, 212, 0.1);
-    color: var(--primary);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    border: 1px solid rgba(153, 132, 212, 0.3);
-}
-
-.slide-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--dark-amethyst);
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.slide-description {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    max-width: 90%;
-}
-
-.slide-stats {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 5px;
-}
-
-.slide-button {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    border: none;
-    padding: 12px 32px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 15px rgba(89, 46, 131, 0.25);
-}
-
-.slide-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(89, 46, 131, 0.35);
 }
 
 /* Navigation Buttons */
@@ -2622,6 +2549,11 @@ section {
         justify-content: center;
     }
 
+    .modern-carousel{
+        padding: 0;
+        height: 400px;
+    }
+
     .unique-coupon-card {
         width: 48%;
         max-width: 320px;
@@ -2685,8 +2617,8 @@ section {
     }
 
     .modern-carousel {
-        padding: 30px 40px;
-        height: 360px;
+        padding: 0px;
+        height: 300px;
     }
 
     .slide-content {
@@ -2990,15 +2922,18 @@ section {
     }
 
     .modern-carousel {
-        padding: 25px 30px;
         height: auto;
-        min-height: 400px;
     }
 
     .slide-content {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
+        min-height: 200px;
         text-align: center;
+    }
+
+    .carousel-slide{
+        padding: 0;
     }
 
     .text-content {
@@ -3192,6 +3127,18 @@ section {
 
     .large-image {
         height: 250px;
+    }
+
+    .nav-btn{
+        display: none;
+    }
+
+    .modern-carousel{
+        padding: 0;
+    }
+
+    .slide-content{
+        min-height: 100px;
     }
 }
 

@@ -24,32 +24,6 @@
                     <!-- Slide 1 -->
                     <div class="carousel-slide">
                         <div class="slide-content">
-                            {{-- <div class="text-content">
-                                <span class="slide-tag">Limited Offer</span>
-                                <h2 class="slide-title">Premium Electronics Collection</h2>
-                                <p class="slide-description">
-                                    Discover cutting-edge gadgets and devices with advanced features. Our curated selection
-                                    includes smartphones, laptops, wearables, and smart home technology.
-                                </p>
-
-                                <div class="slide-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-value">35%</span>
-                                        <span class="stat-label">Discount</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">150+</span>
-                                        <span class="stat-label">Products</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">48h</span>
-                                        <span class="stat-label">Sale Ends</span>
-                                    </div>
-                                </div>
-
-                                <button class="slide-button">Explore Collection</button>
-                            </div> --}}
-
                             <div class="image-content">
                                 <img src="https://placehold.co/1320x450/450077/9984d4" alt="Electronics"
                                     class="slide-image">
@@ -60,33 +34,6 @@
                     <!-- Slide 2 -->
                     <div class="carousel-slide">
                         <div class="slide-content">
-                            {{-- <div class="text-content">
-                                <span class="slide-tag">New Arrivals</span>
-                                <h2 class="slide-title">Modern Home Decor Essentials</h2>
-                                <p class="slide-description">
-                                    Transform your living space with contemporary furniture and decor pieces. Minimalist
-                                    designs
-                                    meet functional elegance for the modern home.
-                                </p>
-
-                                <div class="slide-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-value">25%</span>
-                                        <span class="stat-label">Off</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">200+</span>
-                                        <span class="stat-label">Items</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">7d</span>
-                                        <span class="stat-label">Limited Time</span>
-                                    </div>
-                                </div>
-
-                                <button class="slide-button">Shop Now</button>
-                            </div> --}}
-
                             <div class="image-content">
                                 <img src="https://placehold.co/1320x450/450077/9984d4" alt="Home Decor" class="slide-image">
                             </div>
@@ -96,32 +43,6 @@
                     <!-- Slide 3 -->
                     <div class="carousel-slide">
                         <div class="slide-content">
-                            {{-- <div class="text-content">
-                                <span class="slide-tag">Best Sellers</span>
-                                <h2 class="slide-title">Fashion & Accessories Store</h2>
-                                <p class="slide-description">
-                                    Elevate your style with premium fashion collections and accessories. From casual wear to
-                                    formal attire, find everything for your wardrobe.
-                                </p>
-
-                                <div class="slide-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-value">40%</span>
-                                        <span class="stat-label">Sale</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">500+</span>
-                                        <span class="stat-label">Styles</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">14d</span>
-                                        <span class="stat-label">Seasonal</span>
-                                    </div>
-                                </div>
-
-                                <button class="slide-button">View Collection</button>
-                            </div> --}}
-
                             <div class="image-content">
                                 <img src="https://placehold.co/1320x450/450077/9984d4" alt="Fashion" class="slide-image">
                             </div>
@@ -131,32 +52,6 @@
                     <!-- Slide 4 -->
                     <div class="carousel-slide">
                         <div class="slide-content">
-                            {{-- <div class="text-content">
-                                <span class="slide-tag">Exclusive</span>
-                                <h2 class="slide-title">Beauty & Wellness Products</h2>
-                                <p class="slide-description">
-                                    Discover premium skincare, cosmetics, and wellness products for your self-care routine.
-                                    Organic ingredients and sustainable packaging.
-                                </p>
-
-                                <div class="slide-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-value">30%</span>
-                                        <span class="stat-label">Off</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">300+</span>
-                                        <span class="stat-label">Products</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-value">5d</span>
-                                        <span class="stat-label">Flash Sale</span>
-                                    </div>
-                                </div>
-
-                                <button class="slide-button">Discover More</button>
-                            </div> --}}
-
                             <div class="image-content">
                                 <img src="https://placehold.co/1320x450/450077/9984d4" alt="Beauty Products"
                                     class="slide-image">
@@ -166,7 +61,6 @@
                 </div>
 
                 <div class="carousel-dots d-none" id="carousel-dots">
-                    <!-- Dots will be generated by JavaScript -->
                 </div>
             </div>
         </section>
