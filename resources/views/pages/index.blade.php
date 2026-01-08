@@ -229,7 +229,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">40% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Headphones">
+                        <img src="https://placehold.co/500x360/450077/9984d4" alt="Headphones">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Wireless Noise Cancelling Headphones</h3>
@@ -249,7 +249,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">35% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Smart Watch">
+                        <img src="https://placehold.co/500x360/450077/9984d4" alt="Smart Watch">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Fitness Smart Watch Series 5</h3>
@@ -268,7 +268,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">50% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Coffee Maker">
+                        <img src="https://placehold.co/500x360/450077/9984d4" alt="Coffee Maker">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Programmable Coffee Machine</h3>
@@ -287,7 +287,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">30% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Sneakers">
+                        <img src="https://placehold.co/500x360/450077/9984d4" alt="Sneakers">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Premium Running Sneakers</h3>
@@ -306,7 +306,7 @@
                 <div class="deal-card">
                     <div class="card-image">
                         <div class="deal-badge">45% OFF</div>
-                        <img src="https://placehold.co/250x180/450077/9984d4" alt="Backpack">
+                        <img src="https://placehold.co/500x360/450077/9984d4" alt="Backpack">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Waterproof Travel Backpack</h3>
