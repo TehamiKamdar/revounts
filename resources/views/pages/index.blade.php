@@ -179,6 +179,7 @@
     </main>
     <!-- Hero Section -->
     <div class="hero-section text-center">
+        <img src="{{ asset('assets/images/hero-1.png') }}" alt="" class="hero-img">
     </div>
     <main class="container content-section mb-0 pb-0">
         <section class="coupon-wrapper">
