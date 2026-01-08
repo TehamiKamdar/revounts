@@ -2610,7 +2610,7 @@ section {
     }
 
     .carousel-track-brands {
-        gap: 8px;
+        gap: 0px;
     }
 
     @keyframes scroll {
@@ -2849,6 +2849,11 @@ section {
         padding: 0px;
     }
 
+    .read-blog-btn{
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
     @keyframes scroll {
         0% {
             transform: translateX(0);
@@ -2876,10 +2881,6 @@ section {
     .carousel-container::before,
     .carousel-container::after {
         width: 60px;
-    }
-
-    .carousel-track-brands {
-        gap: 8px;
     }
 
     .hero-img {
@@ -3019,6 +3020,23 @@ section {
 
     .rectangle-carousel{
         padding: 20px 0;
+    }
+
+    .blog-columns{
+        padding: 0 20px;
+    }
+
+    .featured-blog-excerpt{
+        font-size: 0.9rem;
+    }
+
+    .read-blog-btn{
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+
+    .section-wrapper{
+        padding: 0 20px;
     }
 
     @keyframes scroll {
