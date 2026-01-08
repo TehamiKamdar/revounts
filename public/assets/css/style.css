@@ -231,11 +231,7 @@ h6,
 
 
 
-@media (max-width: 480px) {
-    .hero-img {
-        max-height: 180px;
-    }
-}
+
 
 .content-section {
     padding: 2rem 0rem;
@@ -405,18 +401,6 @@ h6,
     color: #cccccc;
 }
 
-@media (max-width: 576px) {
-    .footer-links {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-socials {
-        flex-direction: column;
-    }
-}
-
-
 /* footer .footer-img{
     width: 100%;
     max-width: 1560px;
@@ -429,141 +413,6 @@ footer .footer-img img{
     display: block;
     object-fit: contain;
 } */
-
-@media (max-width: 992px) {
-    .navbar-nav .nav-link {
-        margin: 0.2rem 0;
-    }
-
-    .navbar-nav .nav-link::after {
-        display: none;
-    }
-
-    .dropdown-menu {
-        background-color: transparent;
-        border: none;
-        padding-left: 1rem;
-    }
-
-    .modern-carousel {
-        padding: 30px 40px;
-        height: 360px;
-    }
-
-    .slide-content {
-        gap: 40px;
-    }
-
-    .slide-title {
-        font-size: 1.8rem;
-    }
-
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .brand-logo-item {
-        width: 180px;
-        height: 100px;
-    }
-
-    .logo-rectangle {
-        width: 220px;
-        height: 120px;
-        padding: 0px;
-    }
-
-    .carousel-track-brands {
-        gap: 8px;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-180px * 12 - 30px * 12));
-        }
-    }
-
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .category-card {
-        padding: 20px;
-    }
-
-    .section-header {
-        margin-bottom: 50px;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-    }
-
-    .blog-columns {
-        flex-direction: column;
-    }
-
-    .featured-blog-image {
-        height: 300px;
-    }
-
-    .categories-filter {
-        gap: 10px;
-    }
-
-    .category-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .header-split {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .split-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .image-layout {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .image-col {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .col-3-left,
-    .col-6-center,
-    .col-3-right {
-        flex: 0 0 100%;
-    }
-
-    .col-3-left .image-container,
-    .col-3-right .image-container {
-        flex: 1 1 calc(50% - 10px);
-        height: 200px;
-    }
-
-    .large-image {
-        height: 300px;
-        flex: 1 1 100%;
-    }
-
-    .deals-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 /* coupons section */
 .coupon-wrapper {
@@ -800,61 +649,6 @@ footer .footer-img img{
     color: var(--white);
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-
-    .coupons-row {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .unique-coupon-card {
-        width: 48%;
-        max-width: 320px;
-    }
-
-    .brand-card {
-        height: 300px;
-        padding: 30px 25px;
-    }
-
-    .brand-logo-item {
-        width: 200px;
-        height: 110px;
-    }
-
-    .logo-rectangle {
-        width: 200px;
-        height: 110px;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-200px * 12 - 30px * 12));
-        }
-    }
-
-    .categories-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .blog-columns {
-        gap: 30px;
-    }
-
-    .featured-blog-image {
-        height: 250px;
-    }
-
-    .deals-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
 section {
     margin-bottom: 6rem !important;
 }
@@ -1063,20 +857,6 @@ section {
     background: rgba(153, 132, 212, 0.1);
     padding: 6px 12px;
     border-radius: 20px;
-}
-
-@media (max-width: 576px) {
-    .modern-carousel {
-        padding: 20px;
-    }
-
-    .slide-title {
-        font-size: 1.5rem;
-    }
-
-    .stat-value {
-        font-size: 1.6rem;
-    }
 }
 
 /* featured brands */
@@ -1308,26 +1088,6 @@ section {
     transform: scale(1.3);
 }
 
-@media (max-width: 576px) {
-    body {
-        padding: 40px 15px;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .custom-nav {
-        display: none;
-    }
-
-    .brand-card {
-        margin: 10px;
-        height: auto;
-        min-height: 260px;
-    }
-}
-
 .view-all-container {
     text-align: center;
     margin-top: 60px;
@@ -1474,28 +1234,6 @@ section {
     transform: scale(1.3);
 }
 
-@media (max-width: 576px) {
-    .brand-logo-item {
-        width: 140px;
-        height: 80px;
-    }
-
-    .logo-rectangle {
-        width: 220px;
-        height: 120px;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-140px * 12 - 30px * 12));
-        }
-    }
-}
-
 /* Store Section */
 .store-wrapper {
     width: 100%;
@@ -1614,31 +1352,6 @@ section {
 
 .store-wrapper .brand-item:hover .store-link {
     color: var(--primary-dark);
-}
-
-/* Responsive */
-@media (max-width: 1400px) {
-    .categories-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .category-card {
-        padding: 18px;
-    }
-
-    .category-header {
-        margin-bottom: 20px;
-    }
-
-    .brands-list {
-        gap: 12px;
-    }
 }
 
 /* Blogs Section */
@@ -2298,35 +2011,7 @@ section {
     animation: slideIn 0.6s ease-out 0.6s both;
 }
 
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .header-badge {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-
-    .featured-blog-image {
-        height: 220px;
-    }
-
-    .featured-blog-title {
-        font-size: 1.3rem;
-    }
-
-    .article-title {
-        font-size: 1.1rem;
-    }
-
-    .coupon-tag {
-        display: none;
-    }
-}
-
 /* Newsletter Section */
-
 
 .newsletter-wrapper {
     width: 100%;
@@ -2476,51 +2161,6 @@ section {
     opacity: 1;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .newsletter-wrapper {
-        height: auto;
-        min-height: 230px;
-        flex-direction: column;
-        padding: 40px 30px;
-        text-align: center;
-    }
-
-    .newsletter-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .text-content {
-        text-align: center;
-    }
-
-    .email-form {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-@media (max-width: 576px) {
-    .newsletter-wrapper {
-        padding: 30px 20px;
-    }
-
-    .newsletter-title {
-        font-size: 1.5rem;
-    }
-
-    .email-form {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .email-input,
-    .subscribe-btn {
-        width: 100%;
-    }
-}
-
 /* Current Deals */
 .deals-wrapper {
     width: 100%;
@@ -2655,31 +2295,6 @@ section {
 .deal-card .action-btn:hover {
     background: var(--primary);
     color: white;
-}
-
-@media (max-width: 576px) {
-    body {
-        padding: 40px 15px;
-    }
-
-    .deals-grid {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .card-image {
-        height: 180px;
-    }
-
-    .section-title {
-        font-size: 1.4rem;
-        margin-bottom: 14px;
-    }
-
-    .section-subtitle{
-        font-size: 0.8rem;
-    }
 }
 
 /* FAQ */
@@ -2854,12 +2469,6 @@ section {
     box-shadow: 0 8px 20px rgba(89, 46, 131, 0.2);
 }
 
-@media (max-width: 576px) {
-    .accordion-header {
-        padding: 18px 15px;
-    }
-}
-
 /* Notice */
 .notice-wrapper p {
     text-align: center;
@@ -2998,16 +2607,224 @@ section {
     height: 525px;
 }
 
-@media (max-width: 576px) {
+/* Responsive */
+
+@media (max-width: 1400px) {
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .coupons-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .unique-coupon-card {
+        width: 48%;
+        max-width: 320px;
+    }
+
+    .brand-card {
+        height: 300px;
+        padding: 30px 25px;
+    }
+
+    .brand-logo-item {
+        width: 200px;
+        height: 110px;
+    }
+
+    .logo-rectangle {
+        width: 200px;
+        height: 110px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-200px * 12 - 30px * 12));
+        }
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .blog-columns {
+        gap: 30px;
+    }
+
+    .featured-blog-image {
+        height: 250px;
+    }
+
+    .deals-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        margin: 0.2rem 0;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    .dropdown-menu {
+        background-color: transparent;
+        border: none;
+        padding-left: 1rem;
+    }
+
+    .modern-carousel {
+        padding: 30px 40px;
+        height: 360px;
+    }
+
+    .slide-content {
+        gap: 40px;
+    }
+
+    .slide-title {
+        font-size: 1.8rem;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-logo-item {
+        width: 180px;
+        height: 100px;
+    }
+
+    .logo-rectangle {
+        width: 220px;
+        height: 120px;
+        padding: 0px;
+    }
+
+    .carousel-track-brands {
+        gap: 8px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-180px * 12 - 30px * 12));
+        }
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .category-card {
+        padding: 20px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+
+    .blog-columns {
+        flex-direction: column;
+    }
+
+    .featured-blog-image {
+        height: 300px;
+    }
+
+    .categories-filter {
+        gap: 10px;
+    }
+
+    .category-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .header-split {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .split-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .col-3-left,
+    .col-6-center,
+    .col-3-right {
+        flex: 0 0 100%;
+    }
 
     .col-3-left .image-container,
     .col-3-right .image-container {
-        height: 160px;
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 10px);
+        height: 200px;
     }
 
     .large-image {
-        height: 250px;
+        height: 300px;
+        flex: 1 1 100%;
+    }
+
+    .deals-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .newsletter-wrapper {
+        height: auto;
+        min-height: 230px;
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .email-form {
+        width: 100%;
+        max-width: 500px;
     }
 }
 
@@ -3136,6 +2953,16 @@ section {
         }
     }
 
+    @keyframes fadeIn {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 400px;
+        }
+    }
+
     .carousel-container {
         padding: 0 20px;
     }
@@ -3222,5 +3049,154 @@ section {
 
     .brand-name {
         font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-socials {
+        flex-direction: column;
+    }
+
+    .modern-carousel {
+        padding: 20px;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .custom-nav {
+        display: none;
+    }
+
+    .brand-card {
+        margin: 10px;
+        height: auto;
+        min-height: 260px;
+    }
+
+    .brand-logo-item {
+        width: 140px;
+        height: 80px;
+    }
+
+    .logo-rectangle {
+        width: 220px;
+        height: 120px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-140px * 12 - 30px * 12));
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            width: 0px;
+        }
+
+        100% {
+            width: 300px;
+        }
+    }
+
+    .category-card {
+        padding: 18px;
+    }
+
+    .category-header {
+        margin-bottom: 20px;
+    }
+
+    .brands-list {
+        gap: 12px;
+    }
+
+    .header-badge {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .featured-blog-image {
+        height: 220px;
+    }
+
+    .featured-blog-title {
+        font-size: 1.3rem;
+    }
+
+    .article-title {
+        font-size: 1.1rem;
+    }
+
+    .coupon-tag {
+        display: none;
+    }
+
+    .newsletter-wrapper {
+        padding: 30px 20px;
+    }
+
+    .newsletter-title {
+        font-size: 1.5rem;
+    }
+
+    .email-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .email-input,
+    .subscribe-btn {
+        width: 100%;
+    }
+
+    .deals-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    .accordion-header {
+        padding: 18px 15px;
+    }
+
+    .col-3-left .image-container,
+    .col-3-right .image-container {
+        height: 160px;
+        flex: 1 1 100%;
+    }
+
+    .large-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-img {
+        max-height: 180px;
     }
 }
