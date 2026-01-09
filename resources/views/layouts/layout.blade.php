@@ -43,7 +43,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <span id="navbrand">Revounts</span>
             </a>
 
@@ -57,7 +57,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Reviews</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('reviews') }}">Reviews</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Coupons</a>
