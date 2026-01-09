@@ -8,8 +8,9 @@
     --heading-font-family: "Aleo", "Times New Roman", serif;
     --gradient-start: #f262ff;
     --gradient-end: #7a43d3;
+    --season-theme-color: #BC1719;
+    --season-theme-bg-color: #FFE2E2;
 }
-
 
 body {
     font-family: var(--font-family);
@@ -437,7 +438,6 @@ h6,
     /* sabse important */
     display: block;
     /* unwanted gap remove */
-    max-height: 350px;
     object-fit: cover;
     padding-top: 2rem;
 }
@@ -566,19 +566,6 @@ h6,
     font-size: 13px;
     color: #cccccc;
 }
-
-/* footer .footer-img{
-    width: 100%;
-    max-width: 1560px;
-    margin: 0 auto;
-}
-
-footer .footer-img img{
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-} */
 
 /* coupons section */
 .section-title {
@@ -2648,9 +2635,9 @@ section {
 /* Main Section with Background & Border */
 /* Section background & styling */
 .whats-in-section {
-    /* background: linear-gradient(135deg, #BC1719 0%, #26887C 100%); */
-    background-color: #ffe2e2;
-    border: 2px dashed #BC1719;
+    /* background: linear-gradient(135deg, var(--season-theme-color) 0%, #26887C 100%); */
+    background-color: var(--season-theme-bg-color);
+    border: 2px dashed var(--season-theme-color);
     border-radius: 25px;
     padding: 50px;
     position: relative;
@@ -2696,7 +2683,7 @@ section {
     position: absolute;
     bottom: 10px;
     right: -10px;
-    color: #BC1719;
+    color: var(--season-theme-color);
     font-weight: bold;
     font-size: 26px;
     font-family: "Playlist", sans-serif;
