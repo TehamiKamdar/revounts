@@ -522,9 +522,7 @@ footer .footer-img img{
 .coupon-title {
     font-weight: 600;
     color: var(--dark-amethyst);
-    font-size: 1.1rem;
     margin-bottom: 4px;
-    padding-right: 70px;
 }
 
 .coupon-category {
@@ -615,7 +613,7 @@ footer .footer-img img{
 }
 
 section {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 
 /* carousel section */
@@ -1041,7 +1039,6 @@ section {
 .brands-wrapper .logo-rectangle {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 12px;
     background: none !important;
     display: flex;
     align-items: center;
@@ -1049,7 +1046,7 @@ section {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    padding: 15px;
+    padding: 0px;
 }
 
 .brands-wrapper .logo-rectangle::before {
@@ -1253,6 +1250,123 @@ section {
     color: var(--primary-dark);
 }
 
+.shop-wrapper{
+    width: 100%;
+}
+
+.shop-wrapper .accordions-container {
+    /* background: white; */
+    padding: 10px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(153, 132, 212, 0.1);
+}
+
+/* Accordion Item */
+.shop-wrapper .accordion-item {
+    border-bottom: 1px solid rgba(153, 132, 212, 0.2);
+    overflow: hidden;
+}
+
+.shop-wrapper .accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* Accordion Header */
+.shop-wrapper .accordion-header {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.shop-wrapper .accordion-header:hover {
+    background: rgba(153, 132, 212, 0.03);
+}
+
+.shop-wrapper .accordion-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-amethyst);
+    line-height: 1;
+    transition: color 0.3s ease;
+    padding-right: 40px;
+}
+
+.shop-wrapper .accordion-header:hover .accordion-title {
+    color: var(--primary);
+}
+
+.shop-wrapper .accordion-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.shop-wrapper .accordion-icon span {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.shop-wrapper .horizontal {
+    width: 20px;
+    height: 2px;
+    left: 2px;
+    top: 11px;
+}
+
+.shop-wrapper .vertical {
+    width: 2px;
+    height: 20px;
+    left: 11px;
+    top: 2px;
+    transform: rotate(90deg);
+}
+
+.shop-wrapper .accordion-item.active .vertical {
+    transform: rotate(0deg);
+}
+
+.shop-wrapper .accordion-item.active .horizontal {
+    background: var(--primary-dark);
+}
+
+.shop-wrapper .accordion-item.active .accordion-title {
+    color: var(--primary);
+}
+
+/* Accordion Content */
+.shop-wrapper .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accordion Content */
+.shop-wrapper .accordion-content .category-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-amethyst);
+    line-height: 1;
+    transition: color 0.3s ease;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.shop-wrapper .accordion-body {
+    padding: 0 20px 25px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* Blogs Section */
 .blog-wrapper {
     width: 100%;
@@ -1411,7 +1525,7 @@ section {
 }
 
 .featured-blog-image {
-    height: 280px;
+    max-height: 280px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -1419,12 +1533,12 @@ section {
 
 .featured-blog-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.featured-blog-card:hover .featured-blog-image img {
+.featured-blog-card :hover .featured-blog-image img {
     transform: scale(1.1);
 }
 
@@ -1816,6 +1930,7 @@ section {
     color: var(--dark-amethyst);
     margin-bottom: 5px;
     font-size: 1rem;
+    font-family: var(--heading-font-family);
 }
 
 .tip-desc {
@@ -2527,13 +2642,14 @@ section {
     }
 
     .brand-logo-item {
-        width: 200px;
-        height: 110px;
+        width: 220px;
+        height: 120px;
     }
 
     .logo-rectangle {
-        width: 200px;
-        height: 110px;
+        width: 220px;
+        height: 120px;
+        padding: 8px;
     }
 
     @keyframes scroll {
@@ -2554,9 +2670,9 @@ section {
         gap: 30px;
     }
 
-    .featured-blog-image {
+    /* .featured-blog-image {
         height: 250px;
-    }
+    } */
 
     .deals-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -2604,10 +2720,10 @@ section {
         height: 100px;
     }
 
-    .logo-rectangle {
+    .brands-wrapper .logo-rectangle {
         width: 220px;
         height: 120px;
-        padding: 0px;
+        padding: 6px;
     }
 
     .carousel-track-brands {
@@ -2651,17 +2767,17 @@ section {
         flex-direction: column;
     }
 
-    .featured-blog-image {
+    /* .featured-blog-image {
         height: 300px;
-    }
+    } */
 
     .categories-filter {
         gap: 10px;
     }
 
     .category-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 4px 8px;
+        font-size: 0.8rem;
     }
 
     .header-split {
@@ -2758,18 +2874,38 @@ section {
         height: 280px;
     }
 
-    .accordion-header {
+    .faq-wrapper .accordion-header {
         padding: 20px 15px;
     }
 
-    .accordion-title {
+    .shop-wrapper .accordion-header {
+        padding: 20px 15px 10px;
+    }
+
+    .faq-wrapper .accordion-title {
         font-size: 1rem;
         padding-right: 30px;
     }
 
-    .accordion-body {
-        padding: 0 15px 20px;
+    .shop-wrapper .accordion-title {
+        font-size: 1rem;
+        padding-right: 30px;
+    }
+
+    .faq-wrapper .accordion-body {
+        padding: 0 15px 10px;
         font-size: 0.9rem;
+    }
+
+    .shop-wrapper .accordion-body {
+        padding: 0 15px 10px;
+        font-size: 0.9rem;
+    }
+
+    .shop-wrapper .accordion-content .category-title {
+        font-size: 0.9rem;
+        padding-left: 5px;
+        padding-top: 10px;
     }
 
     .contact-section {
@@ -2848,10 +2984,10 @@ section {
         height: 90px;
     }
 
-    .logo-rectangle {
+    .brands-wrapper .logo-rectangle {
         width: 220px;
         height: 120px;
-        padding: 0px;
+        padding: 8px;
     }
 
     .read-blog-btn{
@@ -3018,9 +3154,10 @@ section {
         height: 80px;
     }
 
-    .logo-rectangle {
+    .brands-wrapper .logo-rectangle {
         width: 220px;
         height: 120px;
+        padding: 12px;
     }
 
     .rectangle-carousel{
@@ -3081,9 +3218,9 @@ section {
         font-size: 0.9rem;
     }
 
-    .featured-blog-image {
+    /* .featured-blog-image {
         height: 220px;
-    }
+    } */
 
     .featured-blog-title {
         font-size: 1.3rem;

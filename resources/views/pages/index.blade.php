@@ -38,7 +38,8 @@
                         <a href="#" class="slide-link">
                             <div class="slide-content">
                                 <div class="image-content">
-                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Home Decor" class="slide-image">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Home Decor"
+                                        class="slide-image">
                                 </div>
                             </div>
                         </a>
@@ -49,7 +50,8 @@
                         <a href="#" class="slide-link">
                             <div class="slide-content">
                                 <div class="image-content">
-                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Fashion" class="slide-image">
+                                    <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Fashion"
+                                        class="slide-image">
                                 </div>
                             </div>
                         </a>
@@ -89,7 +91,7 @@
                 <!-- Coupon 1 -->
                 <div class="unique-coupon-card">
                     <div class="coupon-strip">
-                        <div class="coupon-title">Electronics Sale</div>
+                        <h5 class="coupon-title">Electronics Sale</h5>
                         <div class="coupon-category">Gadgets & Devices</div>
                     </div>
 
@@ -100,7 +102,8 @@
                         </p>
 
                         <div class="image-container">
-                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Electronics" class="product-image">
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Electronics"
+                                class="product-image">
                         </div>
                     </div>
 
@@ -115,7 +118,7 @@
                 <!-- Coupon 2 -->
                 <div class="unique-coupon-card">
                     <div class="coupon-strip">
-                        <div class="coupon-title">Fashion Weekend</div>
+                        <h5 class="coupon-title">Fashion Weekend</h5>
                         <div class="coupon-category">Clothing & Accessories</div>
                     </div>
 
@@ -141,7 +144,7 @@
                 <!-- Coupon 3 -->
                 <div class="unique-coupon-card">
                     <div class="coupon-strip">
-                        <div class="coupon-title">Home Essentials</div>
+                        <h5 class="coupon-title">Home Essentials</h5>
                         <div class="coupon-category">Kitchen & Living</div>
                     </div>
 
@@ -153,7 +156,8 @@
                         </p>
 
                         <div class="image-container">
-                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Home Goods" class="product-image">
+                            <img src="{{ asset('assets/images/banner_480x200.png') }}" alt="Home Goods"
+                                class="product-image">
                         </div>
                     </div>
 
@@ -168,7 +172,7 @@
                 <!-- Coupon 4 -->
                 <div class="unique-coupon-card">
                     <div class="coupon-strip">
-                        <div class="coupon-title">Beauty Box</div>
+                        <h5 class="coupon-title">Beauty Box</h5>
                         <div class="coupon-category">Skincare & Cosmetics</div>
                     </div>
 
@@ -324,153 +328,117 @@
             </div>
         </section>
 
-        {{-- Stores Section --}}
-        {{-- <section class="store-wrapper">
-            <!-- Section Header -->
-            <div class="section-header">
-                <h2 class="section-title">Shop by Brand Category</h2>
-                <p class="section-subtitle">
-                    Explore top brands across different categories. Click any brand to visit their store and discover exclusive deals.
-                </p>
+        {{-- Shop Section --}}
+        <section class="shop-wrapper">
+
+            <div class="brands-wrapper-header">
+                <img src="{{ asset('assets/images/banner_1320x80_1.png') }}" loading="lazy" alt="">
             </div>
-
-            <!-- 5 Categories Grid -->
-            <div class="categories-grid">
-                <!-- Category 1: Electronics -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-laptop"></i>
+            <!-- Modern Accordions -->
+            <div class="accordions-container">
+                <!-- FAQ 1 -->
+                <div class="accordion-item brands">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Shop by Brands</h3>
+                        <div class="accordion-icon">
+                            <span class="horizontal"></span>
+                            <span class="vertical"></span>
                         </div>
-                        <h3 class="category-title">Electronics</h3>
                     </div>
-
-                    <div class="brands-list">
-                        <!-- Brand 1 -->
-                        <div class="brand-item">
-                            <div class="brand-logo">
-                                <img src="https://placehold.co/100x100/592e83/ffffff?text=ELEC1" alt="Electronics Brand">
-                            </div>
-                            <div class="brand-info">
-                                <div class="brand-name">TechPro Solutions</div>
-                                <div class="store-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Visit Store</span>
+                    <div class="accordion-content" style="max-height: 200px;">
+                        <div class="accordion-body">
+                            <div class="owl-carousel brand-carousel">
+                                <div class="item">
+                                    <a href="#" class="card-150">
+                                        <img src="https://placehold.co/150x75">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="card-150">
+                                        <img src="https://placehold.co/150x75">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="card-150">
+                                        <img src="https://placehold.co/150x75">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="card-150">
+                                        <img src="https://placehold.co/150x75">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="card-150">
+                                        <img src="https://placehold.co/150x75">
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Category 2: Fashion -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-tshirt"></i>
+                <!-- FAQ 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Shop by Category</h3>
+                        <div class="accordion-icon">
+                            <span class="horizontal"></span>
+                            <span class="vertical"></span>
                         </div>
-                        <h3 class="category-title">Fashion</h3>
                     </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <!-- CATEGORY 1 -->
+                            <div class="category-row mb-3">
+                                <div class="category-title">Fashion</div>
 
-                    <div class="brands-list">
-                        <!-- Repeat 10 fashion brands with unique placehold.co images -->
-                        <!-- Brand 1-10 -->
-                        <div class="brand-item">
-                            <div class="brand-logo">
-                                <img src="https://placehold.co/100x100/9984d4/ffffff?text=FSH1" alt="Fashion Brand">
-                            </div>
-                            <div class="brand-info">
-                                <div class="brand-name">StyleCraft Fashion</div>
-                                <div class="store-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Visit Store</span>
+                                <div class="owl-carousel category-carousel flex-grow-1">
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Category 3: Home & Kitchen -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h3 class="category-title">Home & Kitchen</h3>
-                    </div>
+                            <!-- CATEGORY 2 -->
+                            <div class="category-row">
+                                <div class="category-title">Electronics</div>
 
-                    <div class="brands-list">
-                        <!-- 10 home brands with placehold.co -->
-                        <!-- Using unique colors for each category -->
-                        <div class="brand-item">
-                            <div class="brand-logo">
-                                <img src="https://placehold.co/100x100/450077/ffffff?text=HOME1" alt="Home Brand">
-                            </div>
-                            <div class="brand-info">
-                                <div class="brand-name">Cozy Living Spaces</div>
-                                <div class="store-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Visit Store</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 4: Beauty & Health -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-spa"></i>
-                        </div>
-                        <h3 class="category-title">Beauty & Health</h3>
-                    </div>
-
-                    <div class="brands-list">
-                        <!-- 10 beauty brands -->
-                        <!-- Using different color for placehold.co -->
-                        <div class="brand-item">
-                            <div class="brand-logo">
-                                <img src="https://placehold.co/100x100/150132/ffffff?text=BTY1" alt="Beauty Brand">
-                            </div>
-                            <div class="brand-info">
-                                <div class="brand-name">Glow Beauty Labs</div>
-                                <div class="store-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Visit Store</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 5: Sports & Outdoors -->
-                <div class="category-card">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3 class="category-title">Sports & Outdoors</h3>
-                    </div>
-
-                    <div class="brands-list">
-                        <!-- 10 sports brands -->
-                        <!-- Using different color -->
-                        <div class="brand-item">
-                            <div class="brand-logo">
-                                <img src="https://placehold.co/100x100/592e83/9984d4?text=SPT1" alt="Sports Brand">
-                            </div>
-                            <div class="brand-info">
-                                <div class="brand-name">Active Gear Pro</div>
-                                <div class="store-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Visit Store</span>
+                                <div class="owl-carousel category-carousel flex-grow-1">
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="#" class="card-150">
+                                            <img src="https://placehold.co/150x75">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
 
         {{-- Blogs --}}
         <section class="blog-wrapper">
@@ -524,7 +492,7 @@
                             <div class="featured-blog-badge">
                                 <i class="fas fa-crown"></i> FEATURED GUIDE
                             </div>
-                            <img src="https://placehold.co/640x280/450077/9984d4" alt="Shopping Tips">
+                            <img src="{{ asset('assets/images/banner_1320x450.png') }}" alt="Shopping Tips">
                         </div>
 
                         <div class="featured-blog-content">
@@ -884,32 +852,31 @@
                     <!-- Left Col-3 (2 images) -->
                     <div class="image-col col-3-left">
                         <div class="image-container small-image">
-                            <img src="{{ asset('assets/images/banner_610x500_1.png') }}"
-                                alt="Electronics" class="layout-image">
+                            <img src="{{ asset('assets/images/banner_610x500_1.png') }}" alt="Electronics"
+                                class="layout-image">
                         </div>
                         <div class="image-container small-image">
-                            <img src="{{ asset('assets/images/banner_610x500_2.png') }}"
-                                alt="Smart Watch" class="layout-image">
+                            <img src="{{ asset('assets/images/banner_610x500_2.png') }}" alt="Smart Watch"
+                                class="layout-image">
                         </div>
                     </div>
 
                     <!-- Center Col-6 (1 large image) -->
                     <div class="image-col col-6-center">
                         <div class="image-container large-image">
-                            <img src="{{ asset('assets/images/banner_1280x1024.png') }}"
-                                alt="Featured Product" class="layout-image">
+                            <img src="{{ asset('assets/images/banner_1280x1024.png') }}" alt="Featured Product"
+                                class="layout-image">
                         </div>
                     </div>
 
                     <!-- Right Col-3 (2 images) -->
                     <div class="image-col col-3-right">
                         <div class="image-container small-image">
-                            <img src="{{ asset('assets/images/banner_610x500_3.png') }}"
-                                alt="Home Appliances" class="layout-image">
+                            <img src="{{ asset('assets/images/banner_610x500_3.png') }}" alt="Home Appliances"
+                                class="layout-image">
                         </div>
                         <div class="image-container small-image">
-                            <img src="{{ asset('assets/images/banner_610x500_4.png') }}"
-                                alt="Fashion" class="layout-image">
+                            <img src="{{ asset('assets/images/banner_610x500_4.png') }}" alt="Fashion" class="layout-image">
                         </div>
                     </div>
                 </div>
@@ -1086,7 +1053,11 @@
 
         {{-- Notice --}}
         <section class="notice-wrapper pb-0 mb-3">
-            <p>*Disclosure: When you buy something using the retail links in our <a href="">stores</a>, <a href="">reviews</a>, or <a href="blogs"></a>, We may earn a small affiliate commission at no additional cost for you. We recommend brands and products that we genuinely like and are only promoted through <a href="">coupon codes</a>, promo codes, discounts & editorial reviews on Revounts. Learn more about our <a href="">terms & conditions</a>.</p>
+            <p>*Disclosure: When you buy something using the retail links in our <a href="">stores</a>, <a
+                    href="">reviews</a>, or <a href="blogs"></a>, We may earn a small affiliate commission at no additional
+                cost for you. We recommend brands and products that we genuinely like and are only promoted through <a
+                    href="">coupon codes</a>, promo codes, discounts & editorial reviews on Revounts. Learn more about our
+                <a href="">terms & conditions</a>.</p>
         </section>
     </main>
 
