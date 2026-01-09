@@ -24,6 +24,21 @@
 </head>
 
 <body>
+    <div class="animated-coupon-bg">
+        <!-- Discount Tags -->
+        <div class="discount-tag tag-1">70% OFF</div>
+        <div class="discount-tag tag-2">SAVE 40%</div>
+        <div class="discount-tag tag-3">50% OFF</div>
+        <div class="discount-tag tag-4">35% OFF</div>
+        <div class="discount-tag tag-5">80% OFF</div>
+        <div class="discount-tag tag-6">25% OFF</div>
+        <div class="discount-tag tag-7">15% OFF</div>
+        <div class="discount-tag tag-8">60% OFF</div>
+        <div class="discount-tag tag-9">45% OFF</div>
+        <div class="discount-tag tag-10">55% OFF</div>
+        <div class="discount-tag tag-11">30% OFF</div>
+        <div class="discount-tag tag-12">65% OFF</div>
+    </div>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
         <div class="container">

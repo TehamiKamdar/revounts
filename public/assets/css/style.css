@@ -14,7 +14,195 @@
 body {
     font-family: var(--font-family);
     padding-top: 76px;
-    /* To account for fixed navbar */
+    background-color: var(--white);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated Background Container */
+.animated-coupon-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    /* background: linear-gradient(135deg,
+            rgba(248, 249, 255, 0.9) 0%,
+            rgba(240, 242, 255, 0.9) 100%); */
+}
+
+/* Animated Discount Tags */
+.discount-tag {
+    position: absolute;
+    color: rgba(89, 46, 131, 0.15);
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Archivo', sans-serif;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    text-shadow: 0 4px 12px rgba(89, 46, 131, 0.1);
+    animation: floatAround 20s infinite linear;
+}
+
+/* Different discount values with different animations */
+.tag-1 {
+    font-size: 5.5rem;
+    color: rgba(153, 132, 212, 0);
+    top: 10%;
+    left: 5%;
+    animation-duration: 25s;
+    animation-delay: 0s;
+}
+
+.tag-2 {
+    font-size: 4rem;
+    color: rgba(89, 46, 131, 0);
+    top: 20%;
+    right: 40%;
+    animation-duration: 18s;
+    animation-delay: 2s;
+}
+
+.tag-3 {
+    font-size: 6rem;
+    color: rgba(153, 132, 212, 0.1);
+    top: 40%;
+    left: 12%;
+    animation-duration: 30s;
+    animation-delay: 4s;
+}
+
+.tag-4 {
+    font-size: 3.5rem;
+    color: rgba(89, 46, 131, 0);
+    top: 60%;
+    right: 35%;
+    animation-duration: 22s;
+    animation-delay: 1s;
+}
+
+.tag-5 {
+    font-size: 4.5rem;
+    color: rgba(153, 132, 212, 0);
+    top: 75%;
+    left: 20%;
+    animation-duration: 28s;
+    animation-delay: 3s;
+}
+
+.tag-6 {
+    font-size: 5rem;
+    color: rgba(89, 46, 131, 0);
+    top: 30%;
+    left: 50%;
+    animation-duration: 24s;
+    animation-delay: 5s;
+}
+
+.tag-7 {
+    font-size: 3rem;
+    color: rgba(153, 132, 212, 0);
+    top: 80%;
+    right: 25%;
+    animation-duration: 20s;
+    animation-delay: 6s;
+}
+
+.tag-8 {
+    font-size: 4.8rem;
+    color: rgba(89, 46, 131, 0);
+    top: 15%;
+    left: 60%;
+    animation-duration: 26s;
+    animation-delay: 7s;
+}
+
+.tag-9 {
+    font-size: 3.8rem;
+    color: rgba(153, 132, 212, 0);
+    top: 65%;
+    left: 5%;
+    animation-duration: 32s;
+    animation-delay: 8s;
+}
+
+.tag-10 {
+    font-size: 5.2rem;
+    color: rgba(89, 46, 131, 0);
+    top: 45%;
+    right: 5%;
+    animation-duration: 19s;
+    animation-delay: 9s;
+}
+
+.tag-11 {
+    font-size: 4.2rem;
+    color: rgba(153, 132, 212, 0.0);
+    top: 85%;
+    left: 75%;
+    animation-duration: 27s;
+    animation-delay: 10s;
+}
+
+.tag-12 {
+    font-size: 3.2rem;
+    color: rgba(89, 46, 131, 0.0);
+    top: 25%;
+    left: 85%;
+    animation-duration: 23s;
+    animation-delay: 11s;
+}
+
+/* Floating Animation */
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(50px, -30px) rotate(90deg) scale(1.05);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-30px, 40px) rotate(180deg) scale(1.1);
+        opacity: 0.5;
+    }
+
+    75% {
+        transform: translate(40px, -20px) rotate(270deg) scale(1.05);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Subtle Pulse Effect */
+@keyframes subtlePulse {
+
+    0%,
+    100% {
+        filter: blur(0px);
+        opacity: 0.3;
+    }
+
+    50% {
+        filter: blur(1px);
+        opacity: 0.5;
+    }
+}
+
+.discount-tag {
+    animation: floatAround 20s infinite linear, subtlePulse 4s infinite ease-in-out;
 }
 
 h1,
@@ -52,13 +240,15 @@ h6,
 }
 
 @keyframes flash {
-    0%{
+    0% {
         color: var(--primary);
     }
-    50%{
+
+    50% {
         color: var(--primary-light);
     }
-    100%{
+
+    100% {
         color: var(--primary);
     }
 }
@@ -72,7 +262,7 @@ h6,
     transition: all 0.3s ease;
 }
 
-.text-primary{
+.text-primary {
     color: var(--primary) !important;
 }
 
@@ -243,63 +433,18 @@ h6,
 
 .hero-img {
     width: 100%;
-    height: auto;      /* sabse important */
-    display: block;    /* unwanted gap remove */
+    height: auto;
+    /* sabse important */
+    display: block;
+    /* unwanted gap remove */
     max-height: 350px;
     object-fit: cover;
     padding-top: 2rem;
 }
 
-
-
-
-
 .content-section {
     padding: 2rem 0rem;
     margin-bottom: 3rem;
-}
-
-.color-palette {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: center;
-}
-
-.color-item {
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.color-white {
-    background-color: var(--white);
-    color: var(--dark-amethyst);
-    border: 1px solid #eee;
-}
-
-.color-primary-light {
-    background-color: var(--primary-light);
-}
-
-.color-primary {
-    background-color: var(--primary);
-}
-
-.color-primary-dark {
-    background-color: var(--primary-dark);
-}
-
-.color-dark-amethyst {
-    background-color: var(--dark-amethyst);
 }
 
 .site-footer {
@@ -626,7 +771,7 @@ section {
 
 /* Modern Carousel */
 .modern-carousel {
-    background: var(--white);
+    /* background: var(--white); */
     padding: 0px 40px 60px 40px;
     height: 450px;
     position: relative;
@@ -653,7 +798,7 @@ section {
 
 /* Slide Content - Split Layout */
 
-.slide-link{
+.slide-link {
     height: 100%;
     width: 100%;
     display: block;
@@ -1250,12 +1395,12 @@ section {
     color: var(--primary-dark);
 }
 
-.shop-wrapper{
+.shop-wrapper {
     width: 100%;
 }
 
 .shop-wrapper .accordions-container {
-    /* background: white; */
+    background: white;
     padding: 10px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -2443,7 +2588,7 @@ section {
     text-align: center;
     margin-top: 60px;
     padding: 40px;
-    background: linear-gradient(135deg, rgba(153, 132, 212, 0.05), rgba(89, 46, 131, 0.02));
+    background: linear-gradient(135deg, rgba(153, 132, 212, 0.1), rgba(89, 46, 131, 0.1));
     border-radius: 20px;
     border: 1px solid rgba(153, 132, 212, 0.1);
 }
@@ -2626,7 +2771,7 @@ section {
         justify-content: center;
     }
 
-    .modern-carousel{
+    .modern-carousel {
         padding: 0;
         height: 400px;
     }
@@ -2680,7 +2825,7 @@ section {
 }
 
 @media (max-width: 992px) {
-    section{
+    section {
         margin-bottom: 5rem;
     }
 
@@ -2848,7 +2993,19 @@ section {
 }
 
 @media (max-width: 768px) {
-    section{
+
+    .discount-tag {
+        font-size: 3rem;
+    }
+
+    .tag-1 { font-size: 4rem; }
+    .tag-2 { font-size: 3rem; }
+    .tag-3 { font-size: 4.5rem; }
+    .tag-4 { font-size: 2.8rem; }
+    .tag-5 { font-size: 3.5rem; }
+    .tag-6 { font-size: 4rem; }
+
+    section {
         margin-bottom: 4rem;
     }
 
@@ -2861,7 +3018,7 @@ section {
         border-radius: 20px;
     }
 
-    .image-layout .image-container{
+    .image-layout .image-container {
         max-height: 280px;
     }
 
@@ -2990,7 +3147,7 @@ section {
         padding: 8px;
     }
 
-    .read-blog-btn{
+    .read-blog-btn {
         padding: 14px 20px;
         font-size: 1rem;
     }
@@ -3048,7 +3205,7 @@ section {
         text-align: center;
     }
 
-    .carousel-slide{
+    .carousel-slide {
         padding: 0;
     }
 
@@ -3104,7 +3261,7 @@ section {
 }
 
 @media (max-width: 576px) {
-    section{
+    section {
         margin-bottom: 3rem;
     }
 
@@ -3160,24 +3317,24 @@ section {
         padding: 12px;
     }
 
-    .rectangle-carousel{
+    .rectangle-carousel {
         padding: 20px 0;
     }
 
-    .blog-columns{
+    .blog-columns {
         padding: 0 20px;
     }
 
-    .featured-blog-excerpt{
+    .featured-blog-excerpt {
         font-size: 0.9rem;
     }
 
-    .read-blog-btn{
+    .read-blog-btn {
         padding: 10px 14px;
         font-size: 0.8rem;
     }
 
-    .section-wrapper{
+    .section-wrapper {
         padding: 0 20px;
     }
 
@@ -3276,27 +3433,38 @@ section {
         height: 250px;
     }
 
-    .nav-btn{
+    .nav-btn {
         display: none;
     }
 
-    .modern-carousel{
+    .modern-carousel {
         padding: 0;
     }
 
-    .slide-content{
+    .slide-content {
         min-height: 100px;
     }
 
-    .notice-wrapper p{
+    .notice-wrapper p {
         font-size: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
+    .discount-tag {
+        font-size: 2.5rem;
+    }
+
+    .tag-1 { font-size: 3.2rem; }
+    .tag-2 { font-size: 2.5rem; }
+    .tag-3 { font-size: 3.5rem; }
+    .tag-4 { font-size: 2.2rem; }
+    .tag-5 { font-size: 2.8rem; }
+
     .hero-img {
         max-height: 180px;
     }
+
     .unique-coupon-card {
         width: 100%;
         max-width: 320px;
