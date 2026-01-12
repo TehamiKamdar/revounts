@@ -17,3 +17,4 @@ use App\Http\Controllers\ReviewsController;
 
 Route::get('/', [HomeController::class , 'index'])->name('home');
 Route::get('/reviews', [ReviewsController::class , 'index'])->name('reviews');
+Route::get('/review/{id}', [ReviewsController::class , 'details'])->name('review.details');
