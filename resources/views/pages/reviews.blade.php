@@ -187,14 +187,14 @@
                     <span class="section-badge">Latest 12</span>
                 </div>
 
-                <!-- Filter Buttons -->
+                {{-- <!-- Filter Buttons -->
                 <div class="reviews-filter">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="5star">5 Stars</button>
                     <button class="filter-btn" data-filter="4star">4+ Stars</button>
                     <button class="filter-btn" data-filter="recent">Recent</button>
                     <button class="filter-btn" data-filter="critical">Critical</button>
-                </div>
+                </div> --}}
 
                 <!-- Reviews List -->
                 <div class="all-reviews-list">
@@ -398,4 +398,143 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<script>
+    // Filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const reviewCards = document.querySelectorAll('.review-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Filter reviews
+                    reviewCards.forEach(card => {
+                        const rating = parseInt(card.getAttribute('data-rating'));
+                        const date = card.getAttribute('data-date');
+
+                        let shouldShow = true;
+
+                        switch(filter) {
+                            case 'all':
+                                shouldShow = true;
+                                break;
+                            case '5star':
+                                shouldShow = rating === 5;
+                                break;
+                            case '4star':
+                                shouldShow = rating >= 4;
+                                break;
+                            case 'recent':
+                                shouldShow = date === 'today' || date === 'yesterday' || date === '2days';
+                                break;
+                            case 'critical':
+                                shouldShow = rating <= 3;
+                                break;
+                        }
+
+                        if (shouldShow) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(10px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Store review hover effect
+            const storeReviews = document.querySelectorAll('.store-review-item');
+            storeReviews.forEach(review => {
+                review.addEventListener('click', function() {
+                    // Add ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '15px';
+                    ripple.style.backgroundColor = 'rgba(158, 98, 255, 0.2)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.top = '0';
+                    ripple.style.left = '0';
+                    ripple.style.width = '100%';
+                    ripple.style.height = '100%';
+                    ripple.style.pointerEvents = 'none';
+
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+
+                    // Simulate store selection
+                    const storeName = this.querySelector('.store-review-name').textContent;
+                    alert(`Loading reviews from ${storeName}...`);
+                });
+            });
+
+            // Add animation to cards on hover
+            reviewCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Simulate real-time updates
+            // setInterval(() => {
+            //     const lastUpdated = document.querySelector('.dashboard-footer span');
+            //     const now = new Date();
+            //     const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            //     lastUpdated.textContent = `Last updated: ${timeString}`;
+
+            //     // Randomly update a stat
+            //     const statValues = document.querySelectorAll('.stat-value');
+            //     const randomStat = Math.floor(Math.random() * statValues.length);
+            //     const currentValue = parseInt(statValues[randomStat].textContent);
+
+            //     if (randomStat === 3) { // This month count
+            //         const newValue = currentValue + Math.floor(Math.random() * 3);
+            //         statValues[randomStat].textContent = newValue;
+
+            //         // Add animation
+            //         statValues[randomStat].style.transform = 'scale(1.2)';
+            //         statValues[randomStat].style.color = 'var(--primary-light)';
+
+            //         setTimeout(() => {
+            //             statValues[randomStat].style.transform = 'scale(1)';
+            //             statValues[randomStat].style.color = '';
+            //         }, 300);
+            //     }
+            // }, 10000); // Update every 10 seconds
+</script>
 @endsection

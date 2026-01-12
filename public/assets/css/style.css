@@ -2807,7 +2807,9 @@ section {
 
 /* Featured Review - Left Top */
 .reviews-layout .featured-review-card {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    background: url('https://placehold.co/1024x768/450077/9984d4') no-repeat;
+    background-size: cover;
+    background-position: center;
     color: white;
     border-radius: 20px;
     padding: 30px;
@@ -3004,7 +3006,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-height: 800px;
+    max-height: 900px;
     overflow-y: auto;
     padding-right: 10px;
 }
@@ -3104,14 +3106,14 @@ section {
 }
 
 /* Stats Bar */
-.reviews-layout .stats-bar {
+.stats-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 40px;
 }
 
-.reviews-layout .stat-card {
+.stat-card {
     background: white;
     border-radius: 15px;
     padding: 25px;
@@ -3120,11 +3122,11 @@ section {
     transition: transform 0.3s ease;
 }
 
-.reviews-layout .stat-card:hover {
+.stat-card:hover {
     transform: translateY(-5px);
 }
 
-.reviews-layout .stat-icon {
+.stat-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -3137,24 +3139,14 @@ section {
     margin: 0 auto 15px;
 }
 
-.reviews-layout .stat-value {
+.stat-value {
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-dark);
     margin-bottom: 5px;
 }
 
-.reviews-layout .stat-label {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* Footer */
-.reviews-layout .dashboard-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(158, 98, 255, 0.2);
+.stat-label {
     color: #666;
     font-size: 0.9rem;
 }
@@ -3414,7 +3406,7 @@ section {
 
 @media (max-width: 768px) {
 
-    .reviews-layout .stats-bar {
+    .stats-bar {
         grid-template-columns: repeat(2, 1fr);
     }
 

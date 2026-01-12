@@ -1040,7 +1040,6 @@
             `;
             document.head.appendChild(style);
 
-            // Simulate real-time updates
             setInterval(() => {
                 const lastUpdated = document.querySelector('.dashboard-footer span');
                 const now = new Date();
@@ -1065,7 +1064,7 @@
                         statValues[randomStat].style.color = '';
                     }, 300);
                 }
-            }, 10000); // Update every 10 seconds
+            }, 10000);
         });
     </script>
 </body>
