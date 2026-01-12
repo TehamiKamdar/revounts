@@ -1,12 +1,12 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="hero-section text-center">
-    <img src="{{ asset('assets/images/banner_1560x480.png') }}" alt="" style="padding-top: 0;" class="hero-img">
-</div>
-{{-- CSS Starting from Line 2748 --}}
-<section class="container content-section">
-    <div class="reviews-layout animate-in" style="animation-delay: 0.1s">
+    <div class="hero-section text-center">
+        <img src="{{ asset('assets/images/banner_1560x480.png') }}" alt="" style="padding-top: 0;" class="hero-img">
+    </div>
+    {{-- CSS Starting from Line 2748 --}}
+    <section class="container content-section">
+        <div class="reviews-layout animate-in" style="animation-delay: 0.1s">
             <!-- Left Sections -->
             <div class="left-sections">
                 <!-- Featured Review Section -->
@@ -214,7 +214,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">5.0</span>
                         </div>
-                        <p class="review-text">Best laptop I've ever owned. The battery life is incredible and performance is flawless for both work and gaming.</p>
+                        <p class="review-text">Best laptop I've ever owned. The battery life is incredible and performance
+                            is flawless for both work and gaming.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">MJ</div>
@@ -240,7 +241,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">4.0</span>
                         </div>
-                        <p class="review-text">Great sound quality and battery life. Noise cancellation works well but could be better for airplane noise.</p>
+                        <p class="review-text">Great sound quality and battery life. Noise cancellation works well but could
+                            be better for airplane noise.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">SR</div>
@@ -266,7 +268,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">5.0</span>
                         </div>
-                        <p class="review-text">Setup was surprisingly easy. Now my entire home is connected. The app interface is intuitive and responsive.</p>
+                        <p class="review-text">Setup was surprisingly easy. Now my entire home is connected. The app
+                            interface is intuitive and responsive.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">TW</div>
@@ -292,7 +295,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">3.0</span>
                         </div>
-                        <p class="review-text">Heart rate monitor is inaccurate during workouts. Sleep tracking works well but battery drains too fast.</p>
+                        <p class="review-text">Heart rate monitor is inaccurate during workouts. Sleep tracking works well
+                            but battery drains too fast.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">AL</div>
@@ -318,7 +322,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">5.0</span>
                         </div>
-                        <p class="review-text">Professional quality at home cook prices. Razor sharp and beautifully balanced. Worth every penny.</p>
+                        <p class="review-text">Professional quality at home cook prices. Razor sharp and beautifully
+                            balanced. Worth every penny.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">DC</div>
@@ -344,7 +349,8 @@
                             </div>
                             <span style="font-weight: 600; color: var(--primary);">2.0</span>
                         </div>
-                        <p class="review-text">Bass is weak and Bluetooth connectivity drops frequently. Expected better for this price range.</p>
+                        <p class="review-text">Bass is weak and Bluetooth connectivity drops frequently. Expected better for
+                            this price range.</p>
                         <div class="review-footer">
                             <div class="reviewer">
                                 <div class="reviewer-avatar">KP</div>
@@ -391,5 +397,5 @@
                 <div class="stat-label">This Month</div>
             </div>
         </div>
-</section>
+    </section>
 @endsection
