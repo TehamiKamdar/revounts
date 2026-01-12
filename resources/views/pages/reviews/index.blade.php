@@ -201,7 +201,7 @@
                     <!-- Review 1 -->
                     <div class="review-card" data-rating="5" data-date="today">
                         <div class="review-card-header">
-                            <div class="review-product">UltraBook Pro Laptop</div>
+                            <a href="{{ route('review.details', 'ultrabook-pro-laptop') }}" class="review-product">UltraBook Pro Laptop</a>
                             <span class="review-category">Electronics</span>
                         </div>
                         <div class="review-rating">
