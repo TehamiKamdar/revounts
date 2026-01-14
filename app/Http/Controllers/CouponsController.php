@@ -9,4 +9,8 @@ class CouponsController extends Controller
     public function index(){
         return view('pages.coupons.index');
     }
+
+    public function details($id){
+        return view('pages.coupons.details');
+    }
 }

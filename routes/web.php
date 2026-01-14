@@ -20,3 +20,4 @@ Route::get('/', [HomeController::class , 'index'])->name('home');
 Route::get('/reviews', [ReviewsController::class , 'index'])->name('reviews');
 Route::get('/review/{id}', [ReviewsController::class , 'details'])->name('review.details');
 Route::get('/coupons', [CouponsController::class , 'index'])->name('coupons');
+Route::get('/coupon/{id}', [CouponsController::class , 'details'])->name('coupon.details');

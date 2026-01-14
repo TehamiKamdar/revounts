@@ -400,7 +400,7 @@
                         <i class="fas fa-tag"></i> 42 Active Coupons
                     </div>
                     <p class="brand-description">Everything from electronics to groceries with fast delivery.</p>
-                    <a href="#" class="view-coupons-btn">
+                    <a href="{{ route('coupon.details', 'amazon-promo-coupons') }}" class="view-coupons-btn">
                         View All Coupons <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
