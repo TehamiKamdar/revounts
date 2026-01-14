@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Coupons | Affiliate Marketing</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --white: #ffffff;
+            --primary-light: #9e62ff;
+            --primary: #592e83;
+            --primary-dark: #450077;
+            --dark-amethyst: #150132;
+            --font-family: "Archivo", Helvetica, sans-serif;
+            --heading-font-family: "Aleo", "Times New Roman", serif;
+            --gradient-start: #f262ff;
+            --gradient-end: #7a43d3;
+            --season-theme-color: #BC1719;
+            --season-theme-bg-color: #FFE2E2;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--dark-amethyst);
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font-family);
+            color: var(--primary);
+        }
+        
+        /* Custom Navbar */
+        .navbar-custom {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-family: var(--heading-font-family);
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.8rem;
+        }
+        
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(89, 46, 131, 0.3);
+        }
+        
+        /* Coupon Card Styles */
+        .coupon-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .coupon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.15);
+        }
+        
+        .coupon-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .coupon-title {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .coupon-code {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 2px dashed var(--primary-light);
+        }
+        
+        .coupon-body {
+            padding: 25px;
+        }
+        
+        .coupon-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .coupon-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .expiry-date {
+            color: var(--season-theme-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .usage-count {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .usage-count i {
+            margin-right: 5px;
+        }
+        
+        /* Brand Info Sidebar */
+        .brand-sidebar {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 30px;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .brand-logo {
+            width: 150px;
+            height: auto;
+            margin: 0 auto 25px;
+            display: block;
+        }
+        
+        .brand-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        .brand-category {
+            text-align: center;
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .brand-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .brand-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .brand-website-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-website-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Seasonal Badge */
+        .seasonal-badge {
+            background-color: var(--season-theme-bg-color);
+            color: var(--season-theme-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .filter-btn {
+            background-color: #f0f0f0;
+            border: none;
+            color: var(--dark-amethyst);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-amethyst);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer h5 {
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+        
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--primary-light);
+        }
+        
+        /* Copy to Clipboard Button */
+        .copy-btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .copy-btn.copied {
+            background-color: #28a745;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .brand-sidebar {
+                position: static;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tag me-2"></i>CouponHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-primary-custom" href="#">
+                            <i class="fas fa-user me-2"></i>My Account
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">Amazon Coupons & Deals</h1>
+            <p class="page-subtitle">Save big with these verified coupons and promo codes for Amazon</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Coupon List Section - col-8 -->
+            <div class="col-lg-8">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <h5 class="filter-label">Filter by:</h5>
+                    <div class="d-flex flex-wrap">
+                        <button class="filter-btn active" data-filter="all">All Coupons</button>
+                        <button class="filter-btn" data-filter="free-shipping">Free Shipping</button>
+                        <button class="filter-btn" data-filter="percentage">Percentage Off</button>
+                        <button class="filter-btn" data-filter="cashback">Cashback</button>
+                        <button class="filter-btn" data-filter="expiring">Expiring Soon</button>
+                    </div>
+                </div>
+                
+                <!-- Coupon List -->
+                <div class="coupon-list">
+                    <!-- Coupon 1 -->
+                    <div class="coupon-card" data-coupon-type="percentage">
+                        <div class="coupon-header">
+                            <h3 class="coupon-title">30% Off Electronics</h3>
+                            <div class="d-flex align-items-center">
+                                <div class="coupon-code" id="coupon1">AMAZON30</div>
+                                <button class="copy-btn" data-clipboard-target="#coupon1">
+                                    <i class="fas fa-copy me-1"></i>Copy
+                                </button>
+                            </div>
+                            <span class="seasonal-badge">
+                                <i class="fas fa-bolt me-1"></i>Limited Time
+                            </span>
+                        </div>
+                        <div class="coupon-body">
+                            <p class="coupon-description">
+                                Save 30% on select electronics including laptops, tablets, headphones, and smart home devices. Minimum purchase of $100 required. Valid on new orders only.
+                            </p>
+                            <div class="coupon-meta">
+                                <div class="expiry-date">
+                                    <i class="fas fa-clock me-1"></i>Expires: 12/31/2023
+                                </div>
+                                <div class="usage-count">
+                                    <i class="fas fa-users"></i> 2,548 used today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 2 -->
+                    <div class="coupon-card" data-coupon-type="free-shipping">
+                        <div class="coupon-header">
+                            <h3 class="coupon-title">Free Express Shipping</h3>
+                            <div class="d-flex align-items-center">
+                                <div class="coupon-code" id="coupon2">FREESHIP</div>
+                                <button class="copy-btn" data-clipboard-target="#coupon2">
+                                    <i class="fas fa-copy me-1"></i>Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="coupon-body">
+                            <p class="coupon-description">
+                                Get free express shipping on all orders over $35. No code needed at checkout. Applies to standard shipping times. Valid for Prime and non-Prime members.
+                            </p>
+                            <div class="coupon-meta">
+                                <div class="expiry-date">
+                                    <i class="fas fa-clock me-1"></i>No Expiry
+                                </div>
+                                <div class="usage-count">
+                                    <i class="fas fa-users"></i> 5,231 used today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 3 -->
+                    <div class="coupon-card" data-coupon-type="cashback">
+                        <div class="coupon-header">
+                            <h3 class="coupon-title">$25 Cashback on $100+</h3>
+                            <div class="d-flex align-items-center">
+                                <div class="coupon-code" id="coupon3">CASHBACK25</div>
+                                <button class="copy-btn" data-clipboard-target="#coupon3">
+                                    <i class="fas fa-copy me-1"></i>Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="coupon-body">
+                            <p class="coupon-description">
+                                Get $25 cashback when you spend $100 or more on eligible items. Cashback will be credited to your account within 14 days. First-time customers only.
+                            </p>
+                            <div class="coupon-meta">
+                                <div class="expiry-date">
+                                    <i class="fas fa-clock me-1"></i>Expires: 11/15/2023
+                                </div>
+                                <div class="usage-count">
+                                    <i class="fas fa-users"></i> 1,874 used today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 4 -->
+                    <div class="coupon-card" data-coupon-type="percentage">
+                        <div class="coupon-header">
+                            <h3 class="coupon-title">50% Off Fashion</h3>
+                            <div class="d-flex align-items-center">
+                                <div class="coupon-code" id="coupon4">STYLE50</div>
+                                <button class="copy-btn" data-clipboard-target="#coupon4">
+                                    <i class="fas fa-copy me-1"></i>Copy
+                                </button>
+                            </div>
+                            <span class="seasonal-badge">
+                                <i class="fas fa-star me-1"></i>Exclusive
+                            </span>
+                        </div>
+                        <div class="coupon-body">
+                            <p class="coupon-description">
+                                Enjoy 50% off on select fashion items including clothing, shoes, and accessories. Limited to certain brands and styles. While supplies last.
+                            </p>
+                            <div class="coupon-meta">
+                                <div class="expiry-date">
+                                    <i class="fas fa-clock me-1"></i>Expires: 10/30/2023
+                                </div>
+                                <div class="usage-count">
+                                    <i class="fas fa-users"></i> 3,456 used today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 5 -->
+                    <div class="coupon-card" data-coupon-type="expiring">
+                        <div class="coupon-header">
+                            <h3 class="coupon-title">20% Off Prime Membership</h3>
+                            <div class="d-flex align-items-center">
+                                <div class="coupon-code" id="coupon5">PRIME20</div>
+                                <button class="copy-btn" data-clipboard-target="#coupon5">
+                                    <i class="fas fa-copy me-1"></i>Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="coupon-body">
+                            <p class="coupon-description">
+                                Get 20% off on your first year of Amazon Prime membership. Includes all Prime benefits like free shipping, Prime Video, and Prime Music.
+                            </p>
+                            <div class="coupon-meta">
+                                <div class="expiry-date">
+                                    <i class="fas fa-clock me-1"></i>Expires: 10/15/2023
+                                </div>
+                                <div class="usage-count">
+                                    <i class="fas fa-users"></i> 892 used today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brand Info Section - col-4 -->
+            <div class="col-lg-4">
+                <div class="brand-sidebar">
+                    <!-- Brand Logo -->
+                    <div class="text-center mb-4">
+                        <div style="width: 150px; height: 150px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-shopping-bag fa-4x" style="color: white;"></i>
+                        </div>
+                        <h2 class="brand-title">Amazon</h2>
+                        <div class="brand-category">
+                            <i class="fas fa-globe me-2"></i>E-commerce & Retail
+                        </div>
+                    </div>
+                    
+                    <!-- Brand Description -->
+                    <p class="brand-description">
+                        Amazon is the world's largest online retailer and a prominent cloud services provider. Founded in 1994 by Jeff Bezos, it started as an online bookstore but has since expanded to a wide variety of product categories.
+                    </p>
+                    <p class="brand-description">
+                        Amazon offers everything from electronics, clothing, and household goods to digital content, groceries, and more. With Amazon Prime, customers get benefits like free shipping, streaming video, and exclusive deals.
+                    </p>
+                    
+                    <!-- Brand Stats -->
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">4.8</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">42</div>
+                            <div class="stat-label">Coupons</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Success</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Brand Website Button -->
+                    <a href="https://www.amazon.com" class="brand-website-btn" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>Visit Amazon Website
+                    </a>
+                    
+                    <!-- Additional Brand Info -->
+                    <div class="mt-4">
+                        <h5><i class="fas fa-check-circle me-2" style="color: var(--primary-light);"></i>Why Shop Here?</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-shipping-fast me-2" style="color: var(--primary-light);"></i>Fast & free shipping options</li>
+                            <li class="mb-2"><i class="fas fa-shield-alt me-2" style="color: var(--primary-light);"></i>Secure payment & buyer protection</li>
+                            <li class="mb-2"><i class="fas fa-undo me-2" style="color: var(--primary-light);"></i>Easy returns within 30 days</li>
+                            <li class="mb-2"><i class="fas fa-headset me-2" style="color: var(--primary-light);"></i>24/7 customer support</li>
+                            <li><i class="fas fa-box-open me-2" style="color: var(--primary-light);"></i>Wide product selection</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Share Buttons -->
+                    <div class="mt-4">
+                        <h5><i class="fas fa-share-alt me-2" style="color: var(--primary-light);"></i>Share These Deals</h5>
+                        <div class="d-flex justify-content-between mt-3">
+                            <a href="#" class="btn" style="background-color: #3b5998; color: white; width: 48%;">
+                                <i class="fab fa-facebook-f me-1"></i> Facebook
+                            </a>
+                            <a href="#" class="btn" style="background-color: #1da1f2; color: white; width: 48%;">
+                                <i class="fab fa-twitter me-1"></i> Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-tag me-2"></i>CouponHub</h5>
+                    <p class="mt-3">Your trusted source for the best coupons, promo codes, and deals from top brands worldwide.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">About Us</a></li>
+                        <li class="mb-2"><a href="#">Brand Directory</a></li>
+                        <li class="mb-2"><a href="#">How It Works</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@couponhub.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Business St, City, State</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: #444; margin: 30px 0;">
+            <div class="text-center">
+                <p>&copy; 2023 CouponHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Copy coupon code functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-clipboard-target');
+                const couponCode = document.querySelector(targetId).textContent;
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(couponCode).then(() => {
+                    // Change button text temporarily
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+                    this.classList.add('copied');
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                const couponCards = document.querySelectorAll('.coupon-card');
+                
+                if (filterValue === 'all') {
+                    // Show all coupons
+                    couponCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                } else {
+                    // Show only filtered coupons
+                    couponCards.forEach(card => {
+                        const couponType = card.getAttribute('data-coupon-type');
+                        if (couponType === filterValue || (filterValue === 'expiring' && card.querySelector('.expiry-date').textContent.includes('Expires:'))) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const couponCards = document.querySelectorAll('.coupon-card');
+            couponCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
