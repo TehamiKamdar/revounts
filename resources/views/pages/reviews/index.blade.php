@@ -293,7 +293,7 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <span style="font-weight: 600; color: var(--primary);">3.0</span>
+                            <span style="font-weight: 60ins0; color: var(--primary);">3.0</span>
                         </div>
                         <p class="review-text">Heart rate monitor is inaccurate during workouts. Sleep tracking works well
                             but battery drains too fast.</p>

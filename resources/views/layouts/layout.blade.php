@@ -60,7 +60,7 @@
                         <a class="nav-link {{ Route::is('reviews') || Route::is('review.details') ? 'active' : '' }}" aria-current="page" href="{{ route('reviews') }}">Reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Coupons</a>
+                        <a class="nav-link {{ Route::is(patterns: 'coupons') || Route::is('coupon.details') ? 'active' : '' }}" aria-current="page" href="{{ route('coupons') }}" href="#">Coupons</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blogs</a>

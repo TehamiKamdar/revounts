@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CouponsController;
 use App\Http\Controllers\ReviewsController;
 
 /*
@@ -18,3 +19,4 @@ use App\Http\Controllers\ReviewsController;
 Route::get('/', [HomeController::class , 'index'])->name('home');
 Route::get('/reviews', [ReviewsController::class , 'index'])->name('reviews');
 Route::get('/review/{id}', [ReviewsController::class , 'details'])->name('review.details');
+Route::get('/coupons', [CouponsController::class , 'index'])->name('coupons');
