@@ -2,697 +2,804 @@
 
 @section('styles')
     <style>
-        
-        
-        /* COMPACT COUPON CARD DESIGN */
-        .coupon-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            margin-bottom: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-            display: flex;
-            height: 120px; /* Fixed height for compact design */
-        }
-        
-        .coupon-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(89, 46, 131, 0.12);
-            border-color: var(--primary-light);
-        }
-        
-        .coupon-content {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .coupon-header {
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 80px 0;
             position: relative;
-            margin-bottom: 8px;
+            overflow: hidden;
         }
-        
-        .coupon-title {
-            font-size: 1.1rem;
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-            line-height: 1.3;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        
-        .coupon-description {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
         }
-        
-        .coupon-meta {
+
+        /* Search Bar */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             display: flex;
             align-items: center;
-            font-size: 0.85rem;
-            color: #777;
-            margin-top: 8px;
         }
-        
-        .expiry-date {
-            color: var(--season-theme-color);
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 20px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-weight: 600;
-            margin-right: 15px;
-        }
-        
-        .usage-count i {
-            margin-right: 5px;
-        }
-        
-        /* HIDDEN COUPON CODE PANEL - PARTIALLY HIDDEN */
-        .coupon-code-panel {
-            width: 180px;
-            background: linear-gradient(135deg, #f5f5f5, #e9ecef);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            position: relative;
-            border-left: 2px dashed #ccc;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
-        .coupon-card.revealed .coupon-code-panel,
-        .coupon-code-panel.revealed {
+
+        .search-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--white);
+            padding: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Brand Cards - col-3 */
+        .brand-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
+        }
+
+        .brand-card-header {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-        }
-        
-        .hidden-code-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        
-        .hidden-part {
-            color: #999;
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            font-family: monospace;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
             position: relative;
         }
-        
-        .hidden-part::before {
-            content: "••••••";
-            letter-spacing: 3px;
-        }
-        
-        .visible-part {
-            color: var(--primary);
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            font-family: monospace;
-            margin-left: 5px;
-        }
-        
-        /* Revealed Code Styles */
-        .revealed-code {
-            display: none;
-            text-align: center;
-            color: white;
-        }
-        
-        .coupon-card.revealed .hidden-code-container,
-        .coupon-code-panel.revealed .hidden-code-container {
-            display: none;
-        }
-        
-        .coupon-card.revealed .revealed-code,
-        .coupon-code-panel.revealed .revealed-code {
-            display: block;
-            animation: fadeInUp 0.3s ease;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .coupon-code-label {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .full-coupon-code {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin: 5px 0;
-            font-family: monospace;
-            color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-        
-        .coupon-action {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-top: 8px;
-            color: white;
-        }
-        
-        .coupon-action i {
-            margin-right: 5px;
-        }
-        
-        .click-hint {
-            font-size: 0.75rem;
-            color: #777;
-            margin-top: 8px;
-            text-align: center;
-        }
-        
-        .click-hint i {
-            margin-right: 5px;
-        }
-        
-        /* Badge Styles */
-        .coupon-badge {
+
+        .discount-badge {
             position: absolute;
-            top: 0;
-            right: 0;
-            background-color: var(--season-theme-bg-color);
+            top: 15px;
+            right: 15px;
+            background: var(--season-theme-bg-color);
             color: var(--season-theme-color);
-            padding: 3px 10px;
-            border-radius: 0 0 0 8px;
-            font-size: 0.75rem;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
-        
-        .badge-exclusive {
-            background-color: #FFE8D6;
-            color: #E85D04;
-        }
-        
-        .badge-popular {
-            background-color: #D8F3DC;
-            color: #2D6A4F;
-        }
-        
-        .badge-limited {
-            background-color: #FFE2E2;
-            color: #BC1719;
-        }
-        
-        /* Brand Info Sidebar */
-        .brand-sidebar {
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            padding: 25px;
-            position: sticky;
-            top: 20px;
-        }
-        
-        .brand-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .brand-logo-container {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
-        }
-        
-        .brand-title {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            color: var(--primary-dark);
-        }
-        
-        .brand-category {
-            color: var(--primary-light);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .brand-description {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        
-        .brand-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 12px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 2rem;
             color: var(--primary);
+        }
+
+        .brand-name {
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 5px;
         }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            color: #777;
+
+        .brand-category {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
-        
-        .brand-website-btn {
+
+        .brand-card-body {
+            padding: 25px;
+        }
+
+        .coupon-count {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .coupon-count i {
+            margin-right: 8px;
+        }
+
+        .view-coupons-btn {
             display: block;
             width: 100%;
             text-align: center;
-            background-color: var(--primary);
+            background: var(--primary-light);
             color: white;
             padding: 12px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 15px;
             transition: all 0.3s ease;
+            margin-top: 15px;
         }
-        
-        .brand-website-btn:hover {
-            background-color: var(--primary-dark);
+
+        .view-coupons-btn:hover {
+            background: var(--primary);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(89, 46, 131, 0.3);
         }
-        
-        .brand-features {
-            margin-top: 25px;
+
+        /* Benefits Section - 100% width cards */
+        .benefits-section {
+            background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
+            padding: 60px 0;
+            margin: 60px 0;
         }
-        
-        .feature-item {
+
+        .benefit-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        
-        .feature-item i {
-            color: var(--primary-light);
-            margin-right: 10px;
-            width: 20px;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            padding: 30px 0;
-            margin-bottom: 30px;
-            border-radius: 0 0 12px 12px;
-        }
-        
-        .page-title {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
             color: white;
         }
-        
-        .page-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Filter Section */
-        .filter-section {
-            background-color: var(--white);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        
-        .filter-label {
-            font-weight: 600;
-            margin-bottom: 10px;
+
+        .benefit-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: var(--primary);
+        }
+
+        .benefit-description {
+            color: #666;
             font-size: 1rem;
         }
-        
-        .filter-btn {
-            background-color: #f0f0f0;
-            border: none;
-            color: var(--dark-amethyst);
-            padding: 6px 15px;
-            border-radius: 20px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+
+        /* New Stores Section */
+        .store-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            margin-bottom: 30px;
+            border: 1px solid #f0f0f0;
         }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background-color: var(--primary);
-            color: white;
+
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
+        }
+
+        .store-logo {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #f5f5f5, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .store-info {
+            padding: 25px;
+        }
+
+        .store-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .store-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Content Writing Section */
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 60px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .content-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary-dark);
+        }
+
+        .content-text {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .content-highlight {
+            background: linear-gradient(135deg, rgba(158, 98, 255, 0.1), rgba(122, 67, 211, 0.1));
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 30px 0;
+        }
+
+        .content-highlight p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--primary);
+            margin: 0;
         }
     </style>
 @endsection
 
 @section('content')
-<div class="container content-section">
-    <div class="row">
-        <!-- Coupon List Section - col-8 -->
-        <div class="col-lg-8">
-            <!-- Filter Section -->
-            <div class="filter-section">
-                <h5 class="filter-label">Filter Coupons:</h5>
-                <div class="d-flex flex-wrap">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="free-shipping">Free Shipping</button>
-                    <button class="filter-btn" data-filter="percentage">% Off</button>
-                    <button class="filter-btn" data-filter="cashback">Cashback</button>
-                    <button class="filter-btn" data-filter="limited">Limited Time</button>
-                </div>
-            </div>
-            
-            <!-- Coupon List -->
-            <div class="coupon-list">
-                <!-- Coupon 1 -->
-                <div class="coupon-card" data-coupon-type="percentage">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-limited">Ending Soon</div>
-                            <h3 class="coupon-title">30% Off Electronics & Gadgets</h3>
-                            <p class="coupon-description">Save on laptops, tablets, headphones, and smart home devices. Min. purchase $100.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 12/31/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 2.5k used
-                                </div>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="hero-title">Save Big with Exclusive Coupons & Deals</h1>
+                    <p class="hero-subtitle">Find the best discounts, promo codes, and special offers from 5000+ top
+                        brands. Start saving today!</p>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" class="search-input"
+                                placeholder="Search for stores, brands, or categories...">
+                            <button class="search-btn">
+                                <i class="fas fa-search me-2"></i>Find Deals
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h3 class="stat-number">5,000+</h3>
+                                <p class="stat-text">Brands & Stores</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="AMAZON30">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">30</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">AMAZON30</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coupon 2 -->
-                <div class="coupon-card" data-coupon-type="free-shipping">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-popular">Most Used</div>
-                            <h3 class="coupon-title">Free Express Shipping</h3>
-                            <p class="coupon-description">Free shipping on all orders over $35. No code needed. For Prime & non-Prime members.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date" style="color: #2D6A4F;">
-                                    <i class="fas fa-infinity me-1"></i>No Expiry
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 5.2k used
-                                </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h3 class="stat-number">25,000+</h3>
+                                <p class="stat-text">Active Coupons</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="FREESHIP">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">IP</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Auto Applied</div>
-                            <div class="full-coupon-code">FREESHIP</div>
-                            <div class="coupon-action">No Code Needed</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coupon 3 -->
-                <div class="coupon-card" data-coupon-type="cashback">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <h3 class="coupon-title">$25 Cashback on $100+ Orders</h3>
-                            <p class="coupon-description">Get cashback credited to your account within 14 days. First-time customers only.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 11/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 1.8k used
-                                </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <h3 class="stat-number">₹2.5Cr+</h3>
+                                <p class="stat-text">Saved by Users</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="CASHBACK25">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">25</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">CASHBACK25</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coupon 4 -->
-                <div class="coupon-card" data-coupon-type="percentage">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-exclusive">Exclusive</div>
-                            <h3 class="coupon-title">50% Off Fashion Items</h3>
-                            <p class="coupon-description">Half off on select clothing, shoes & accessories. Limited brands & styles.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 10/30/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 3.4k used
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="STYLE50">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">50</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">STYLE50</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coupon 5 -->
-                <div class="coupon-card" data-coupon-type="percentage">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-limited">Limited</div>
-                            <h3 class="coupon-title">20% Off Prime Membership</h3>
-                            <p class="coupon-description">Discount on first year of Amazon Prime. Includes all Prime benefits.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 10/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 892 used
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="PRIME20">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">20</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">PRIME20</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coupon 6 -->
-                <div class="coupon-card" data-coupon-type="cashback">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <h3 class="coupon-title">10% Cashback on Home & Kitchen</h3>
-                            <p class="coupon-description">Get cashback on appliances, cookware, and home essentials. Min. spend $50.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 12/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 1.2k used
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="HOME10CB">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">CB</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">HOME10CB</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Brand Info Section - col-4 -->
-        <div class="col-lg-4">
-            <div class="brand-sidebar">
-                <!-- Brand Header -->
-                <div class="brand-header">
-                    <div class="brand-logo-container">
-                        <i class="fas fa-a fa-3x" style="color: white;"></i>
+    </section>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Top Brands with Big Discounts</h2>
+            <p class="section-subtitle">Shop from your favorite brands and save with our exclusive coupon codes</p>
+        </div>
+
+        <div class="owl-carousel brand-carousel">
+            <!-- Brand Card 1 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">UP TO 70% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fab fa-amazon"></i>
                     </div>
-                    <h2 class="brand-title">Amazon</h2>
-                    <div class="brand-category">
-                        <i class="fas fa-shopping-cart me-2"></i>E-commerce Giant
+                    <h3 class="brand-name">Amazon</h3>
+                    <p class="brand-category">E-commerce & Retail</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 42 Active Coupons
+                    </div>
+                    <p class="brand-description">Everything from electronics to groceries with fast delivery.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 2 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">60% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fab fa-flipkart"></i>
+                    </div>
+                    <h3 class="brand-name">Flipkart</h3>
+                    <p class="brand-category">Online Shopping</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 35 Active Coupons
+                    </div>
+                    <p class="brand-description">Best deals on electronics, fashion, and home appliances.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 3 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">50% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="brand-name">Myntra</h3>
+                    <p class="brand-category">Fashion & Lifestyle</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 28 Active Coupons
+                    </div>
+                    <p class="brand-description">Latest fashion trends with exclusive discounts.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 4 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">40% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="brand-name">Zomato</h3>
+                    <p class="brand-category">Food Delivery</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 31 Active Coupons
+                    </div>
+                    <p class="brand-description">Order from your favorite restaurants with great deals.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 5 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">55% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="brand-name">Netflix</h3>
+                    <p class="brand-category">Entertainment</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 15 Active Coupons
+                    </div>
+                    <p class="brand-description">Stream unlimited movies and TV shows.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 6 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">65% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="brand-name">MakeMyTrip</h3>
+                    <p class="brand-category">Travel</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 42 Active Coupons
+                    </div>
+                    <p class="brand-description">Book flights, hotels, and holiday packages.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 7 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">45% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="brand-name">OnePlus</h3>
+                    <p class="brand-category">Electronics</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 22 Active Coupons
+                    </div>
+                    <p class="brand-description">Premium smartphones and accessories.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Brand Card 8 -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">30% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="brand-name">Ajio</h3>
+                    <p class="brand-category">Fashion</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 19 Active Coupons
+                    </div>
+                    <p class="brand-description">Trendy fashion for men and women.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add more brand cards as needed -->
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">35% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <h3 class="brand-name">Swiggy</h3>
+                    <p class="brand-category">Food Delivery</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 27 Active Coupons
+                    </div>
+                    <p class="brand-description">Fast food delivery from restaurants near you.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-card-header">
+                    <div class="discount-badge">25% OFF</div>
+                    <div class="brand-logo">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="brand-name">Uber</h3>
+                    <p class="brand-category">Transportation</p>
+                </div>
+                <div class="brand-card-body">
+                    <div class="coupon-count">
+                        <i class="fas fa-tag"></i> 18 Active Coupons
+                    </div>
+                    <p class="brand-description">Ride sharing and food delivery services.</p>
+                    <a href="#" class="view-coupons-btn">
+                        View All Coupons <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Navigation Buttons -->
+        <div class="carousel-navigation text-center mt-4">
+            <button class="btn btn-outline-primary me-2 prev-btn">
+                <i class="fas fa-chevron-left me-2"></i> Previous
+            </button>
+            <button class="btn btn-outline-primary next-btn">
+                Next <i class="fas fa-chevron-right ms-2"></i>
+            </button>
+        </div>
+
+        <!-- View All Brands Button -->
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-primary-custom btn-lg">
+                <i class="fas fa-store me-2"></i>View All 5000+ Brands
+            </a>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose SaveNow?</h2>
+                <p class="section-subtitle">We make saving money easy, reliable, and rewarding</p>
+            </div>
+
+            <div class="row">
+                <!-- Benefit 1 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="benefit-title">100% Verified Coupons</h3>
+                        <p class="benefit-description">Every coupon is tested and verified by our team to ensure it
+                            works perfectly when you need it.</p>
                     </div>
                 </div>
-                
-                <!-- Brand Description -->
-                <p class="brand-description">
-                    World's largest online retailer offering everything from electronics and clothing to groceries and digital content. Known for fast shipping and competitive prices.
-                </p>
-                
-                <!-- Brand Stats -->
-                <div class="brand-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">4.8/5</div>
-                        <div class="stat-label">Store Rating</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">42</div>
-                        <div class="stat-label">Active Coupons</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Avg. Update</div>
+
+                <!-- Benefit 2 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="benefit-title">Daily Updates</h3>
+                        <p class="benefit-description">We update our database daily with new coupons, deals, and expired
+                            offers removed.</p>
                     </div>
                 </div>
-                
-                <!-- Brand Website Button -->
-                <a href="https://www.amazon.com" class="brand-website-btn" target="_blank">
-                    <i class="fas fa-external-link-alt me-2"></i>Visit Amazon.com
-                </a>
-                
-                <!-- Brand Features -->
-                <div class="brand-features">
-                    <h5 style="font-size: 1rem; margin-bottom: 15px; color: var(--primary);">
-                        <i class="fas fa-check-circle me-2"></i>Why Shop Here
-                    </h5>
-                    <div class="feature-item">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Fast & free shipping options</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-undo"></i>
-                        <span>Easy 30-day returns</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Secure payment & buyer protection</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-box-open"></i>
-                        <span>Millions of products</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-tv"></i>
-                        <span>Prime Video & Music included</span>
+
+                <!-- Benefit 3 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="benefit-title">Exclusive Deals</h3>
+                        <p class="benefit-description">Get access to special offers and promo codes not available
+                            anywhere else.</p>
                     </div>
                 </div>
-                
-                <!-- Coupon Stats -->
-                <div class="mt-4 pt-3 border-top">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <small class="text-muted">Total Coupons:</small>
-                            <div class="fw-bold">42</div>
+            </div>
+
+            <div class="row">
+                <!-- Benefit 4 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-friends"></i>
                         </div>
-                        <div>
-                            <small class="text-muted">Updated:</small>
-                            <div class="fw-bold">Today</div>
+                        <h3 class="benefit-title">Community Driven</h3>
+                        <p class="benefit-description">Join our community of savers who share and rate coupons for
+                            better experience.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <div>
-                            <small class="text-muted">Last Added:</small>
-                            <div class="fw-bold">2 hours ago</div>
+                        <h3 class="benefit-title">Mobile Friendly</h3>
+                        <p class="benefit-description">Access coupons on the go with our mobile-optimized website and
+                            easy sharing.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
                         </div>
+                        <h3 class="benefit-title">24/7 Support</h3>
+                        <p class="benefit-description">Our support team is always ready to help you with any
+                            coupon-related issues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Stores Section -->
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Recently Added Stores</h2>
+            <p class="section-subtitle">Discover new brands and stores with exclusive discounts</p>
+        </div>
+
+        <div class="row">
+            <!-- Store 1 -->
+            <div class="col-md-4">
+                <div class="store-card">
+                    <div class="store-logo">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="store-info">
+                        <h3 class="store-name">Cult.fit</h3>
+                        <p class="store-description">Fitness classes, workouts, and wellness programs with certified
+                            trainers.</p>
+                        <a href="#" class="view-coupons-btn">
+                            <i class="fas fa-fire me-2"></i>12 Hot Deals
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store 2 -->
+            <div class="col-md-4">
+                <div class="store-card">
+                    <div class="store-logo">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="store-info">
+                        <h3 class="store-name">Blinkit</h3>
+                        <p class="store-description">Groceries and essentials delivered in minutes. Fastest delivery
+                            service.</p>
+                        <a href="#" class="view-coupons-btn">
+                            <i class="fas fa-fire me-2"></i>8 Hot Deals
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store 3 -->
+            <div class="col-md-4">
+                <div class="store-card">
+                    <div class="store-logo">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="store-info">
+                        <h3 class="store-name">GamesKraft</h3>
+                        <p class="store-description">Online gaming platform with rummy, poker, and fantasy sports.</p>
+                        <a href="#" class="view-coupons-btn">
+                            <i class="fas fa-fire me-2"></i>6 Hot Deals
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Content Writing Section -->
+    <div class="container">
+        <div class="content-section">
+            <h2 class="content-title">The Ultimate Guide to Saving Money Online</h2>
+
+            <p class="content-text">
+                In today's digital age, saving money has never been easier. With thousands of online stores and brands
+                offering discounts, cashback, and promo codes, you can significantly reduce your shopping expenses.
+                However, finding the right deals at the right time can be challenging.
+            </p>
+
+            <p class="content-text">
+                At SaveNow, we've made it our mission to simplify the process of finding and using coupons. Our platform
+                aggregates deals from across the web, verifies their validity, and presents them in an easy-to-use
+                format. Whether you're shopping for electronics, fashion, groceries, or travel, we have you covered.
+            </p>
+
+            <div class="content-highlight">
+                <p>"The average SaveNow user saves ₹5,000 annually by using our verified coupons and promo codes."</p>
+            </div>
+
+            <p class="content-text">
+                <strong>Tips for Maximizing Your Savings:</strong>
+            </p>
+
+            <ul class="content-text">
+                <li><strong>Stack Coupons:</strong> Combine multiple coupons when allowed for maximum savings</li>
+                <li><strong>Timing Matters:</strong> Look for seasonal sales and holiday discounts</li>
+                <li><strong>Sign Up for Newsletters:</strong> Many brands offer exclusive discounts to subscribers</li>
+                <li><strong>Check Expiry Dates:</strong> Always verify coupon validity before shopping</li>
+                <li><strong>Share with Friends:</strong> Some brands offer referral bonuses for sharing deals</li>
+            </ul>
+
+            <p class="content-text">
+                Our team works round the clock to ensure that you have access to the latest and most relevant deals. We
+                believe that everyone deserves to save money without compromising on quality or convenience.
+            </p>
+
+            <a href="#" class="btn btn-primary-custom mt-3">
+                <i class="fas fa-book me-2"></i>Read More Money Saving Tips
+            </a>
+        </div>
+    </div>
 @endsection
