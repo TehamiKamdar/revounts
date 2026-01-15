@@ -240,13 +240,8 @@
         }
 
         .brand-logo-container {
-            width: 120px;
-            height: 120px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0 auto 15px;
         }
 
@@ -385,14 +380,256 @@
             background-color: var(--primary);
             color: white;
         }
+
+        .main-heading {
+            color: var(--primary);
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-light);
+            margin-bottom: 25px;
+        }
+
+        .section-heading {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary-light);
+            border-bottom: 4px solid var(--primary-light);
+        }
+
+        /* Banner Area */
+        .banner-container {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-placeholder {
+            background: url("{{ asset('assets/images/banner_1320x450_amazon.png') }}")  center / cover no-repeat;
+            aspect-ratio: 1320 / 450;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Content Styling */
+        .content-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .content-section-blog {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+        .content-section {
+            padding: 0px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            margin-top: 3rem;
+        }
+
+        .content-section p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        /* Newsletter Sidebar */
+        .newsletter-sidebar {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary);
+        }
+
+        .newsletter-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .newsletter-form .form-control {
+            border: 2px solid #e0e0e0;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form .form-control:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 0.25rem rgba(158, 98, 255, 0.25);
+        }
+
+        .newsletter-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .banner-container {
+                padding: 20px;
+            }
+
+            .newsletter-sidebar {
+                margin-top: 30px;
+            }
+            .coupon-card{
+                height: 150px;
+            }
+            .coupon-title{
+                font-size: 1rem;
+            }
+            .coupon-description{
+                font-size: 0.9rem !important;
+            }
+            .wrap-reverse{
+                flex-direction: column-reverse;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .filter-btn{
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+            .coupon-card{
+                height: 110px;
+            }
+            .coupon-content{
+                padding: 15px;
+            }
+            .coupon-title{
+                font-size: 0.8rem;
+            }
+            .coupon-description{
+                font-size: 0.75rem !important;
+                margin-bottom: 8px !important;
+            }
+            .coupon-badge{
+                padding: 1px 4px;
+                font-size: 0.5rem;
+            }
+            .coupon-meta{
+                font-size: 0.7rem;
+            }
+            .hidden-part{
+                font-size: 1rem;
+            }
+            .click-hint{
+                font-size: 0.65rem;
+            }
+            .visible-part{
+                font-size: 1rem;
+            }
+            .brand-description {
+                font-size: 0.80rem !important;
+                text-align: center;
+                margin-bottom: 10px !important;
+            }
+            .brand-stats{
+                display: flex;
+                justify-content: space-around;
+                gap: 0;
+            }
+            .stat-item{
+                padding: 0.2rem 0.8rem;
+            }
+            .stat-number{
+                font-size: 1rem;
+            }
+            .stat-label{
+                font-size: 0.65rem;
+            }
+            .feature-item{
+                margin-bottom: 6px;
+                font-size: 0.75rem;
+            }
+            .main-heading{
+                font-size: calc(1.25rem + 1vw);
+                padding-bottom: 4px;
+                margin-bottom: 1rem;
+            }
+            h2{
+                font-size: calc(1rem + .8vw);
+            }
+            .content-section{
+                margin-top: 2rem;
+            }
+            .content-section p{
+                font-size: 0.9rem;
+                margin-bottom: 10px
+            }
+        }
+
+        @media(max-width: 420px){
+            .coupon-card{
+                height: 70px;
+            }
+            .coupon-content{
+                padding: 15px;
+            }
+            .coupon-title{
+                font-size: 0.7rem;
+            }
+            .coupon-description{
+                font-size: 0.35rem !important;
+                margin-bottom: 8px !important;
+            }
+            .coupon-badge{
+                padding: 0px 2px;
+                font-size: 0.3rem;
+            }
+            .coupon-meta{
+                font-size: 0.4rem;
+            }
+            .coupon-code-panel{
+                width: 100px
+            }
+            .hidden-part{
+                font-size: 0.6rem;
+            }
+            .click-hint{
+                font-size: 0.4rem;
+            }
+            .visible-part{
+                font-size: 0.6rem;
+            }
+            .coupon-code-label{
+                display: none;
+            }
+            .full-coupon-code{
+                font-size: 0.6rem;
+            }
+            .coupon-action{
+                font-size: 0.4rem;
+                margin-top: 4px;
+            }
+        }
     </style>
 @endsection
 
 @section('content')
 <div class="container content-section">
-    <div class="row">
+    <div class="row wrap-reverse">
         <!-- Coupon List Section - col-8 -->
-        <div class="col-lg-9">
+        <div class="col-12 col-lg-9">
             <!-- Filter Section -->
             <div class="filter-section">
                 <h5 class="filter-label">Filter Coupons:</h5>
@@ -605,7 +842,7 @@
         </div>
 
         <!-- Brand Info Section - col-4 -->
-        <div class="col-lg-3">
+        <div class="col-12 col-lg-3">
             <div class="brand-sidebar">
                 <!-- Brand Header -->
                 <div class="brand-header">
@@ -688,6 +925,77 @@
         </div>
     </div>
 
+</div>
+<div class="container">
+    <!-- Banner Area -->
+<div class="banner-container mt-4">
+    <div class="banner-placeholder">
+    </div>
+</div>
+
+<div class="content-section-blog">
+    <div class="row">
+    <!-- Main Content (col-9) -->
+    <div class="col-lg-9 col-md-12">
+        <h1 class="main-heading">More about Amazon</h1>
+
+        <!-- Section 1 -->
+        <div class="content-section">
+            <h2 class="section-heading">Amazon Web Services (AWS)</h2>
+            <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.</p>
+            <p>AWS provides services such as compute power, database storage, content delivery, and other functionality to help businesses scale and grow. The platform is known for its high availability, scalability, and security features that meet the needs of enterprise-level applications.</p>
+            <p>Key AWS services include Amazon EC2 for virtual servers, Amazon S3 for scalable storage, Amazon RDS for managed databases, and AWS Lambda for serverless computing.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="content-section">
+            <h2 class="section-heading">E-commerce & Amazon Marketplace</h2>
+            <p>Amazon's e-commerce platform is the largest online retailer in the world, serving customers in over 20 countries. The Amazon Marketplace allows third-party sellers to list and sell their products alongside Amazon's own offerings, creating a vast selection for customers.</p>
+            <p>Amazon Prime, the company's subscription service, offers members free two-day shipping, access to streaming of movies, TV shows and music, and other benefits. With over 200 million Prime members worldwide, this service has revolutionized customer expectations for delivery speed and convenience.</p>
+            <p>The company's logistics network, including fulfillment centers, delivery stations, and last-mile delivery capabilities, enables Amazon to offer same-day and next-day delivery for millions of items in many metropolitan areas.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="content-section">
+            <h2 class="section-heading">Artificial Intelligence & Alexa</h2>
+            <p>Amazon's AI capabilities are integrated across its services, most notably through Alexa, the cloud-based voice service that powers devices like Amazon Echo. Alexa can play music, answer questions, control smart home devices, and provide news, weather, and information.</p>
+            <p>Beyond consumer devices, Amazon offers AI and machine learning services through AWS, including Amazon SageMaker for building, training, and deploying machine learning models, Amazon Lex for building conversational interfaces, and Amazon Rekognition for image and video analysis.</p>
+            <p>These AI services are used by businesses across industries to enhance customer experiences, improve operational efficiency, and drive innovation in products and services.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="content-section">
+            <h2 class="section-heading">Entertainment & Prime Video</h2>
+            <p>Amazon Prime Video is a streaming service offering thousands of movies and TV shows, including award-winning Amazon Originals like "The Marvelous Mrs. Maisel," "The Boys," and "The Lord of the Rings: The Rings of Power." The service is included with Amazon Prime membership or available as a standalone subscription.</p>
+            <p>In addition to Prime Video, Amazon operates Amazon Music, Twitch (a live streaming service for gamers), Audible (audiobooks and spoken-word entertainment), and Amazon Games. This entertainment ecosystem creates multiple touchpoints with customers and represents a significant growth area for the company.</p>
+            <p>Amazon Studios produces and distributes original content globally, with a focus on creating high-quality series and films that attract and retain Prime members.</p>
+        </div>
+    </div>
+
+    <!-- Newsletter Sidebar (col-3) -->
+    <div class="col-lg-3 col-md-12">
+        <div class="newsletter-sidebar">
+            <h3 class="newsletter-title">Amazon Updates</h3>
+            <p class="text-center mb-4">Subscribe to receive the latest news about Amazon services and features.</p>
+
+            <form class="newsletter-form">
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your email address" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn newsletter-btn">
+                        <i class="fas fa-envelope me-2"></i>Subscribe
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-4 text-center">
+                <p class="small text-muted">We'll send you updates once a week. No spam, unsubscribe anytime.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 @endsection
 
