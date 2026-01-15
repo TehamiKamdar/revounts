@@ -408,7 +408,7 @@
             background: url("{{ asset('assets/images/banner_1320x450_amazon.png') }}")  center / cover no-repeat;
             aspect-ratio: 1320 / 450;
             display: block;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
         }
 
         /* Content Styling */
@@ -420,7 +420,7 @@
         .content-section-blog {
             background-color: white;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 0 0 8px 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             margin-bottom: 25px;
         }
