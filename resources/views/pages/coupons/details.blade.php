@@ -863,20 +863,20 @@
                 <!-- Brand Stats -->
                 <div class="brand-stats">
                     <div class="stat-item">
-                        <div class="stat-number">4.8/5</div>
-                        <div class="stat-label">Store Rating</div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Coupon Codes</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">42</div>
-                        <div class="stat-label">Active Coupons</div>
+                        <div class="stat-label">Deals</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Success Rate</div>
+                        <div class="stat-number">98</div>
+                        <div class="stat-label">Free Shipping</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Avg. Update</div>
+                        <div class="stat-number">90% Off</div>
+                        <div class="stat-label">Best Discount</div>
                     </div>
                 </div>
 
@@ -945,6 +945,7 @@
             <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.</p>
             <p>AWS provides services such as compute power, database storage, content delivery, and other functionality to help businesses scale and grow. The platform is known for its high availability, scalability, and security features that meet the needs of enterprise-level applications.</p>
             <p>Key AWS services include Amazon EC2 for virtual servers, Amazon S3 for scalable storage, Amazon RDS for managed databases, and AWS Lambda for serverless computing.</p>
+            <img src="{{ asset('assets/images/amazon_web_services_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
         </div>
 
         <!-- Section 2 -->
@@ -953,6 +954,7 @@
             <p>Amazon's e-commerce platform is the largest online retailer in the world, serving customers in over 20 countries. The Amazon Marketplace allows third-party sellers to list and sell their products alongside Amazon's own offerings, creating a vast selection for customers.</p>
             <p>Amazon Prime, the company's subscription service, offers members free two-day shipping, access to streaming of movies, TV shows and music, and other benefits. With over 200 million Prime members worldwide, this service has revolutionized customer expectations for delivery speed and convenience.</p>
             <p>The company's logistics network, including fulfillment centers, delivery stations, and last-mile delivery capabilities, enables Amazon to offer same-day and next-day delivery for millions of items in many metropolitan areas.</p>
+            <img src="{{ asset('assets/images/amazon_marketplace_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
         </div>
 
         <!-- Section 3 -->
@@ -961,6 +963,7 @@
             <p>Amazon's AI capabilities are integrated across its services, most notably through Alexa, the cloud-based voice service that powers devices like Amazon Echo. Alexa can play music, answer questions, control smart home devices, and provide news, weather, and information.</p>
             <p>Beyond consumer devices, Amazon offers AI and machine learning services through AWS, including Amazon SageMaker for building, training, and deploying machine learning models, Amazon Lex for building conversational interfaces, and Amazon Rekognition for image and video analysis.</p>
             <p>These AI services are used by businesses across industries to enhance customer experiences, improve operational efficiency, and drive innovation in products and services.</p>
+            <img src="{{ asset('assets/images/alexa_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
         </div>
 
         <!-- Section 4 -->
@@ -969,6 +972,7 @@
             <p>Amazon Prime Video is a streaming service offering thousands of movies and TV shows, including award-winning Amazon Originals like "The Marvelous Mrs. Maisel," "The Boys," and "The Lord of the Rings: The Rings of Power." The service is included with Amazon Prime membership or available as a standalone subscription.</p>
             <p>In addition to Prime Video, Amazon operates Amazon Music, Twitch (a live streaming service for gamers), Audible (audiobooks and spoken-word entertainment), and Amazon Games. This entertainment ecosystem creates multiple touchpoints with customers and represents a significant growth area for the company.</p>
             <p>Amazon Studios produces and distributes original content globally, with a focus on creating high-quality series and films that attract and retain Prime members.</p>
+            <img src="{{ asset('assets/images/amazon_prime_video_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
         </div>
     </div>
 
