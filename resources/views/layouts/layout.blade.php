@@ -63,7 +63,7 @@
                         <a class="nav-link {{ Route::is(patterns: 'coupons') || Route::is('coupon.details') ? 'active' : '' }}" aria-current="page" href="{{ route('coupons') }}" href="#">Coupons</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blogs</a>
+                        <a class="nav-link {{ Route::is(patterns: 'blogs') || Route::is('blog.details') ? 'active' : '' }}" href="{{ route('blogs') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Seasonal</a>
