@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Services</title>
+    <title>Affiliate Marketing Blog</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Aleo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Aleo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -31,242 +33,491 @@
 
         body {
             font-family: var(--font-family);
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
+            color: var(--dark-amethyst);
+            background-color: #f9f7ff;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--heading-font-family);
-            color: var(--primary-dark);
             font-weight: 600;
         }
 
-        .main-heading {
-            color: var(--primary);
-            font-weight: 700;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--primary-light);
-            margin-bottom: 25px;
-        }
-
-        .section-heading {
-            color: var(--primary);
-            margin-top: 30px;
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 4px solid var(--primary-light);
-        }
-
-        /* Banner Area */
-        .banner-container {
-            background-color: var(--dark-amethyst);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
+        /* Banner Styles */
+        .main-banner {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 80px 0;
             text-align: center;
-            color: white;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .banner-placeholder {
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
+        .main-banner:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .main-banner h1 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .banner-placeholder i {
-            font-size: 48px;
-            color: white;
+        .main-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
 
-        .banner-text {
-            font-size: 1.1rem;
+        /* Featured Blogs */
+        .featured-section {
+            margin-bottom: 50px;
         }
 
-        /* Content Styling */
-        .content-section {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        .section-title {
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--primary-light);
+            padding-bottom: 10px;
             margin-bottom: 25px;
+            position: relative;
         }
 
-        .content-section p {
-            font-size: 1.05rem;
-            margin-bottom: 15px;
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
         }
 
-        /* Newsletter Sidebar */
-        .newsletter-sidebar {
-            background-color: white;
-            padding: 25px;
+        .featured-card {
+            border: none;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
+        }
+
+        .featured-img {
+            height: 150px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .featured-card-body {
+            padding: 20px;
+            background-color: var(--white);
+        }
+
+        .featured-card-title {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        /* Main Content Area */
+        .main-content-card {
+            border: none;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .main-content-card:hover {
+            box-shadow: 0 10px 25px rgba(89, 46, 131, 0.15);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .blog-title {
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-title a:hover {
+            color: var(--primary-light);
+        }
+
+        .blog-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid var(--primary);
         }
 
-        .newsletter-title {
-            color: var(--primary);
+        .sidebar-title {
+            color: var(--primary-dark);
             font-weight: 700;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .trending-item {
+            padding: 15px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+
+        .trending-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-light);
+            color: var(--white);
             text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 10px;
         }
 
-        .newsletter-form .form-control {
-            border: 2px solid #e0e0e0;
-            padding: 12px 15px;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .newsletter-form .form-control:focus {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 0.25rem rgba(158, 98, 255, 0.25);
-        }
-
-        .newsletter-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px;
+        .trending-title {
+            color: var(--primary-dark);
             font-weight: 600;
-            width: 100%;
-            border-radius: 8px;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .newsletter-btn:hover {
-            background-color: var(--primary-dark);
+        .trending-title:hover {
+            color: var(--primary-light);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .banner-container {
-                padding: 20px;
-            }
-
-            .newsletter-sidebar {
-                margin-top: 30px;
-            }
+        /* Season Theme */
+        .season-badge {
+            background-color: var(--season-theme-bg-color);
+            color: var(--season-theme-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         /* Footer */
         .footer {
             background-color: var(--dark-amethyst);
-            color: white;
-            padding: 20px 0;
-            margin-top: 50px;
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
             text-align: center;
-            font-size: 0.9rem;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .main-banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .main-banner {
+                padding: 50px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container py-4">
-        <!-- Banner Area -->
-        <div class="banner-container">
-            <div class="banner-placeholder">
-                <i class="fas fa-image"></i>
-            </div>
-            <p class="banner-text">Replace this area with your Amazon banner image. Recommended size: 1200x180px.</p>
+    <!-- Banner Section -->
+    <section class="main-banner">
+        <div class="container">
+            <h1>Affiliate Marketing Insights</h1>
+            <p>Expert tips, strategies, and reviews to grow your affiliate marketing business and maximize your earnings</p>
         </div>
+    </section>
 
-        <div class="row">
-            <!-- Main Content (col-9) -->
-            <div class="col-lg-9 col-md-12">
-                <h1 class="main-heading">Amazon Services Overview</h1>
-
-                <!-- Section 1 -->
-                <div class="content-section">
-                    <h2 class="section-heading">Amazon Web Services (AWS)</h2>
-                    <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.</p>
-                    <p>AWS provides services such as compute power, database storage, content delivery, and other functionality to help businesses scale and grow. The platform is known for its high availability, scalability, and security features that meet the needs of enterprise-level applications.</p>
-                    <p>Key AWS services include Amazon EC2 for virtual servers, Amazon S3 for scalable storage, Amazon RDS for managed databases, and AWS Lambda for serverless computing.</p>
-                </div>
-
-                <!-- Section 2 -->
-                <div class="content-section">
-                    <h2 class="section-heading">E-commerce & Amazon Marketplace</h2>
-                    <p>Amazon's e-commerce platform is the largest online retailer in the world, serving customers in over 20 countries. The Amazon Marketplace allows third-party sellers to list and sell their products alongside Amazon's own offerings, creating a vast selection for customers.</p>
-                    <p>Amazon Prime, the company's subscription service, offers members free two-day shipping, access to streaming of movies, TV shows and music, and other benefits. With over 200 million Prime members worldwide, this service has revolutionized customer expectations for delivery speed and convenience.</p>
-                    <p>The company's logistics network, including fulfillment centers, delivery stations, and last-mile delivery capabilities, enables Amazon to offer same-day and next-day delivery for millions of items in many metropolitan areas.</p>
-                </div>
-
-                <!-- Section 3 -->
-                <div class="content-section">
-                    <h2 class="section-heading">Artificial Intelligence & Alexa</h2>
-                    <p>Amazon's AI capabilities are integrated across its services, most notably through Alexa, the cloud-based voice service that powers devices like Amazon Echo. Alexa can play music, answer questions, control smart home devices, and provide news, weather, and information.</p>
-                    <p>Beyond consumer devices, Amazon offers AI and machine learning services through AWS, including Amazon SageMaker for building, training, and deploying machine learning models, Amazon Lex for building conversational interfaces, and Amazon Rekognition for image and video analysis.</p>
-                    <p>These AI services are used by businesses across industries to enhance customer experiences, improve operational efficiency, and drive innovation in products and services.</p>
-                </div>
-
-                <!-- Section 4 -->
-                <div class="content-section">
-                    <h2 class="section-heading">Entertainment & Prime Video</h2>
-                    <p>Amazon Prime Video is a streaming service offering thousands of movies and TV shows, including award-winning Amazon Originals like "The Marvelous Mrs. Maisel," "The Boys," and "The Lord of the Rings: The Rings of Power." The service is included with Amazon Prime membership or available as a standalone subscription.</p>
-                    <p>In addition to Prime Video, Amazon operates Amazon Music, Twitch (a live streaming service for gamers), Audible (audiobooks and spoken-word entertainment), and Amazon Games. This entertainment ecosystem creates multiple touchpoints with customers and represents a significant growth area for the company.</p>
-                    <p>Amazon Studios produces and distributes original content globally, with a focus on creating high-quality series and films that attract and retain Prime members.</p>
-                </div>
-            </div>
-
-            <!-- Newsletter Sidebar (col-3) -->
-            <div class="col-lg-3 col-md-12">
-                <div class="newsletter-sidebar">
-                    <h3 class="newsletter-title">Amazon Updates</h3>
-                    <p class="text-center mb-4">Subscribe to receive the latest news about Amazon services and features.</p>
-
-                    <form class="newsletter-form">
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
+    <!-- Featured Blogs Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Blogs</h2>
+            <div class="row">
+                <!-- Featured Blog 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="featured-card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="featured-img" alt="Affiliate Strategies">
+                        <div class="featured-card-body">
+                            <h5 class="featured-card-title">Top 10 Affiliate Programs for Beginners in 2023</h5>
                         </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn newsletter-btn">
-                                <i class="fas fa-envelope me-2"></i>Subscribe
-                            </button>
-                        </div>
-                    </form>
+                    </div>
+                </div>
 
-                    <div class="mt-4 text-center">
-                        <p class="small text-muted">We'll send you updates once a week. No spam, unsubscribe anytime.</p>
+                <!-- Featured Blog 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="featured-card">
+                        <img src="https://images.unsplash.com/photo-1665686306578-2a4a28b6be43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="featured-img" alt="Marketing Tools">
+                        <div class="featured-card-body">
+                            <h5 class="featured-card-title">How to Double Your Conversion Rate with These Simple Techniques</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Blog 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="featured-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="featured-img" alt="SEO Tips">
+                        <div class="featured-card-body">
+                            <h5 class="featured-card-title">SEO Strategies That Actually Work for Affiliate Sites</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Blog 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="featured-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="featured-img" alt="SEO Tips">
+                        <div class="featured-card-body">
+                            <h5 class="featured-card-title">SEO Strategies That Actually Work for Affiliate Sites</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer">
+    <!-- Main Content Area -->
+    <section class="main-content">
         <div class="container">
-            <p>Amazon Services Layout &copy; 2023 | Created with Bootstrap 5 & Font Awesome 6</p>
-            <p class="small">This is a demonstration layout for educational purposes.</p>
+            <div class="row">
+                <!-- Main Blog List (col-9) -->
+                <div class="col-lg-9 col-md-8 mb-5">
+                    <h2 class="section-title mb-4">Latest Blog Posts</h2>
+
+                    <!-- Blog Post 1 -->
+                    <div class="row main-content-card align-items-center">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="blog-img" alt="Email Marketing">
+                        </div>
+                        <div class="col-md-8 p-4">
+                            <div class="season-badge"><i class="fas fa-bolt me-1"></i> HOT TOPIC</div>
+                            <div class="blog-date"><i class="far fa-calendar me-1"></i> October 15, 2023</div>
+                            <h3 class="blog-title"><a href="#">The Power of Email Marketing in Affiliate Sales</a></h3>
+                            <p class="blog-description">Learn how to build an email list that converts and drives consistent affiliate sales. We break down the best practices for email marketing in the affiliate space.</p>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="row main-content-card align-items-center">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="blog-img" alt="Analytics">
+                        </div>
+                        <div class="col-md-8 p-4">
+                            <div class="blog-date"><i class="far fa-calendar me-1"></i> October 10, 2023</div>
+                            <h3 class="blog-title"><a href="#">Tracking Your Affiliate Performance: Essential Analytics Tools</a></h3>
+                            <p class="blog-description">Discover the must-have analytics tools that will help you track your affiliate marketing performance and optimize your campaigns for maximum ROI.</p>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="row main-content-card align-items-center">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="blog-img" alt="Social Media">
+                        </div>
+                        <div class="col-md-8 p-4">
+                            <div class="blog-date"><i class="far fa-calendar me-1"></i> October 5, 2023</div>
+                            <h3 class="blog-title"><a href="#">Leveraging Social Media for Affiliate Marketing Success</a></h3>
+                            <p class="blog-description">A complete guide to using Instagram, TikTok, and Pinterest to promote affiliate products without being spammy or salesy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 4 -->
+                    <div class="row main-content-card align-items-center">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="blog-img" alt="Content Creation">
+                        </div>
+                        <div class="col-md-8 p-4">
+                            <div class="season-badge"><i class="fas fa-star me-1"></i> PREMIUM CONTENT</div>
+                            <div class="blog-date"><i class="far fa-calendar me-1"></i> September 28, 2023</div>
+                            <h3 class="blog-title"><a href="#">Content Creation Strategies That Drive Affiliate Sales</a></h3>
+                            <p class="blog-description">Learn how to create compelling content that naturally integrates affiliate products and drives conversions without alienating your audience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar (col-3) -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="sidebar-card">
+                        <h4 class="sidebar-title">Trending Blogs</h4>
+
+                        <div class="trending-item">
+                            <span class="trending-number">1</span>
+                            <a href="#" class="trending-title">Best Affiliate Programs</a>
+                        </div>
+
+                        <div class="trending-item">
+                            <span class="trending-number">2</span>
+                            <a href="#" class="trending-title">Conversion Optimization</a>
+                        </div>
+
+                        <div class="trending-item">
+                            <span class="trending-number">3</span>
+                            <a href="#" class="trending-title">SEO for Affiliates</a>
+                        </div>
+
+                        <div class="trending-item">
+                            <span class="trending-number">4</span>
+                            <a href="#" class="trending-title">Email List Building</a>
+                        </div>
+
+                        <div class="trending-item">
+                            <span class="trending-number">5</span>
+                            <a href="#" class="trending-title">Social Media Strategies</a>
+                        </div>
+
+                        <div class="trending-item">
+                            <span class="trending-number">6</span>
+                            <a href="#" class="trending-title">Analytics & Tracking</a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Sidebar Element -->
+                    <div class="sidebar-card">
+                        <h4 class="sidebar-title">Quick Tips</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Always disclose affiliate links</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Test multiple products before promoting</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Focus on solving problems, not just selling</li>
+                            <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Build trust with your audience first</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i> Track everything to optimize performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4>Affiliate Marketing Blog</h4>
+                    <p>Your go-to resource for affiliate marketing strategies, tips, and insights to grow your online business.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#">All Blogs</a></li>
+                        <li class="mb-2"><a href="#">Affiliate Programs</a></li>
+                        <li class="mb-2"><a href="#">Resources</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get weekly affiliate marketing tips and strategies.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 Affiliate Marketing Blog. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Simple form submission handler
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Simple script to add interaction to trending numbers
+        document.addEventListener('DOMContentLoaded', function() {
+            const trendingItems = document.querySelectorAll('.trending-item');
 
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value;
+            trendingItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
 
-            if(email) {
-                // Show success message
-                alert(`Thank you! You've successfully subscribed with email: ${email}`);
-
-                // Reset form
-                emailInput.value = '';
-            } else {
-                alert('Please enter a valid email address.');
-            }
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
         });
     </script>
 </body>
