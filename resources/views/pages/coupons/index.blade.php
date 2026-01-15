@@ -34,12 +34,12 @@
         .hero-subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 30px;
+            margin: 0px auto 30px;
             max-width: 600px;
         }
 
         /* Search Bar */
-        .search-container {
+        .search-container-coupon {
             max-width: 700px;
             margin: 0 auto 40px;
         }
@@ -106,7 +106,7 @@
         }
 
         /* Brand Cards - col-3 */
-        .brand-card {
+        .brand-card-new {
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -117,7 +117,7 @@
             border: 1px solid #f0f0f0;
         }
 
-        .brand-card:hover {
+        .brand-card-new:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
         }
@@ -328,6 +328,133 @@
             color: var(--primary);
             margin: 0;
         }
+
+        /* Owl Carousel Custom Styles */
+        .brand-carousel {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .brand-carousel .owl-stage {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .brand-carousel .brand-card-new {
+            margin: 0 15px;
+            height: 100%;
+        }
+
+        .owl-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.3);
+        }
+
+        .owl-carousel .owl-nav button {
+            background: var(--primary) !important;
+            color: white !important;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-nav button:hover {
+            background: var(--primary-dark) !important;
+            transform: scale(1.1);
+        }
+
+        .owl-carousel .owl-dots {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .owl-carousel .owl-dot {
+            width: 12px;
+            height: 12px;
+            background: #ddd !important;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-dot.active {
+            background: var(--primary) !important;
+            transform: scale(1.2);
+        }
+
+        /* Custom Navigation Buttons */
+        .carousel-navigation {
+            display: none;
+            /* Hide custom buttons if using owl nav */
+        }
+
+        /* Responsive Carousel */
+        @media (max-width: 768px) {
+            .owl-carousel .owl-nav {
+                display: none;
+            }
+
+            .carousel-navigation {
+                display: block;
+            }
+
+            .brand-carousel .brand-card {
+                margin: 0 10px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+
+            .search-input {
+                border-radius: 15px;
+                margin-bottom: 10px;
+            }
+
+            .search-btn {
+                width: 100%;
+                border-radius: 15px;
+            }
+
+            .content-section {
+                padding: 30px;
+            }
+        }
     </style>
 @endsection
 
@@ -342,7 +469,7 @@
                         brands. Start saving today!</p>
 
                     <!-- Search Bar -->
-                    <div class="search-container">
+                    <div class="search-container-coupon">
                         <div class="search-box">
                             <input type="text" class="search-input"
                                 placeholder="Search for stores, brands, or categories...">
@@ -368,7 +495,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="text-center">
-                                <h3 class="stat-number">₹2.5Cr+</h3>
+                                <h3 class="stat-number">$2M+</h3>
                                 <p class="stat-text">Saved by Users</p>
                             </div>
                         </div>
@@ -386,7 +513,7 @@
 
         <div class="owl-carousel brand-carousel">
             <!-- Brand Card 1 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">UP TO 70% OFF</div>
                     <div class="brand-logo">
@@ -407,7 +534,7 @@
             </div>
 
             <!-- Brand Card 2 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">60% OFF</div>
                     <div class="brand-logo">
@@ -428,7 +555,7 @@
             </div>
 
             <!-- Brand Card 3 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">50% OFF</div>
                     <div class="brand-logo">
@@ -449,7 +576,7 @@
             </div>
 
             <!-- Brand Card 4 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">40% OFF</div>
                     <div class="brand-logo">
@@ -470,7 +597,7 @@
             </div>
 
             <!-- Brand Card 5 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">55% OFF</div>
                     <div class="brand-logo">
@@ -491,7 +618,7 @@
             </div>
 
             <!-- Brand Card 6 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">65% OFF</div>
                     <div class="brand-logo">
@@ -512,7 +639,7 @@
             </div>
 
             <!-- Brand Card 7 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">45% OFF</div>
                     <div class="brand-logo">
@@ -533,7 +660,7 @@
             </div>
 
             <!-- Brand Card 8 -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">30% OFF</div>
                     <div class="brand-logo">
@@ -554,7 +681,7 @@
             </div>
 
             <!-- Add more brand cards as needed -->
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">35% OFF</div>
                     <div class="brand-logo">
@@ -574,7 +701,7 @@
                 </div>
             </div>
 
-            <div class="brand-card">
+            <div class="brand-card-new">
                 <div class="brand-card-header">
                     <div class="discount-badge">25% OFF</div>
                     <div class="brand-logo">
@@ -802,4 +929,94 @@
             </a>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script>
+        // Owl Carousel Initialization
+        $(document).ready(function () {
+            $(".brand-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    992: {
+                        items: 4
+                    }
+                }
+            });
+
+            // Custom navigation buttons
+            $('.prev-btn').click(function () {
+                $('.brand-carousel').trigger('prev.owl.carousel');
+            });
+
+            $('.next-btn').click(function () {
+                $('.brand-carousel').trigger('next.owl.carousel');
+            });
+        });
+
+        // Simple search functionality
+        document.querySelector('.search-btn').addEventListener('click', function () {
+            const searchTerm = document.querySelector('.search-input').value;
+            if (searchTerm.trim() !== '') {
+                alert(`Searching for: ${searchTerm}\n(Search functionality would redirect to results page)`);
+                // In real implementation, you would redirect to search results page
+                // window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+            } else {
+                alert('Please enter a search term');
+            }
+        });
+
+        // Enter key support for search
+        document.querySelector('.search-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-btn').click();
+            }
+        });
+
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const animateOnScroll = function () {
+                const elements = document.querySelectorAll('.brand-card-new, .benefit-card, .store-card');
+
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Set initial state
+            const cards = document.querySelectorAll('.brand-card-new, .benefit-card, .store-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            // Animate on load
+            setTimeout(animateOnScroll, 300);
+
+            // Animate on scroll
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
 @endsection
