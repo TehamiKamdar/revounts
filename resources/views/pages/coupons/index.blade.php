@@ -347,29 +347,12 @@
 
         .owl-carousel .owl-nav {
             position: absolute;
-            top: 50%;
+            top: 47%;
             width: 100%;
             transform: translateY(-50%);
             display: flex;
             justify-content: space-between;
             padding: 0 20px;
-        }
-
-        .btn-primary-custom {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary-custom:hover {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.3);
         }
 
         .owl-carousel .owl-nav button {

@@ -405,6 +405,23 @@ h6,
     box-shadow: 0 4px 8px rgba(89, 46, 131, 0.3) !important;
 }
 
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(89, 46, 131, 0.3);
+}
+
 .dropdown-menu {
     background-color: var(--dark-amethyst);
     border: 1px solid var(--primary-light);
@@ -1761,6 +1778,15 @@ section {
     flex: 1;
 }
 
+/* Sidebar */
+.sidebar-card {
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(89, 46, 131, 0.15);
+    border-top: 5px solid var(--primary);
+}
+
 .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -1786,6 +1812,28 @@ section {
     bottom: -23px;
     left: 0;
     border-radius: 2px;
+}
+
+.trending-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.trending-item:last-child {
+    border-bottom: none;
+}
+
+
+.trending-title {
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.trending-title:hover {
+    color: var(--primary);
 }
 
 .sidebar-count {
@@ -2984,6 +3032,7 @@ section {
 }
 
 .reviews-layout .review-product {
+    font-family: var(--heading-font-family);
     font-weight: 600;
     color: var(--primary-dark);
     font-size: 1.1rem;
@@ -3117,7 +3166,7 @@ section {
 /* 8:4 Columns Grid */
 .reviews-details-container .content-grid {
     display: grid;
-    grid-template-columns: 8fr 4fr;
+    grid-template-columns: 9fr 3fr;
     gap: 40px;
     margin-top: 30px;
 }

@@ -5,9 +5,9 @@
     <!-- Main Container -->
     <div class="reviews-details-container">
         <!-- 8:4 Columns Grid -->
-        <div class="content-grid">
+        <div class="row">
             <!-- Left Column (8 parts) -->
-            <div class="left-column">
+            <div class="col-lg-9 col-12">
                 <!-- Hero Image -->
                 <div class="hero-image">
                     <img src="https://placehold.co/1200x400/450077/9984d4" alt="Brand Collection">
@@ -69,7 +69,7 @@
             </div>
 
             <!-- Right Column (4 parts) -->
-            <div class="right-column">
+            <div class="col-lg-3 col-12">
                 <!-- New Card 1: Reviewed by & Views -->
                 <div class="stats-card">
                     <div class="stats-content">
@@ -79,8 +79,7 @@
                                 Reviewed by
                             </div>
                             <div class="d-flex flex-row align-items-center justify-content-end">
-                                <img src="{{ asset('assets/images/author-revounts-staff.png') }}" height="40" width="40" class="img-fluid me-1" alt="">
-                                <div class="stat-value w-50 text-center">Revounts Staff</div>
+                                <img src="{{ asset('assets/images/author-revounts-staff.png') }}" height="40" width="40" class="img-fluid me-1" title="Revounts Staff" style="cursor: pointer;" alt="">
                             </div>
                         </div>
                         <div class="stat-row">
@@ -187,62 +186,35 @@
                 </div>
 
                 <!-- Related Reviews -->
-                <div class="related-reviews">
-                    <h3 class="related-title">Related Reviews</h3>
-                    <ul class="related-list">
-                        <li class="related-item">
-                            {{-- <div class="related-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div> --}}
-                            <a href="#" class="related-product">Premium Sofa Collection</a>
-                            <div class="related-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </li>
-                        <li class="related-item">
-                            {{-- <div class="related-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div> --}}
-                            <a href="#" class="related-product">Designer Dining Set</a>
-                            <div class="related-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </li>
-                        <li class="related-item">
-                            {{-- <div class="related-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div> --}}
-                            <a href="#" class="related-product">Luxury Bedroom Suite</a>
-                            <div class="related-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </li>
-                        <li class="related-item">
-                            {{-- <div class="related-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div> --}}
-                            <a href="#" class="related-product">Executive Office Desk</a>
-                            <div class="related-arrow">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="sidebar-card">
+                    <div class="sidebar-header">
+                        <h4 class="sidebar-title">Related Reviews</h4>
+                    </div>
+
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">Catch Reviews - Aussie`s Chosen Store For Daily Deals</a>
+                    </div>
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">Kirstin Ash Reviews: Shop Stylish & Trendy Jewellery</a>
+                    </div>
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">Wrangler Australia Review | Premium Quality with Huge Savings</a>
+                    </div>
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">Decathlon Discount Code Review and Savings Tips</a>
+                    </div>
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">How a Pizza Hut Coupon Affects the Overall Brand Value</a>
+                    </div>
+
+                    <div class="trending-item">
+                        <a href="#" class="trending-title">Cheap online shopping: A guide to buying online Clothing Brands in Australia 2020</a>
+                    </div>
                 </div>
             </div>
         </div>
