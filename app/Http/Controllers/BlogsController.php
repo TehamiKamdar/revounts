@@ -9,4 +9,7 @@ class BlogsController extends Controller
     public function index(){
         return view('pages.blogs.index');
     }
+    public function details($id){
+        return view('pages.blogs.details');
+    }
 }

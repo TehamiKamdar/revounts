@@ -23,3 +23,4 @@ Route::get('/review/{id}', [ReviewsController::class , 'details'])->name('review
 Route::get('/coupons', [CouponsController::class , 'index'])->name('coupons');
 Route::get('/coupon/{id}', [CouponsController::class , 'details'])->name('coupon.details');
 Route::get('/blogs', [BlogsController::class , 'index'])->name('blogs');
+Route::get('/blog/{id}', [BlogsController::class , 'details'])->name('blog.details');
