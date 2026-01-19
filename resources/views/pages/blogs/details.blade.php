@@ -151,27 +151,27 @@
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Best Women`s Perfumes to Buy in 2020</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Best Women`s Perfumes to Buy in 2020</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">15 Smartest Ways to get Discounts in Australia</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">15 Smartest Ways to get Discounts in Australia</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">How to Pick the Right Standby Generator For Home Use</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">How to Pick the Right Standby Generator For Home Use</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">The 15 Most Loved Australia`s E-commerce Websites of 2023</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">The 15 Most Loved Australia`s E-commerce Websites of 2023</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Best Running Shoes For Men to Buy at JD Sports</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Best Running Shoes For Men to Buy at JD Sports</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Cheap online shopping: A guide to buying online Clothing Brands in Australia 2020</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Cheap online shopping: A guide to buying online Clothing Brands in Australia 2020</a>
                     </div>
                 </div>
             </div>

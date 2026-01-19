@@ -249,7 +249,7 @@
                     <div class="col-md-8 p-4">
                         <div class="season-badge"><i class="fas fa-bolt me-1"></i> HOT TOPIC</div>
                         <div class="blog-date"><i class="far fa-calendar me-1"></i> October 15, 2023</div>
-                        <h3 class="blog-title"><a href="#">The Power of Email Marketing in Affiliate Sales</a></h3>
+                        <h3 class="blog-title"><a href="{{ route('blog.details', 'some-blog-post') }}">The Power of Email Marketing in Affiliate Sales</a></h3>
                         <p class="blog-description">Learn how to build an email list that converts and drives consistent
                             affiliate sales. We break down the best practices for email marketing in the affiliate
                             space.</p>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="col-md-8 p-4">
                         <div class="blog-date"><i class="far fa-calendar me-1"></i> October 10, 2023</div>
-                        <h3 class="blog-title"><a href="#">Tracking Your Affiliate Performance: Essential Analytics
+                        <h3 class="blog-title"><a href="{{ route('blog.details', 'some-blog-post') }}">Tracking Your Affiliate Performance: Essential Analytics
                                 Tools</a></h3>
                         <p class="blog-description">Discover the must-have analytics tools that will help you track your
                             affiliate marketing performance and optimize your campaigns for maximum ROI.</p>
@@ -279,7 +279,7 @@
                     </div>
                     <div class="col-md-8 p-4">
                         <div class="blog-date"><i class="far fa-calendar me-1"></i> October 5, 2023</div>
-                        <h3 class="blog-title"><a href="#">Leveraging Social Media for Affiliate Marketing Success</a>
+                        <h3 class="blog-title"><a href="{{ route('blog.details', 'some-blog-post') }}">Leveraging Social Media for Affiliate Marketing Success</a>
                         </h3>
                         <p class="blog-description">A complete guide to using Instagram, TikTok, and Pinterest to
                             promote affiliate products without being spammy or salesy.</p>
@@ -295,7 +295,7 @@
                     <div class="col-md-8 p-4">
                         <div class="season-badge"><i class="fas fa-star me-1"></i> PREMIUM CONTENT</div>
                         <div class="blog-date"><i class="far fa-calendar me-1"></i> September 28, 2023</div>
-                        <h3 class="blog-title"><a href="#">Content Creation Strategies That Drive Affiliate Sales</a>
+                        <h3 class="blog-title"><a href="{{ route('blog.details', 'some-blog-post') }}">Content Creation Strategies That Drive Affiliate Sales</a>
                         </h3>
                         <p class="blog-description">Learn how to create compelling content that naturally integrates
                             affiliate products and drives conversions without alienating your audience.</p>
@@ -317,27 +317,27 @@
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Best Women`s Perfumes to Buy in 2020</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Best Women`s Perfumes to Buy in 2020</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">15 Smartest Ways to get Discounts in Australia</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">15 Smartest Ways to get Discounts in Australia</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">How to Pick the Right Standby Generator For Home Use</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">How to Pick the Right Standby Generator For Home Use</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">The 15 Most Loved Australia`s E-commerce Websites of 2023</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">The 15 Most Loved Australia`s E-commerce Websites of 2023</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Best Running Shoes For Men to Buy at JD Sports</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Best Running Shoes For Men to Buy at JD Sports</a>
                     </div>
 
                     <div class="trending-item">
-                        <a href="#" class="trending-title">Cheap online shopping: A guide to buying online Clothing Brands in Australia 2020</a>
+                        <a href="{{ route('blog.details', 'some-blog-post') }}" class="trending-title">Cheap online shopping: A guide to buying online Clothing Brands in Australia 2020</a>
                     </div>
                 </div>
 

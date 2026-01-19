@@ -20,6 +20,10 @@ body {
     position: relative;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Animated Background Container */
 .animated-coupon-bg {
     position: fixed;
