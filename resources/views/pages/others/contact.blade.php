@@ -133,6 +133,26 @@
             margin-right: 12px;
             font-size: 1.2rem;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-header {
+                padding: 80px 0 60px;
+            }
+
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form-container,
+            .contact-details-container {
+                padding: 30px 25px;
+            }
+
+            .media-kit-section {
+                padding: 30px 25px;
+            }
+        }
 </style>
 @endsection
 

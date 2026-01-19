@@ -153,6 +153,28 @@
             width: 20px;
             text-align: center;
         }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .terms-container {
+                padding: 40px 30px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 60px 0;
+                margin-bottom: 40px;
+            }
+
+            .terms-content {
+                padding-left: 0;
+            }
+        }
 </style>
 
 @endsection
