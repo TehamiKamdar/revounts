@@ -66,7 +66,7 @@
                         <a class="nav-link {{ Route::is(patterns: 'blogs') || Route::is('blog.details') ? 'active' : '' }}" href="{{ route('blogs') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Seasonal</a>
+                        <a class="nav-link {{ Route::is(patterns: 'seasonals') ? 'active' : '' }}" href="{{ route('seasonals') }}">Seasonal</a>
                     </li>
                 </ul>
 
@@ -118,7 +118,7 @@
                 <div class="footer-col">
                     <h4>Coupons</h4>
                     <ul>
-                        <li><a href="#">Seasonal</a></li>
+                        <li><a href="{{ route('seasonals') }}">Seasonal</a></li>
                         <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Fashion</a></li>
                         <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Travel</a></li>
                         <li><a href="{{ route('categories') }}">All Categories</a></li>

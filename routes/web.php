@@ -6,6 +6,7 @@ use App\Http\Controllers\CouponsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SeasonalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,20 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [HomeController::class , 'index'])->name('home');
+
+
 Route::get('/reviews', [ReviewsController::class , 'index'])->name('reviews');
 Route::get('/review/{id}', [ReviewsController::class , 'details'])->name('review.details');
+
+
 Route::get('/coupons', [CouponsController::class , 'index'])->name('coupons');
 Route::get('/coupon/{id}', [CouponsController::class , 'details'])->name('coupon.details');
+
+
 Route::get('/blogs', [BlogsController::class , 'index'])->name('blogs');
 Route::get('/blog/{id}', [BlogsController::class , 'details'])->name('blog.details');
+
+Route::get('/seasonal', [SeasonalController::class , 'index'])->name('seasonals');
 
 
 Route::get('/about', [PagesController::class , 'about'])->name('about');

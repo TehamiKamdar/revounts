@@ -1,59 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seasonal Deals | Affiliate Marketing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Aleo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --white: #ffffff;
-            --primary-light: #9e62ff;
-            --primary: #592e83;
-            --primary-dark: #450077;
-            --dark-amethyst: #150132;
-            --font-family: "Archivo", Helvetica, sans-serif;
-            --heading-font-family: "Aleo", "Times New Roman", serif;
-            --gradient-start: #f262ff;
-            --gradient-end: #7a43d3;
-            --light-bg: #F8FAFC;
-            --light-text: #64748B;
-            --season-theme-color: #BC1719;
-            --season-theme-bg-color: #FFE2E2;
-        }
+@extends('layouts.layout')
 
-        body {
-            font-family: var(--font-family);
-            background-color: #f9f9fc;
-            color: var(--dark-amethyst);
-            line-height: 1.5;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--heading-font-family);
-            font-weight: 600;
-        }
-
-        .navbar-brand {
-            font-family: var(--heading-font-family);
-            font-weight: 700;
-            color: var(--primary) !important;
-        }
-
-        .header-gradient {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-        }
-
-        .header-gradient h1, .header-gradient h2, .header-gradient h3 {
-            color: white;
-        }
-
-        .current-season-banner {
+@section('styles')
+<style>
+    .current-season-banner {
             background-color: var(--season-theme-bg-color);
             border-radius: 10px;
             padding: 1.25rem;
@@ -192,18 +141,6 @@
             border-color: var(--primary);
         }
 
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            font-size: 0.9rem;
-            padding: 0.4rem 1rem;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-        }
-
         .btn-outline-primary {
             color: var(--primary);
             border-color: var(--primary);
@@ -251,60 +188,21 @@
                 gap: 0.5rem;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-gem me-2" style="color: var(--primary-light);"></i>
-                AffiliateDeals
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Deals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Seasonal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+</style>
+@endsection
 
-    <!-- Header -->
-    <div class="header-gradient py-4">
+@section('content')
+
+    <div class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h1 class="h3 mb-2">Seasonal Affiliate Deals</h1>
-                    <p class="mb-0 opacity-90">Timely promotions and offers organized by season</p>
-                </div>
-                <div class="col-md-4 text-md-end mt-2 mt-md-0">
-                    <div class="d-inline-flex align-items-center">
-                        <span class="season-badge me-2">Current: Winter</span>
-                        <small><i class="far fa-calendar-alt me-1"></i> Dec 15 - Feb 15</small>
-                    </div>
+                    <h1>Seasonal Affiliate Deals</h1>
+                    <p class="lead mb-4">Timely promotions and offers organized by season</p>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Main Content -->
     <main class="py-4">
         <div class="container">
             <!-- Current Season Banner -->
@@ -637,22 +535,9 @@
             </div>
         </div>
     </main>
+@endsection
 
-    <!-- Footer -->
-    <footer class="py-3 mt-4 border-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0 small text-muted">&copy; 2023 AffiliateDeals. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0 small text-muted">Maximize earnings with seasonal affiliate promotions</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+@section('scripts')
     <script>
         // Season filter functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -683,7 +568,7 @@
                         const firstVisible = document.querySelector(`.season-section[data-season="${season}"]`);
                         if (firstVisible) {
                             window.scrollTo({
-                                top: firstVisible.offsetTop - 20,
+                                top: firstVisible.offsetTop - 200,
                                 behavior: 'smooth'
                             });
                         }
@@ -692,5 +577,4 @@
             });
         });
     </script>
-</body>
-</html>
+@endsection
