@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CouponsController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::get('/coupons', [CouponsController::class , 'index'])->name('coupons');
 Route::get('/coupon/{id}', [CouponsController::class , 'details'])->name('coupon.details');
 Route::get('/blogs', [BlogsController::class , 'index'])->name('blogs');
 Route::get('/blog/{id}', [BlogsController::class , 'details'])->name('blog.details');
+Route::get('/about', [PagesController::class , 'about'])->name('about');
