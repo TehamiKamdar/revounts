@@ -108,10 +108,10 @@
                 <div class="footer-col">
                     <h4>Explore</h4>
                     <ul>
-                        <li><a href="#">Blogs</a></li>
+                        <li><a href="{{ route('blogs') }}">Blogs</a></li>
                         <li><a href="#">Stores</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Coupons</a></li>
+                        <li><a href="{{ route('reviews') }}">Reviews</a></li>
+                        <li><a href="{{ route('coupons') }}">Coupons</a></li>
                     </ul>
                 </div>
 
