@@ -3884,6 +3884,20 @@ section {
     .deals-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .hero-section{
+        padding: 60px 0;
+    }
+
+    .hero-section h1{
+        font-size: 2.25rem;
+        margin-bottom: 21px;
+    }
+
+    .hero-section .lead{
+        font-size: 1rem;
+        min-height: 20px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -4243,11 +4257,39 @@ section {
     .brand-name {
         font-size: 1.4rem;
     }
+
+    .hero-section{
+        padding: 50px 0;
+    }
+
+    .hero-section h1{
+        font-size: 2.5rem;
+        margin-bottom: 18px;
+    }
+
+    .hero-section .lead{
+        font-size: 1rem;
+        min-height: 30px;
+    }
 }
 
 @media (max-width: 576px) {
     section {
         margin-bottom: 3rem;
+    }
+
+    .hero-section{
+        padding: 40px 0;
+    }
+
+    .hero-section h1{
+        font-size: 2.25rem;
+        margin-bottom: 18px;
+    }
+
+    .hero-section .lead{
+        font-size: 1rem;
+        min-height: 30px;
     }
 
     .section-subtitle::after {
@@ -4479,5 +4521,19 @@ section {
     .unique-coupon-card {
         width: 100%;
         max-width: 320px;
+    }
+
+    .hero-section{
+        padding: 30px 0;
+    }
+
+    .hero-section h1{
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .hero-section .lead{
+        font-size: 0.8rem;
+        min-height: 0;
     }
 }
