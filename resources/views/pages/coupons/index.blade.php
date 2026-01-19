@@ -226,14 +226,14 @@
         .benefit-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, rgba(228, 27, 35, 0.1) 0%, rgba(1, 33, 105, 0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 25px;
             font-size: 2rem;
-            color: white;
+            color: var(--primary-dark);
         }
 
         .benefit-title {
@@ -443,7 +443,7 @@
 
 @section('content')
     <!-- Hero Banner -->
-    <section class="hero-banner">
+    <section class="hero-section">
         <div class="container position-relative">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">

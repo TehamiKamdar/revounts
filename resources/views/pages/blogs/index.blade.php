@@ -2,41 +2,6 @@
 
 @section('styles')
     <style>
-        /* Banner Styles */
-        .main-banner {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .main-banner:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-        }
-
-        .main-banner h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .main-banner p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
         /* Featured Blogs */
         .featured-section {
             margin-bottom: 50px;
@@ -174,10 +139,10 @@
 @section('content')
 
     <!-- Banner Section -->
-    <section class="main-banner">
+    <section class="hero-section">
         <div class="container">
             <h1>Affiliate Marketing Insights</h1>
-            <p>Expert tips, strategies, and reviews to grow your affiliate marketing business and maximize your earnings</p>
+            <p class="lead mb-4">Expert tips, strategies, and reviews to grow your affiliate marketing business and maximize your earnings</p>
         </div>
     </section>
     <!-- Featured Blogs Section -->

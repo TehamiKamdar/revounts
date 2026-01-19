@@ -1,8 +1,11 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="hero-section text-center">
-        <img src="{{ asset('assets/images/banner_1560x480.png') }}" alt="" style="padding-top: 0;" class="hero-img">
+    <div class="hero-section">
+        <div class="container">
+            <h1>Reviews</h1>
+            <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ratione nihil, blanditiis harum fugiat et nemo provident optio itaque quas maiores sit illum minus quasi officiis magni ab corrupti. Aperiam!</p>
+        </div>
     </div>
     {{-- CSS Starting from Line 2748 --}}
     <section class="container content-section">

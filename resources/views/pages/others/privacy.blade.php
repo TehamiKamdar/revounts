@@ -589,23 +589,6 @@
 
 @section('scripts')
     <script>
-        // Cookie Consent Banner
-        document.addEventListener('DOMContentLoaded', function() {
-            const consentBanner = document.getElementById('cookieConsent');
-            const hasConsent = localStorage.getItem('cookieConsent');
-
-            if (!hasConsent) {
-                setTimeout(() => {
-                    consentBanner.style.display = 'block';
-                }, 2000);
-            }
-        });
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieConsent').style.display = 'none';
-        }
-
         function managePreferences() {
             // In a real implementation, this would open a preferences modal
             alert('Cookie preferences management would open here. This is a demo feature.');
