@@ -27,45 +27,6 @@
             color: var(--primary);
         }
 
-        /* Features Grid */
-        .feature-item {
-            padding: 40px 30px;
-            background: white;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid #E2E8F0;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(228, 27, 35, 0.1) 0%, rgba(1, 33, 105, 0.1) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 28px;
-            color: var(--primary);
-        }
-
-        .feature-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
         /* Stats Section */
         .stats-section {
             background: linear-gradient(135deg, var(--primary-light) 0%, #001233 100%);
@@ -137,16 +98,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
             .content-section {
-                padding: 60px 0;
+                padding: 0px 0;
             }
 
             .brands-grid {
@@ -197,7 +150,7 @@
                 </p>
             </div>
 
-            <div class="row">
+            <div class="row g-2">
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-item">
                         <div class="feature-icon">

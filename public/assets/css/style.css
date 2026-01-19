@@ -941,6 +941,46 @@ section {
 }
 
 /* featured brands */
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(228, 27, 35, 0.1) 0%, rgba(1, 33, 105, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: var(--primary);
+}
+
+/* Features Grid */
+.feature-item {
+    padding: 40px 30px;
+    background: white;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.feature-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
 .brands-wrapper {
     width: 100%;
     margin: 0 auto;
@@ -3885,16 +3925,16 @@ section {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .hero-section{
+    .hero-section {
         padding: 60px 0;
     }
 
-    .hero-section h1{
+    .hero-section h1 {
         font-size: 2.25rem;
         margin-bottom: 21px;
     }
 
-    .hero-section .lead{
+    .hero-section .lead {
         font-size: 1rem;
         min-height: 20px;
     }
@@ -4258,16 +4298,16 @@ section {
         font-size: 1.4rem;
     }
 
-    .hero-section{
+    .hero-section {
         padding: 50px 0;
     }
 
-    .hero-section h1{
+    .hero-section h1 {
         font-size: 2.5rem;
         margin-bottom: 18px;
     }
 
-    .hero-section .lead{
+    .hero-section .lead {
         font-size: 1rem;
         min-height: 30px;
     }
@@ -4278,16 +4318,16 @@ section {
         margin-bottom: 3rem;
     }
 
-    .hero-section{
+    .hero-section {
         padding: 40px 0;
     }
 
-    .hero-section h1{
+    .hero-section h1 {
         font-size: 2.25rem;
         margin-bottom: 18px;
     }
 
-    .hero-section .lead{
+    .hero-section .lead {
         font-size: 1rem;
         min-height: 30px;
     }
@@ -4523,17 +4563,63 @@ section {
         max-width: 320px;
     }
 
-    .hero-section{
+    .hero-section {
         padding: 30px 0;
     }
 
-    .hero-section h1{
+    .hero-section h1 {
         font-size: 1.5rem;
         margin-bottom: 12px;
     }
 
-    .hero-section .lead{
+    .hero-section .lead {
         font-size: 0.8rem;
         min-height: 0;
+    }
+
+    .btn-primary-custom {
+        font-size: 0.75rem;
+        border-radius: .5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-outline-light {
+        font-size: 0.75rem;
+        border-radius: .5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .px-5 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .feature-icon {
+        height: 50px;
+        width: 50px;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-item{
+        padding: 1.25rem;
+    }
+
+    .feature-item h4 {
+        font-size: calc(1rem + .1vw);
+    }
+
+    .feature-item p {
+        font-size: calc(0.75rem + .1vw);
+    }
+
+    .feature-item .feature-number {
+        font-size: 2rem;
+        font-size: 600;
+        margin-bottom: 6px;
+    }
+
+    .feature-item small {
+        font-size: .7em;
     }
 }
