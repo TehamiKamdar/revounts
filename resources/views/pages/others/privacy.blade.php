@@ -5,7 +5,6 @@
 
         /* Main Content */
         .privacy-container {
-            max-width: 1000px;
             margin: 0 auto 80px;
             background: white;
             padding: 60px;
@@ -150,7 +149,7 @@
                         explains how we collect, use, disclose, and safeguard your information when you use our
                         coupon and cashback platform.
                     </p>
-                    <a href="#personal-info" class="btn btn-light btn-lg px-4">
+                    <a href="#personal-info" class="btn btn-primary-custom btn-lg px-4">
                         <i class="fas fa-arrow-down me-2"></i> Read Policy
                     </a>
                 </div>
@@ -567,4 +566,51 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        // Cookie Consent Banner
+        document.addEventListener('DOMContentLoaded', function() {
+            const consentBanner = document.getElementById('cookieConsent');
+            const hasConsent = localStorage.getItem('cookieConsent');
+
+            if (!hasConsent) {
+                setTimeout(() => {
+                    consentBanner.style.display = 'block';
+                }, 2000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        function managePreferences() {
+            // In a real implementation, this would open a preferences modal
+            alert('Cookie preferences management would open here. This is a demo feature.');
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Print policy function
+        function printPolicy() {
+            window.print();
+        }
+    </script>
 @endsection
