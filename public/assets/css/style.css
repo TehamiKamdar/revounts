@@ -453,10 +453,9 @@ h6,
 }
 
 .btn-primary-custom:hover {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(89, 46, 131, 0.3);
+    box-shadow: 0 10px 25px rgba(158, 98, 255, 0.3);
 }
 
 .dropdown-menu {

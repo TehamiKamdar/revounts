@@ -15,4 +15,7 @@ class PagesController extends Controller
     public function privacy(){
         return view('pages.others.privacy');
     }
+    public function contact(){
+        return view('pages.others.contact');
+    }
 }

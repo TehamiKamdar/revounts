@@ -101,7 +101,7 @@
                         <li><a href="{{ route('about') }}">About Us</a></li>
                         <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
                         <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>
                 </div>
 
