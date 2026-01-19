@@ -109,7 +109,7 @@
                     <h4>Explore</h4>
                     <ul>
                         <li><a href="{{ route('blogs') }}">Blogs</a></li>
-                        <li><a href="#">Stores</a></li>
+                        <li><a href="{{ route('stores') }}">Stores</a></li>
                         <li><a href="{{ route('reviews') }}">Reviews</a></li>
                         <li><a href="{{ route('coupons') }}">Coupons</a></li>
                     </ul>

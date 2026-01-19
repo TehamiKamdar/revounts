@@ -1,74 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stores - Revounts Australia</title>
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Aleo:wght@300;400;600;700&display=swap" rel="stylesheet">
+@extends('layouts.layout')
+
+@section('styles')
     <style>
-        :root {
-            --white: #ffffff;
-            --primary-light: #9e62ff;
-            --primary: #592e83;
-            --primary-dark: #450077;
-            --dark-amethyst: #150132;
-            --font-family: "Archivo", Helvetica, sans-serif;
-            --heading-font-family: "Aleo", "Times New Roman", serif;
-            --gradient-start: #f262ff;
-            --gradient-end: #7a43d3;
-            --light-bg: #F8FAFC;
-            --light-text: #64748B;
-            --season-theme-color: #BC1719;
-            --season-theme-bg-color: #FFE2E2;
-        }
-
-        body {
-            font-family: var(--font-family);
-            color: var(--dark-amethyst);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-            padding-top: 20px;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--heading-font-family);
-            font-weight: 600;
-        }
-
-        /* Minimal Navbar */
-        .navbar {
-            background: var(--white);
-            padding: 15px 0;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(89, 46, 131, 0.1);
-        }
-
-        .navbar-brand {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary) !important;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--dark-amethyst) !important;
-            margin: 0 5px;
-            padding: 8px 16px !important;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary) !important;
-        }
-
         /* Stores Section */
         .stores-container {
             max-width: 1200px;
@@ -247,7 +180,8 @@
             font-size: 0.9rem;
         }
 
-        .alphabet-btn:hover, .alphabet-btn.active {
+        .alphabet-btn:hover,
+        .alphabet-btn.active {
             background: var(--primary);
             border-color: var(--primary);
             color: white;
@@ -264,33 +198,6 @@
             border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-amethyst);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 40px 0 20px;
-            margin-top: 60px;
-        }
-
-        .footer-title {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: white;
         }
 
         /* Responsive */
@@ -314,7 +221,8 @@
                 align-items: stretch;
             }
 
-            .search-box, .filter-dropdown {
+            .search-box,
+            .filter-dropdown {
                 min-width: 100%;
             }
         }
@@ -329,36 +237,18 @@
             }
         }
     </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-tags"></i>
-                Revounts Australia
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="stores.html">Stores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+@endsection
 
+@section('content')
     <!-- Stores Content -->
+    <section class="hero-section">
+        <div class="container">
+            <!-- Page Title -->
+            <h1>All Stores</h1>
+            <p class="lead mb-4">Browse deals by store. Click any store to view available coupons and cashback offers.</p>
+        </div>
+    </section>
     <div class="stores-container">
-        <!-- Page Title -->
-        <h1 class="page-title">All Stores</h1>
-        <p class="page-subtitle">Browse deals by store. Click any store to view available coupons and cashback offers.</p>
-
         <!-- Filter Bar -->
         <div class="filter-bar">
             <div class="search-box">
@@ -860,66 +750,9 @@
             </a>
         </div>
     </div>
+@endsection
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5 class="footer-title">
-                        <i class="fas fa-tags me-2"></i> Revounts Australia
-                    </h5>
-                    <p style="font-size: 0.9rem;">Your trusted platform for genuine coupon codes and exclusive shopping deals across all Australian stores.</p>
-                </div>
-
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5 class="footer-title">Shop By</h5>
-                    <div class="footer-links">
-                        <a href="stores.html">Stores A-Z</a>
-                        <a href="categories.html">Categories</a>
-                        <a href="seasonal.html">Seasonal Deals</a>
-                        <a href="trending.html">Trending</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5 class="footer-title">Support</h5>
-                    <div class="footer-links">
-                        <a href="contact.html">Contact Us</a>
-                        <a href="faq.html">FAQ</a>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5 class="footer-title">Newsletter</h5>
-                    <div class="input-group input-group-sm mb-2">
-                        <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    <small style="color: rgba(255,255,255,0.6);">Get store-specific deals</small>
-                </div>
-            </div>
-
-            <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
-
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0" style="font-size: 0.85rem;">© 2024 Revounts Australia. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0" style="font-size: 0.85rem;">ABN: 12 345 678 901</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+@section('scripts')
     <script>
         // Store filtering functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1096,5 +929,4 @@
             });
         });
     </script>
-</body>
-</html>
+@endsection

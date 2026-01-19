@@ -21,4 +21,7 @@ class PagesController extends Controller
     public function categories(){
         return view('pages.others.categories');
     }
+    public function stores(){
+        return view('pages.others.stores');
+    }
 }
