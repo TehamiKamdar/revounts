@@ -9,4 +9,7 @@ class PagesController extends Controller
     public function about(){
         return view('pages.others.about');
     }
+    public function terms(){
+        return view('pages.others.terms');
+    }
 }

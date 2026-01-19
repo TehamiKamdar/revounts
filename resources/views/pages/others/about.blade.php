@@ -4,27 +4,7 @@
 
 <style>
     /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #450077cc 0%, #9e62ffcc 100%), url('https://placehold.co/1560x800');
-            background-size: cover;
-            background-position: center;
-            padding: 140px 0 100px;
-            color: white;
-            position: relative;
-        }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .hero-section .lead {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            max-width: 800px;
-        }
 
         .highlight-badge {
             background: var(--accent);
@@ -166,9 +146,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="highlight-badge">
-                        <i class="fas fa-australia"></i> Australia's #1 Savings Platform
-                    </div>
                     <h1>About Revounts Australia</h1>
                     <p class="lead">
                         We are Australia's premier destination for genuine coupon codes, cashback offers, and exclusive

@@ -26,3 +26,4 @@ Route::get('/coupon/{id}', [CouponsController::class , 'details'])->name('coupon
 Route::get('/blogs', [BlogsController::class , 'index'])->name('blogs');
 Route::get('/blog/{id}', [BlogsController::class , 'details'])->name('blog.details');
 Route::get('/about', [PagesController::class , 'about'])->name('about');
+Route::get('/terms', [PagesController::class , 'terms'])->name('terms');

@@ -99,7 +99,7 @@
                     <h4>Revounts</h4>
                     <ul>
                         <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
