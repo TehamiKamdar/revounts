@@ -60,7 +60,7 @@
                         <a class="nav-link {{ Route::is('reviews') || Route::is('review.details') ? 'active' : '' }}" aria-current="page" href="{{ route('reviews') }}">Reviews</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is(patterns: 'coupons') || Route::is('coupon.details') ? 'active' : '' }}" aria-current="page" href="{{ route('coupons') }}" href="#">Coupons</a>
+                        <a class="nav-link {{ Route::is(patterns: 'coupons') || Route::is('coupon.details') ? 'active' : '' }}" aria-current="page" href="{{ route('coupons') }}">Coupons</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is(patterns: 'blogs') || Route::is('blog.details') ? 'active' : '' }}" href="{{ route('blogs') }}">Blogs</a>
@@ -119,8 +119,8 @@
                     <h4>Coupons</h4>
                     <ul>
                         <li><a href="#">Seasonal</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Travel</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Fashion</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Travel</a></li>
                         <li><a href="{{ route('categories') }}">All Categories</a></li>
                     </ul>
                 </div>
@@ -128,20 +128,20 @@
                 <div class="footer-col">
                     <h4>Reviews</h4>
                     <ul>
-                        <li><a href="#">Featured</a></li>
-                        <li><a href="#">Recently Added</a></li>
-                        <li><a href="#">Store Reviews</a></li>
-                        <li><a href="#">ETSY Reviews</a></li>
+                        <li><a href="{{ route('review.details', 'some-brand-review') }}">Featured</a></li>
+                        <li><a href="{{ route('review.details', 'some-brand-review') }}">Recently Added</a></li>
+                        <li><a href="{{ route('review.details', 'some-brand-review') }}">Store Reviews</a></li>
+                        <li><a href="{{ route('review.details', 'some-brand-review') }}">ETSY Reviews</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Top Stores</h4>
                     <ul>
-                        <li><a href="#">Catch</a></li>
-                        <li><a href="#">LVLY</a></li>
-                        <li><a href="#">MyDeal Coupon</a></li>
-                        <li><a href="#">Coach</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Catch</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">LVLY</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">MyDeal Coupon</a></li>
+                        <li><a href="{{ route('coupon.details', 'some-coupon-brand') }}">Coach</a></li>
                     </ul>
                 </div>
             </div>

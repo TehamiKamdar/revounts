@@ -178,7 +178,7 @@
             <!-- Categories Grid -->
             <div class="categories-grid">
                 <!-- Fashion -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
@@ -187,7 +187,7 @@
                 </a>
 
                 <!-- Electronics -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -196,7 +196,7 @@
                 </a>
 
                 <!-- Home & Living -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-home"></i>
                     </div>
@@ -205,7 +205,7 @@
                 </a>
 
                 <!-- Health & Beauty -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
@@ -214,7 +214,7 @@
                 </a>
 
                 <!-- Travel -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-plane"></i>
                     </div>
@@ -223,7 +223,7 @@
                 </a>
 
                 <!-- Food & Dining -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
@@ -232,7 +232,7 @@
                 </a>
 
                 <!-- Automotive -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-car"></i>
                     </div>
@@ -241,7 +241,7 @@
                 </a>
 
                 <!-- Sports & Outdoors -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-basketball-ball"></i>
                     </div>
@@ -250,7 +250,7 @@
                 </a>
 
                 <!-- Entertainment -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-film"></i>
                     </div>
@@ -259,7 +259,7 @@
                 </a>
 
                 <!-- Education -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -268,7 +268,7 @@
                 </a>
 
                 <!-- Pet Supplies -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-paw"></i>
                     </div>
@@ -277,7 +277,7 @@
                 </a>
 
                 <!-- Office Supplies -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -286,7 +286,7 @@
                 </a>
 
                 <!-- Baby & Kids -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-baby"></i>
                     </div>
@@ -295,7 +295,7 @@
                 </a>
 
                 <!-- Jewelry & Watches -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-gem"></i>
                     </div>
@@ -304,7 +304,7 @@
                 </a>
 
                 <!-- Books & Media -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-book"></i>
                     </div>
@@ -313,7 +313,7 @@
                 </a>
 
                 <!-- Gardening -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
@@ -322,7 +322,7 @@
                 </a>
 
                 <!-- Music & Instruments -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-music"></i>
                     </div>
@@ -331,7 +331,7 @@
                 </a>
 
                 <!-- Arts & Crafts -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
@@ -340,7 +340,7 @@
                 </a>
 
                 <!-- Financial Services -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-wallet"></i>
                     </div>
@@ -349,7 +349,7 @@
                 </a>
 
                 <!-- Telecom -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -358,7 +358,7 @@
                 </a>
 
                 <!-- Fitness -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-dumbbell"></i>
                     </div>
@@ -367,7 +367,7 @@
                 </a>
 
                 <!-- Party Supplies -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-birthday-cake"></i>
                     </div>
@@ -376,7 +376,7 @@
                 </a>
 
                 <!-- Photography -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-camera"></i>
                     </div>
@@ -385,7 +385,7 @@
                 </a>
 
                 <!-- Software & Apps -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -394,7 +394,7 @@
                 </a>
 
                 <!-- Seasonal -->
-                <a href="{{ route('coupon.details') }}" class="category-card">
+                <a href="{{ route('coupon.details', 'some-coupon-brand') }}" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-tree"></i>
                     </div>
