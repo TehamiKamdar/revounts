@@ -29,3 +29,4 @@ Route::get('/about', [PagesController::class , 'about'])->name('about');
 Route::get('/terms', [PagesController::class , 'terms'])->name('terms');
 Route::get('/privacy', [PagesController::class , 'privacy'])->name('privacy');
 Route::get('/contact', [PagesController::class , 'contact'])->name('contact');
+Route::get('/categories', [PagesController::class , 'categories'])->name('categories');

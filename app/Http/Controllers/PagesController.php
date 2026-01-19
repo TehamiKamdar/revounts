@@ -18,4 +18,7 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.others.contact');
     }
+    public function categories(){
+        return view('pages.others.categories');
+    }
 }
