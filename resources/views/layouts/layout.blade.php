@@ -121,7 +121,7 @@
                         <li><a href="#">Seasonal</a></li>
                         <li><a href="#">Fashion</a></li>
                         <li><a href="#">Travel</a></li>
-                        <li><a href="#">All Categories</a></li>
+                        <li><a href="{{ route('categories') }}">All Categories</a></li>
                     </ul>
                 </div>
 
