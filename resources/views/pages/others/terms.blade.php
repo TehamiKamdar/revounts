@@ -98,7 +98,7 @@
 
         .highlight-box {
             background: rgba(255, 205, 0, 0.1);
-            border-left: 4px solid var(--primary-light);
+            border-left: 4px solid var(--primary-dark);
             padding: 20px;
             margin: 20px 0;
             font-style: italic;

@@ -27,3 +27,4 @@ Route::get('/blogs', [BlogsController::class , 'index'])->name('blogs');
 Route::get('/blog/{id}', [BlogsController::class , 'details'])->name('blog.details');
 Route::get('/about', [PagesController::class , 'about'])->name('about');
 Route::get('/terms', [PagesController::class , 'terms'])->name('terms');
+Route::get('/privacy', [PagesController::class , 'privacy'])->name('privacy');

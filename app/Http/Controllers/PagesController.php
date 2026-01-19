@@ -12,4 +12,7 @@ class PagesController extends Controller
     public function terms(){
         return view('pages.others.terms');
     }
+    public function privacy(){
+        return view('pages.others.privacy');
+    }
 }
