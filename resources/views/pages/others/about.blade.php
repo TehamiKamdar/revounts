@@ -4,10 +4,8 @@
 
 <style>
     /* Hero Section */
-
-
         .highlight-badge {
-            background: var(--accent);
+            background: var(--primary-light);
             color: var(--dark-text);
             padding: 8px 20px;
             border-radius: 4px;
@@ -18,52 +16,33 @@
             margin-bottom: 24px;
         }
 
-        /* Content Sections */
-        .content-section {
-            padding: 100px 0;
-        }
-
         .section-title span {
             color: var(--primary);
         }
 
         /* Stats Section */
-        .stats-section {
+        /* .stats-section {
             background: linear-gradient(135deg, var(--primary-light) 0%, #001233 100%);
             color: white;
             padding: 100px 0;
-        }
+        } */
 
         .stat-box {
             text-align: center;
             padding: 30px;
         }
-
+/*
         .stat-number {
             font-size: 3.5rem;
             font-weight: 800;
             color: var(--accent);
             line-height: 1;
             margin-bottom: 10px;
-        }
+        } */
 
         /* USP Section */
         .usp-section {
             background: var(--light-bg);
-        }
-
-        .usp-card {
-            background: white;
-            padding: 40px;
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-            height: 100%;
-        }
-
-        .usp-icon {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 20px;
         }
 
         /* Brands Section */
@@ -76,7 +55,7 @@
 
         .brand-item {
             background: white;
-            padding: 30px 20px;
+            padding: 20px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,12 +77,27 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .content-section {
-                padding: 0px 0;
-            }
 
             .brands-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 12px;
+                margin-bottom: 2.5rem;
+            }
+
+            .brand-item{
+                padding: 10px;
+            }
+
+            .brand-item h6{
+                font-size: 0.75rem
+            }
+
+            .brand-item small{
+                font-size: 0.5rem
+            }
+
+            .btn-primary{
+                font-size: 0.75rem
             }
         }
 </style>
@@ -207,7 +201,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <section class="stats-section mt-4" style="border-radius: 0;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-6">
@@ -246,23 +240,21 @@
     <section class="content-section usp-section">
         <div class="container">
             <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <h2 class="section-title">Our Unique <span>Selling Point</span></h2>
-                    <p class="lead">
+                <div class="section-heading">
+                    <h2 class="section-title">Our Unique <span>Selling Point</span>
+                    <i class="fas fa-crown fa-7x" style="color: var(--primary-dark); opacity: 0.3;"></i></h2>
+                    <p class="section-subtitle">
                         While others offer generic coupon codes, Revounts Australia provides <strong>exclusive Australian
                             deals</strong>
                         tailored specifically for the local market with features you won't find anywhere else.
                     </p>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <i class="fas fa-crown fa-7x" style="color: var(--primary-dark); opacity: 0.3;"></i>
-                </div>
             </div>
 
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="usp-card">
-                        <div class="usp-icon">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <h4>Australia-First Strategy</h4>
@@ -272,8 +264,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="usp-card">
-                        <div class="usp-icon">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
                         <h4>Direct Brand Partnerships</h4>
@@ -283,9 +275,9 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="usp-card">
-                        <div class="usp-icon">
-                            <i class="fas fa-chart-network"></i>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-area"></i>
                         </div>
                         <h4>Advanced Deal Intelligence</h4>
                         <p>Our proprietary technology predicts when brands will offer their best discounts based on
@@ -364,7 +356,7 @@
 
             <div class="brands-grid">
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
                     <h6>Fashion & Apparel</h6>
@@ -372,7 +364,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
                     <h6>Electronics & Tech</h6>
@@ -380,7 +372,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <h6>Home & Living</h6>
@@ -388,7 +380,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <h6>Health & Beauty</h6>
@@ -396,7 +388,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-car"></i>
                     </div>
                     <h6>Automotive</h6>
@@ -404,7 +396,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-utensils"></i>
                     </div>
                     <h6>Food & Dining</h6>
@@ -412,7 +404,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-plane"></i>
                     </div>
                     <h6>Travel & Leisure</h6>
@@ -420,7 +412,7 @@
                 </div>
 
                 <div class="brand-item">
-                    <div class="brand-icon">
+                    <div class="feature-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h6>Education & Learning</h6>

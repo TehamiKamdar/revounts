@@ -377,39 +377,38 @@
                 </div>
             </div>
         </div>
-
-        <!-- Stats Bar -->
-        <div class="stats-bar animate-in" style="animation-delay: 0.2s">
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-star"></i>
+    </section>
+    <section class="stats-section mb-5" style="border-radius: 0;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">4.7</div>
+                        <h5>Average Rating</h5>
+                        <p>Australian & international stores</p>
+                    </div>
                 </div>
-                <div class="stat-value">4.7</div>
-                <div class="stat-label">Average Rating</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-comments"></i>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">6,121</div>
+                        <h5>Total Reviews</h5>
+                        <p>Generated for our community</p>
+                    </div>
                 </div>
-                <div class="stat-value">6,121</div>
-                <div class="stat-label">Total Reviews</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-thumbs-up"></i>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">98.7%</div>
+                        <h5>Positive Feedback</h5>
+                        <p>Of coupon codes work</p>
+                    </div>
                 </div>
-                <div class="stat-value">87%</div>
-                <div class="stat-label">Positive Feedback</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-sync-alt"></i>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">4.9/5</div>
+                        <h5>This Month</h5>
+                        <p>Based on 25,000+ reviews</p>
+                    </div>
                 </div>
-                <div class="stat-value">247</div>
-                <div class="stat-label">This Month</div>
             </div>
         </div>
     </section>

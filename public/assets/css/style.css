@@ -9,6 +9,7 @@
     --gradient-start: #f262ff;
     --gradient-end: #7a43d3;
     --light-bg: #F8FAFC;
+    --border-color: #e0e0e0;
     --light-text: #64748B;
     --season-theme-color: #BC1719;
     --season-theme-bg-color: #FFE2E2;
@@ -967,6 +968,8 @@ section {
     margin-bottom: 30px;
     transition: all 0.3s ease;
     height: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .feature-item:hover {
@@ -3245,6 +3248,11 @@ section {
     animation: fadeIn 0.5s ease forwards;
 }
 
+.section-heading i{
+    position: absolute;
+    transform: rotate(45deg);
+}
+
 
 /* Review Details */
 /* Main Container */
@@ -3881,10 +3889,10 @@ section {
 
 /* Stats Section */
 .stats-section {
-    background-color: var(--white);
+    background: var(--icon-gradient);
     padding: 40px 0;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); */
     margin-top: -40px;
     position: relative;
     z-index: 10;
@@ -5317,6 +5325,10 @@ section {
 
     .store-name{
         font-size: 1rem;
+    }
+
+    .sm-d-none{
+        display: none;
     }
 
     .brand-description,

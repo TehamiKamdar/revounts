@@ -68,7 +68,7 @@
     </section>
 
     <!-- Main Content Area -->
-    <section class="container content-section">
+    <section class="container">
         <div class="row">
             <!-- Main Blog List (col-9) -->
             <div class="col-lg-9 col-md-8 mb-5">
