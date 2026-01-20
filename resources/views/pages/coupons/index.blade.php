@@ -2,339 +2,6 @@
 
 @section('styles')
     <style>
-        /* Hero Banner */
-        .hero-banner {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin: 0px auto 30px;
-            max-width: 600px;
-        }
-
-        /* Search Bar */
-        .search-container-coupon {
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-
-        .search-box {
-            background: white;
-            border-radius: 50px;
-            padding: 5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            flex: 1;
-            border: none;
-            padding: 20px 25px;
-            border-radius: 50px;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .search-btn {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .search-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background-color: var(--white);
-            padding: 40px 0;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .stat-text {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Brand Cards - col-3 */
-        .brand-card-new {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
-            border: 1px solid #f0f0f0;
-        }
-
-        .brand-card-new:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
-        }
-
-        .brand-card-header {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            padding: 30px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .discount-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--season-theme-bg-color);
-            color: var(--season-theme-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .brand-logo {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        .brand-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .brand-category {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .brand-card-body {
-            padding: 25px;
-        }
-
-        .coupon-count {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .coupon-count i {
-            margin-right: 8px;
-        }
-
-        .view-coupons-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background: var(--primary-light);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-        }
-
-        .view-coupons-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Benefits Section - 100% width cards */
-        .benefits-section {
-            background: linear-gradient(135deg, #f8f9ff, #f0f2ff);
-            padding: 60px 0;
-            margin: 60px 0;
-        }
-
-        .benefit-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 1px solid #f0f0f0;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(228, 27, 35, 0.1) 0%, rgba(1, 33, 105, 0.1) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-            color: var(--primary-dark);
-        }
-
-        .benefit-title {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .benefit-description {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        /* New Stores Section */
-        .store-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            border: 1px solid #f0f0f0;
-        }
-
-        .store-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
-        }
-
-        .store-logo {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #f5f5f5, #e9ecef);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary);
-        }
-
-        .store-info {
-            padding: 25px;
-        }
-
-        .store-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary-dark);
-        }
-
-        .store-description {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* Content Writing Section */
-        .content-section {
-            background: white;
-            border-radius: 15px;
-            padding: 50px;
-            margin: 60px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-        }
-
-        .content-title {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--primary-dark);
-        }
-
-        .content-text {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .content-highlight {
-            background: linear-gradient(135deg, rgba(158, 98, 255, 0.1), rgba(122, 67, 211, 0.1));
-            border-left: 4px solid var(--primary);
-            padding: 25px;
-            border-radius: 0 10px 10px 0;
-            margin: 30px 0;
-        }
-
-        .content-highlight p {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--primary);
-            margin: 0;
-        }
-
-        /* Owl Carousel Custom Styles */
-        .brand-carousel {
-            position: relative;
-            padding: 20px 0;
-        }
-
         .brand-carousel .owl-stage {
             display: flex;
             align-items: stretch;
@@ -373,69 +40,20 @@
             transform: scale(1.1);
         }
 
-        .owl-carousel .owl-dots {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .owl-carousel .owl-dot {
-            width: 12px;
-            height: 12px;
-            background: #ddd !important;
-            border-radius: 50%;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
-
-        .owl-carousel .owl-dot.active {
-            background: var(--primary) !important;
-            transform: scale(1.2);
-        }
-
         /* Custom Navigation Buttons */
         .carousel-navigation {
             display: none;
             /* Hide custom buttons if using owl nav */
         }
 
-        /* Responsive Carousel */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .owl-carousel .owl-nav {
                 display: none;
             }
 
-            .carousel-navigation {
-                display: block;
-            }
-
             .brand-carousel .brand-card {
                 margin: 0 10px;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            .search-box {
-                flex-direction: column;
-                border-radius: 15px;
-            }
-
-            .search-input {
-                border-radius: 15px;
-                margin-bottom: 10px;
-            }
-
-            .search-btn {
-                width: 100%;
-                border-radius: 15px;
-            }
-
-            .content-section {
-                padding: 30px;
             }
         }
     </style>
@@ -444,51 +62,41 @@
 @section('content')
     <!-- Hero Banner -->
     <section class="hero-section">
-        <div class="container position-relative">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="hero-title">Save Big with Exclusive Coupons & Deals</h1>
-                    <p class="hero-subtitle">Find the best discounts, promo codes, and special offers from 5000+ top
-                        brands. Start saving today!</p>
-
-                    <!-- Search Bar -->
-                    <div class="search-container-coupon">
-                        <div class="search-box">
-                            <input type="text" class="search-input"
-                                placeholder="Search for stores, brands, or categories...">
-                            <button class="search-btn">
-                                <i class="fas fa-search me-2"></i>Find Deals
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <h3 class="stat-number">5,000+</h3>
-                                <p class="stat-text">Brands & Stores</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <h3 class="stat-number">25,000+</h3>
-                                <p class="stat-text">Active Coupons</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="text-center">
-                                <h3 class="stat-number">$2M+</h3>
-                                <p class="stat-text">Saved by Users</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-8">
+                    <h1>Save Big with Exclusive Coupons & Deals</h1>
+                    <p class="lead mb-4">Find the best discounts, promo codes, and special offers from 5000+ top brands. Start saving today!</p>
+                </div>
+            </div>
+            <!-- Search Bar -->
+            <div class="search-container-coupon">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search for stores, brands, or categories...">
+                    <button class="search-btn">
+                        <i class="fas fa-search me-2"></i><span>Find Deals</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Stats -->
+            <div class="row justify-content-start">
+                <div class="col-4 col-lg-2">
+                    <h3 class="stat-number">5,000+</h3>
+                    <p class="stat-text">Brands & Stores</p>
+                </div>
+                <div class="col-4 col-lg-2">
+                    <h3 class="stat-number">25,000+</h3>
+                    <p class="stat-text">Active Coupons</p>
+                </div>
+                <div class="col-4 col-lg-2">
+                    <h3 class="stat-number">$2M+</h3>
+                    <p class="stat-text">Saved by Users</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
+    <div class="container coupons-wrapper">
         <div class="section-header">
             <h2 class="section-title">Top Brands with Big Discounts</h2>
             <p class="section-subtitle">Shop from your favorite brands and save with our exclusive coupon codes</p>
@@ -727,81 +335,78 @@
     <section class="benefits-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose SaveNow?</h2>
+                <h2 class="section-title">Why Choose Revounts?</h2>
                 <p class="section-subtitle">We make saving money easy, reliable, and rewarding</p>
             </div>
 
-            <div class="row">
+            <div class="row g-2">
                 <!-- Benefit 1 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="benefit-title">100% Verified Coupons</h3>
-                        <p class="benefit-description">Every coupon is tested and verified by our team to ensure it
+                        <h4>100% Verified Coupons</h4>
+                        <p>Every coupon is tested and verified by our team to ensure it
                             works perfectly when you need it.</p>
                     </div>
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3 class="benefit-title">Daily Updates</h3>
-                        <p class="benefit-description">We update our database daily with new coupons, deals, and expired
+                        <h4>Daily Updates</h4>
+                        <p>We update our database daily with new coupons, deals, and expired
                             offers removed.</p>
                     </div>
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
-                        <h3 class="benefit-title">Exclusive Deals</h3>
-                        <p class="benefit-description">Get access to special offers and promo codes not available
+                        <h4>Exclusive Deals</h4>
+                        <p>Get access to special offers and promo codes not available
                             anywhere else.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
                 <!-- Benefit 4 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-user-friends"></i>
                         </div>
-                        <h3 class="benefit-title">Community Driven</h3>
-                        <p class="benefit-description">Join our community of savers who share and rate coupons for
+                        <h4>Community Driven</h4>
+                        <p>Join our community of savers who share and rate coupons for
                             better experience.</p>
                     </div>
                 </div>
 
                 <!-- Benefit 5 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3 class="benefit-title">Mobile Friendly</h3>
-                        <p class="benefit-description">Access coupons on the go with our mobile-optimized website and
+                        <h4>Mobile Friendly</h4>
+                        <p>Access coupons on the go with our mobile-optimized website and
                             easy sharing.</p>
                     </div>
                 </div>
 
                 <!-- Benefit 6 -->
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-headset"></i>
                         </div>
-                        <h3 class="benefit-title">24/7 Support</h3>
-                        <p class="benefit-description">Our support team is always ready to help you with any
+                        <h4>24/7 Support</h4>
+                        <p>Our support team is always ready to help you with any
                             coupon-related issues.</p>
                     </div>
                 </div>
@@ -818,10 +423,10 @@
 
         <div class="row">
             <!-- Store 1 -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="store-card">
                     <div class="store-logo">
-                        <i class="fas fa-dumbbell"></i>
+                        <img src="https://placehold.co/800x400/450077/9984d4" alt="">
                     </div>
                     <div class="store-info">
                         <h3 class="store-name">Cult.fit</h3>
@@ -835,10 +440,10 @@
             </div>
 
             <!-- Store 2 -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="store-card">
                     <div class="store-logo">
-                        <i class="fas fa-book-open"></i>
+                        <img src="https://placehold.co/800x400/450077/9984d4" alt="">
                     </div>
                     <div class="store-info">
                         <h3 class="store-name">Blinkit</h3>
@@ -852,10 +457,10 @@
             </div>
 
             <!-- Store 3 -->
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <div class="store-card">
                     <div class="store-logo">
-                        <i class="fas fa-gamepad"></i>
+                        <img src="https://placehold.co/800x400/450077/9984d4" alt="">
                     </div>
                     <div class="store-info">
                         <h3 class="store-name">GamesKraft</h3>
@@ -872,7 +477,7 @@
     <!-- Content Writing Section -->
     <div class="container">
         <div class="content-section">
-            <h2 class="content-title">The Ultimate Guide to Saving Money Online</h2>
+            <h2 class="section-title">The Ultimate Guide to Saving Money Online</h2>
 
             <p class="content-text">
                 In today's digital age, saving money has never been easier. With thousands of online stores and brands
@@ -887,7 +492,7 @@
             </p>
 
             <div class="content-highlight">
-                <p>"The average SaveNow user saves ₹5,000 annually by using our verified coupons and promo codes."</p>
+                <p>The average SaveNow user saves Rs 5,000/- annually by using our verified coupons and promo codes.</p>
             </div>
 
             <p class="content-text">
@@ -907,7 +512,7 @@
                 believe that everyone deserves to save money without compromising on quality or convenience.
             </p>
 
-            <a href="#" class="btn btn-primary-custom mt-3">
+            <a href="#" class="btn btn-primary-custom btn-lg mt-3">
                 <i class="fas fa-book me-2"></i>Read More Money Saving Tips
             </a>
         </div>
@@ -915,7 +520,7 @@
 @endsection
 
 @section('scripts')
-<script>
+    <script>
         // Owl Carousel Initialization
         $(document).ready(function () {
             $(".brand-carousel").owlCarousel({
@@ -931,13 +536,13 @@
                         items: 1
                     },
                     576: {
-                        items: 2
+                        items: 1
                     },
                     768: {
-                        items: 3
+                        items: 2
                     },
                     992: {
-                        items: 4
+                        items: 3
                     }
                 }
             });
@@ -974,7 +579,7 @@
         // Simple animation on scroll
         document.addEventListener('DOMContentLoaded', function () {
             const animateOnScroll = function () {
-                const elements = document.querySelectorAll('.brand-card-new, .benefit-card, .store-card');
+                const elements = document.querySelectorAll('.brand-card-new, .feature-item, .store-card');
 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -988,7 +593,7 @@
             };
 
             // Set initial state
-            const cards = document.querySelectorAll('.brand-card-new, .benefit-card, .store-card');
+            const cards = document.querySelectorAll('.brand-card-new, .feature-item, .store-card');
             cards.forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
