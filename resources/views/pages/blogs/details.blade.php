@@ -1,17 +1,18 @@
 @extends('layouts.layout')
 
 @section('content')
-<section class="container content-section">
+<!-- Hero Image -->
+    <div class="hero-image">
+        <img src="https://placehold.co/1200x400/450077/9984d4" alt="Brand Collection">
+    </div>
     <!-- Main Container -->
     <div class="reviews-details-container">
-        <!-- 8:4 Columns Grid -->
+        <div class="container">
+            <!-- 8:4 Columns Grid -->
         <div class="row">
             <!-- Left Column (8 parts) -->
             <div class="col-lg-9 col-12">
-                <!-- Hero Image -->
-                <div class="hero-image">
-                    <img src="https://placehold.co/1200x400/450077/9984d4" alt="Brand Collection">
-                </div>
+
 
                 <!-- Promotional Content Section 1 -->
                 <div class="content-section">
@@ -176,6 +177,6 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
-</section>
 @endsection
