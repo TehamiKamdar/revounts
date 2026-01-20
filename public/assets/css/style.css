@@ -3710,6 +3710,121 @@ section {
     font-size: 0.9rem;
 }
 
+/* Blogs Page CSS */
+
+.featured-section {
+    margin-bottom: 50px;
+}
+
+.featured-section .section-title {
+    border-bottom: 3px solid var(--primary-light);
+    padding-bottom: 20px;
+}
+
+.featured-section .section-title:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.featured-section .featured-card {
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.featured-section .featured-card:hover {
+    box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
+}
+
+.featured-section .featured-img {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.featured-section .featured-card-body {
+    padding: 20px;
+    background-color: var(--white);
+}
+
+/* Main Content Area */
+.main-content-card {
+    border: none;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(89, 46, 131, 0.15);
+}
+
+.main-content-card:hover {
+    box-shadow: 0 10px 25px rgba(89, 46, 131, 0.15);
+}
+
+.latest-blog {
+    background-color: #ffe2e2;
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-date {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.blog-title {
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: var(--heading-font-family);
+}
+
+.blog-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-title a:hover {
+    color: var(--primary);
+}
+
+.blog-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Season Theme */
+.season-badge {
+    background-color: var(--season-theme-bg-color);
+    color: var(--season-theme-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.latest-blog .season-badge{
+    background-color: var(--season-theme-color);
+    color: var(--season-theme-bg-color);
+}
+
 /* Responsive */
 @media (max-width: 1400px) {
     .categories-grid {
@@ -4527,6 +4642,58 @@ section {
     .notice-wrapper p {
         font-size: 0.5rem;
     }
+
+    .blog-date{
+        font-size: 0.65rem;
+    }
+
+    .blog-title{
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    .blog-description{
+        font-size: 0.75rem;
+    }
+
+    .season-badge{
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 0.5rem;
+        margin-bottom: 12px;
+    }
+
+    .latest-blog .season-badge{
+        padding: 4px 10px;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+    }
+
+    .sidebar-header{
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar-title::after{
+        bottom: -10px;
+    }
+
+    .trending-item{
+        padding: 8px 0;
+    }
+
+    .trending-title{
+        font-size: 0.8rem;
+    }
+
+    .mb-5{
+        margin-bottom: 2rem !important;
+    }
+
+    .mt-5{
+        margin-top: 2rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -4601,7 +4768,7 @@ section {
         margin-bottom: 1rem;
     }
 
-    .feature-item{
+    .feature-ite {
         padding: 1.25rem;
     }
 

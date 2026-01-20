@@ -2,137 +2,6 @@
 
 @section('styles')
     <style>
-        /* Featured Blogs */
-        .featured-section {
-            margin-bottom: 50px;
-        }
-
-        .section-title {
-            border-bottom: 3px solid var(--primary-light);
-            padding-bottom: 20px;
-        }
-
-        .section-title:after {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary);
-        }
-
-        .featured-card {
-            border: 1px solid #e0e0e0;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-
-        .featured-card:hover {
-            box-shadow: 0 15px 30px rgba(89, 46, 131, 0.15);
-        }
-
-        .featured-img {
-            height: 150px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .featured-card-body {
-            padding: 20px;
-            background-color: var(--white);
-        }
-
-        .featured-card-title {
-            font-family: var(--heading-font-family);
-            color: var(--primary-dark);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 0;
-        }
-
-        /* Main Content Area */
-        .main-content-card {
-            border: none;
-            overflow: hidden;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-            background-color: var(--white);
-            box-shadow: 0 5px 15px rgba(89, 46, 131, 0.15);
-        }
-
-        .main-content-card:hover {
-            box-shadow: 0 10px 25px rgba(89, 46, 131, 0.15);
-        }
-
-        .latest-blog {
-            background-color: #ffe2e2;
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-date {
-            color: var(--primary);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .blog-title {
-            color: var(--primary-dark);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .blog-title a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .blog-title a:hover {
-            color: var(--primary);
-        }
-
-        .blog-description {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Season Theme */
-        .season-badge {
-            background-color: var(--season-theme-bg-color);
-            color: var(--season-theme-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .btn-primary-custom {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary-custom:hover {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(89, 46, 131, 0.3);
-        }
     </style>
 @endsection
 
@@ -156,7 +25,7 @@
                         <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             class="featured-img" alt="Affiliate Strategies">
                         <div class="featured-card-body">
-                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="featured-card-title">Top 10 Affiliate Programs for Beginners in 2023</a>
+                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="blog-title">Top 10 Affiliate Programs for Beginners in 2023</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +36,7 @@
                         <img src="https://images.unsplash.com/photo-1665686306578-2a4a28b6be43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             class="featured-img" alt="Marketing Tools">
                         <div class="featured-card-body">
-                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="featured-card-title">How to Double Your Conversion Rate with These Simple Techniques
+                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="blog-title">How to Double Your Conversion Rate with These Simple Techniques
                             </a>
                         </div>
                     </div>
@@ -179,7 +48,7 @@
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             class="featured-img" alt="SEO Tips">
                         <div class="featured-card-body">
-                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="featured-card-title">SEO Strategies That Actually Work for Affiliate Sites</a>
+                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="blog-title">SEO Strategies That Actually Work for Affiliate Sites</a>
                         </div>
                     </div>
                 </div>
@@ -190,7 +59,7 @@
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             class="featured-img" alt="SEO Tips">
                         <div class="featured-card-body">
-                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="featured-card-title">SEO Strategies That Actually Work for Affiliate Sites</a>
+                            <a href="{{ route('blog.details', 'some-blog-post') }}" class="blog-title">SEO Strategies That Actually Work for Affiliate Sites</a>
                         </div>
                     </div>
                 </div>
