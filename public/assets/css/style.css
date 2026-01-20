@@ -4790,6 +4790,15 @@ section {
     .content-text {
         font-size: calc(1rem - .1vw);
     }
+
+    .filter-section{
+        margin-top: 1.25rem;
+    }
+
+    .newsletter-sidebar{
+
+        border-radius: 0 !important;
+    }
 }
 
 @media (max-width: 576px) {

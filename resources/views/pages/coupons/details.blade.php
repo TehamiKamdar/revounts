@@ -6,13 +6,14 @@
         .coupon-card {
             background-color: var(--white);
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             margin-bottom: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid #e9ecef;
             display: flex;
-            height: 120px; /* Fixed height for compact design */
+            height: 120px;
+            /* Fixed height for compact design */
         }
 
         .coupon-card:hover {
@@ -42,7 +43,7 @@
             line-height: 1.3;
         }
 
-        .coupon-data{
+        .coupon-data {
             color: var(--dark-amethyst);
         }
 
@@ -148,6 +149,7 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -169,7 +171,7 @@
             margin: 5px 0;
             font-family: monospace;
             color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .coupon-action {
@@ -228,7 +230,7 @@
         .brand-sidebar {
             background-color: var(--white);
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 25px;
             position: sticky;
             top: 20px;
@@ -315,14 +317,14 @@
             margin-top: 25px;
         }
 
-        .feature-item {
+        .brand-feature {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
             font-size: 0.95rem;
         }
 
-        .feature-item i {
+        .brand-feature i {
             color: var(--primary-light);
             margin-right: 10px;
             width: 20px;
@@ -353,7 +355,7 @@
             background-color: var(--white);
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
         }
 
@@ -376,7 +378,8 @@
             transition: all 0.3s ease;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover,
+        .filter-btn.active {
             background-color: var(--primary);
             color: white;
         }
@@ -405,18 +408,19 @@
         }
 
         .banner-placeholder {
-            background: url("{{ asset('assets/images/banner_1320x450_amazon.png') }}")  center / cover no-repeat;
+            background: url("{{ asset('assets/images/banner_1320x450_amazon.png') }}") center / cover no-repeat;
             aspect-ratio: 1320 / 450;
             display: block;
             border-radius: 8px 8px 0 0;
         }
 
         /* Content Styling */
-        .content-wrapper{
+        .content-wrapper {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .content-section-blog {
             background-color: white;
             padding: 25px;
@@ -424,12 +428,13 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             margin-bottom: 25px;
         }
-        .content-section {
-            padding: 0px;
-            border-radius: 10px;
-            margin-bottom: 16px;
-            margin-top: 3rem;
-        }
+
+        /* .content-section {
+                    padding: 0px;
+                    border-radius: 10px;
+                    margin-bottom: 16px;
+                    margin-top: 3rem;
+                } */
 
         .content-section p {
             font-size: 1.05rem;
@@ -443,6 +448,7 @@
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             border-top: 5px solid var(--primary);
+            margin-top: 60px;
         }
 
         .newsletter-title {
@@ -489,135 +495,170 @@
             .newsletter-sidebar {
                 margin-top: 30px;
             }
-            .coupon-card{
+
+            .coupon-card {
                 height: 150px;
             }
-            .coupon-title{
+
+            .coupon-title {
                 font-size: 1rem;
             }
-            .coupon-description{
+
+            .coupon-description {
                 font-size: 0.9rem !important;
             }
-            .wrap-reverse{
+
+            .wrap-reverse {
                 flex-direction: column-reverse;
             }
         }
 
         /* Responsive adjustments */
         @media (max-width: 576px) {
-            .filter-btn{
+            .filter-btn {
                 padding: 4px 10px;
                 font-size: 0.7rem;
             }
-            .coupon-card{
+
+            .coupon-card {
                 height: 110px;
             }
-            .coupon-content{
+
+            .coupon-content {
                 padding: 15px;
             }
-            .coupon-title{
+
+            .coupon-title {
                 font-size: 0.8rem;
             }
-            .coupon-description{
+
+            .coupon-description {
                 font-size: 0.75rem !important;
                 margin-bottom: 8px !important;
             }
-            .coupon-badge{
+
+            .coupon-badge {
                 padding: 1px 4px;
                 font-size: 0.5rem;
             }
-            .coupon-meta{
+
+            .coupon-meta {
                 font-size: 0.7rem;
             }
-            .hidden-part{
+
+            .hidden-part {
                 font-size: 1rem;
             }
-            .click-hint{
+
+            .click-hint {
                 font-size: 0.65rem;
             }
-            .visible-part{
+
+            .visible-part {
                 font-size: 1rem;
             }
+
             .brand-description {
                 font-size: 0.80rem !important;
                 text-align: center;
                 margin-bottom: 10px !important;
             }
-            .brand-stats{
+
+            .brand-stats {
                 display: flex;
                 justify-content: space-around;
                 gap: 0;
             }
-            .stat-item{
+
+            .stat-item {
                 padding: 0.2rem 0.8rem;
             }
-            .stat-number{
+
+            .stat-number {
                 font-size: 1rem;
             }
-            .stat-label{
+
+            .stat-label {
                 font-size: 0.65rem;
             }
-            .feature-item{
+
+            .brand-feature {
                 margin-bottom: 6px;
                 font-size: 0.75rem;
             }
-            .main-heading{
+
+            .main-heading {
                 font-size: calc(1.25rem + 1vw);
                 padding-bottom: 4px;
                 margin-bottom: 1rem;
             }
-            h2{
+
+            h2 {
                 font-size: calc(1rem + .8vw);
             }
-            .content-section{
+
+            .content-section {
                 margin-top: 2rem;
             }
-            .content-section p{
+
+            .content-section p {
                 font-size: 0.9rem;
                 margin-bottom: 10px
             }
         }
 
-        @media(max-width: 420px){
-            .coupon-card{
+        @media(max-width: 420px) {
+            .coupon-card {
                 height: 70px;
             }
-            .coupon-content{
+
+            .coupon-content {
                 padding: 15px;
             }
-            .coupon-title{
+
+            .coupon-title {
                 font-size: 0.7rem;
             }
-            .coupon-description{
+
+            .coupon-description {
                 font-size: 0.35rem !important;
                 margin-bottom: 8px !important;
             }
-            .coupon-badge{
+
+            .coupon-badge {
                 padding: 0px 2px;
                 font-size: 0.3rem;
             }
-            .coupon-meta{
+
+            .coupon-meta {
                 font-size: 0.4rem;
             }
-            .coupon-code-panel{
+
+            .coupon-code-panel {
                 width: 100px
             }
-            .hidden-part{
+
+            .hidden-part {
                 font-size: 0.6rem;
             }
-            .click-hint{
+
+            .click-hint {
                 font-size: 0.4rem;
             }
-            .visible-part{
+
+            .visible-part {
                 font-size: 0.6rem;
             }
-            .coupon-code-label{
+
+            .coupon-code-label {
                 display: none;
             }
-            .full-coupon-code{
+
+            .full-coupon-code {
                 font-size: 0.6rem;
             }
-            .coupon-action{
+
+            .coupon-action {
                 font-size: 0.4rem;
                 margin-top: 4px;
             }
@@ -626,388 +667,423 @@
 @endsection
 
 @section('content')
-<div class="container content-section">
-    <div class="row wrap-reverse">
-        <!-- Coupon List Section - col-8 -->
-        <div class="col-12 col-lg-9">
-            <!-- Filter Section -->
-            <div class="filter-section">
-                <h5 class="filter-label">Filter Coupons:</h5>
-                <div class="d-flex flex-wrap">
-                    <button class="filter-btn active" data-filter="all">All (12)</button>
-                    <button class="filter-btn" data-filter="coupons">Coupons (4)</button>
-                    <button class="filter-btn" data-filter="deals">Deals (4)</button>
-                    <button class="filter-btn" data-filter="shipping">Shipping (4)</button>
+    <div class="hero-section">
+        <div class="container">
+            <h1>Amazon Promo Codes</h1>
+            <p class="lead mb-4">Verified coupons & discounts for October 2023</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row wrap-reverse">
+            <!-- Coupon List Section - col-8 -->
+            <div class="col-12 col-lg-9">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <h5 class="filter-label">Filter Coupons:</h5>
+                    <div class="d-flex flex-wrap">
+                        <button class="filter-btn active" data-filter="all">All (12)</button>
+                        <button class="filter-btn" data-filter="coupons">Coupons (4)</button>
+                        <button class="filter-btn" data-filter="deals">Deals (4)</button>
+                        <button class="filter-btn" data-filter="shipping">Shipping (4)</button>
+                    </div>
+                </div>
+
+                <!-- Coupon List -->
+                <div class="coupon-list">
+                    <!-- Coupon 1 -->
+                    <div class="coupon-card" data-coupon-type="deals">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <div class="coupon-badge badge-limited">Ending Soon</div>
+                                <h3 class="coupon-title">30% Off Electronics & Gadgets</h3>
+                                <p class="coupon-description">Save on laptops, tablets, headphones, and smart home devices.
+                                    Min. purchase $100.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date">
+                                        <i class="fas fa-clock me-1"></i>Expires 12/31/23
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 2.5k used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="AMAZON30">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">30</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Use Code</div>
+                                <div class="full-coupon-code">AMAZON30</div>
+                                <div class="coupon-action">Click to Copy</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon 2 -->
+                    <div class="coupon-card" data-coupon-type="shipping">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <div class="coupon-badge badge-popular">Most Used</div>
+                                <h3 class="coupon-title">Free Express Shipping</h3>
+                                <p class="coupon-description">Free shipping on all orders over $35. No code needed. For
+                                    Prime & non-Prime members.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date" style="color: #2D6A4F;">
+                                        <i class="fas fa-infinity me-1"></i>No Expiry
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 5.2k used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="FREESHIP">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">IP</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Auto Applied</div>
+                                <div class="full-coupon-code">FREESHIP</div>
+                                <div class="coupon-action">No Code Needed</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon 3 -->
+                    <div class="coupon-card" data-coupon-type="coupons">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <h3 class="coupon-title">$25 Cashback on $100+ Orders</h3>
+                                <p class="coupon-description">Get cashback credited to your account within 14 days.
+                                    First-time customers only.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date">
+                                        <i class="fas fa-clock me-1"></i>Expires 11/15/23
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 1.8k used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="CASHBACK25">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">25</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Use Code</div>
+                                <div class="full-coupon-code">CASHBACK25</div>
+                                <div class="coupon-action">Click to Copy</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon 4 -->
+                    <div class="coupon-card" data-coupon-type="deals">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <div class="coupon-badge badge-exclusive">Exclusive</div>
+                                <h3 class="coupon-title">50% Off Fashion Items</h3>
+                                <p class="coupon-description">Half off on select clothing, shoes & accessories. Limited
+                                    brands & styles.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date">
+                                        <i class="fas fa-clock me-1"></i>Expires 10/30/23
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 3.4k used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="STYLE50">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">50</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Use Code</div>
+                                <div class="full-coupon-code">STYLE50</div>
+                                <div class="coupon-action">Click to Copy</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon 5 -->
+                    <div class="coupon-card" data-coupon-type="deals">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <div class="coupon-badge badge-limited">Limited</div>
+                                <h3 class="coupon-title">20% Off Prime Membership</h3>
+                                <p class="coupon-description">Discount on first year of Amazon Prime. Includes all Prime
+                                    benefits.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date">
+                                        <i class="fas fa-clock me-1"></i>Expires 10/15/23
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 892 used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="PRIME20">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">20</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Use Code</div>
+                                <div class="full-coupon-code">PRIME20</div>
+                                <div class="coupon-action">Click to Copy</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon 6 -->
+                    <div class="coupon-card" data-coupon-type="deals">
+                        <div class="coupon-content">
+                            <div class="coupon-header">
+                                <h3 class="coupon-title">10% Cashback on Home & Kitchen</h3>
+                                <p class="coupon-description">Get cashback on appliances, cookware, and home essentials.
+                                    Min. spend $50.</p>
+                                <div class="coupon-meta">
+                                    <div class="expiry-date">
+                                        <i class="fas fa-clock me-1"></i>Expires 12/15/23
+                                    </div>
+                                    <div class="usage-count">
+                                        <i class="fas fa-users"></i> 1.2k used
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-code-panel" data-full-code="HOME10CB">
+                            <div class="hidden-code-container">
+                                <div class="hidden-part"></div>
+                                <div class="visible-part">CB</div>
+                            </div>
+                            <div class="revealed-code">
+                                <div class="coupon-code-label">Use Code</div>
+                                <div class="full-coupon-code">HOME10CB</div>
+                                <div class="coupon-action">Click to Copy</div>
+                            </div>
+                            <div class="click-hint">
+                                <i class="fas fa-mouse-pointer"></i>Click to reveal
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Coupon List -->
-            <div class="coupon-list">
-                <!-- Coupon 1 -->
-                <div class="coupon-card" data-coupon-type="deals">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-limited">Ending Soon</div>
-                            <h3 class="coupon-title">30% Off Electronics & Gadgets</h3>
-                            <p class="coupon-description">Save on laptops, tablets, headphones, and smart home devices. Min. purchase $100.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 12/31/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 2.5k used
-                                </div>
-                            </div>
+            <!-- Brand Info Section - col-4 -->
+            <div class="col-12 col-lg-3">
+                <div class="brand-sidebar">
+                    <!-- Brand Header -->
+                    <div class="brand-header">
+                        <div class="brand-logo-container">
+                            <i class="fas fa-a fa-3x" style="color: white;"></i>
+                        </div>
+                        <h2 class="brand-title">Amazon</h2>
+                        <div class="brand-category">
+                            <i class="fas fa-shopping-cart me-2"></i>E-commerce Giant
                         </div>
                     </div>
-                    <div class="coupon-code-panel" data-full-code="AMAZON30">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">30</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">AMAZON30</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Coupon 2 -->
-                <div class="coupon-card" data-coupon-type="shipping">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-popular">Most Used</div>
-                            <h3 class="coupon-title">Free Express Shipping</h3>
-                            <p class="coupon-description">Free shipping on all orders over $35. No code needed. For Prime & non-Prime members.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date" style="color: #2D6A4F;">
-                                    <i class="fas fa-infinity me-1"></i>No Expiry
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 5.2k used
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="FREESHIP">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">IP</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Auto Applied</div>
-                            <div class="full-coupon-code">FREESHIP</div>
-                            <div class="coupon-action">No Code Needed</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
+                    <!-- Brand Description -->
+                    <p class="brand-description">
+                        World's largest online retailer offering everything from electronics and clothing to groceries and
+                        digital content. Known for fast shipping and competitive prices.
+                    </p>
 
-                <!-- Coupon 3 -->
-                <div class="coupon-card" data-coupon-type="coupons">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <h3 class="coupon-title">$25 Cashback on $100+ Orders</h3>
-                            <p class="coupon-description">Get cashback credited to your account within 14 days. First-time customers only.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 11/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 1.8k used
-                                </div>
-                            </div>
+                    <!-- Brand Stats -->
+                    <div class="brand-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Coupon Codes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">42</div>
+                            <div class="stat-label">Deals</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98</div>
+                            <div class="stat-label">Free Shipping</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">90% Off</div>
+                            <div class="stat-label">Best Discount</div>
                         </div>
                     </div>
-                    <div class="coupon-code-panel" data-full-code="CASHBACK25">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">25</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">CASHBACK25</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Coupon 4 -->
-                <div class="coupon-card" data-coupon-type="deals">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-exclusive">Exclusive</div>
-                            <h3 class="coupon-title">50% Off Fashion Items</h3>
-                            <p class="coupon-description">Half off on select clothing, shoes & accessories. Limited brands & styles.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 10/30/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 3.4k used
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="STYLE50">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">50</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">STYLE50</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
+                    <!-- Brand Website Button -->
+                    <a href="https://www.amazon.com" class="brand-website-btn" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>Visit Amazon.com
+                    </a>
 
-                <!-- Coupon 5 -->
-                <div class="coupon-card" data-coupon-type="deals">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <div class="coupon-badge badge-limited">Limited</div>
-                            <h3 class="coupon-title">20% Off Prime Membership</h3>
-                            <p class="coupon-description">Discount on first year of Amazon Prime. Includes all Prime benefits.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 10/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 892 used
-                                </div>
-                            </div>
+                    <!-- Brand Features -->
+                    <div class="brand-features">
+                        <h5 style="font-size: 1rem; margin-bottom: 15px; color: var(--primary);">
+                            <i class="fas fa-check-circle me-2"></i>Why Shop Here
+                        </h5>
+                        <div class="brand-feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Fast & free shipping options</span>
+                        </div>
+                        <div class="brand-feature">
+                            <i class="fas fa-undo"></i>
+                            <span>Easy 30-day returns</span>
+                        </div>
+                        <div class="brand-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure payment & buyer protection</span>
+                        </div>
+                        <div class="brand-feature">
+                            <i class="fas fa-box-open"></i>
+                            <span>Millions of products</span>
+                        </div>
+                        <div class="brand-feature">
+                            <i class="fas fa-tv"></i>
+                            <span>Prime Video & Music included</span>
                         </div>
                     </div>
-                    <div class="coupon-code-panel" data-full-code="PRIME20">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">20</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">PRIME20</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Coupon 6 -->
-                <div class="coupon-card" data-coupon-type="deals">
-                    <div class="coupon-content">
-                        <div class="coupon-header">
-                            <h3 class="coupon-title">10% Cashback on Home & Kitchen</h3>
-                            <p class="coupon-description">Get cashback on appliances, cookware, and home essentials. Min. spend $50.</p>
-                            <div class="coupon-meta">
-                                <div class="expiry-date">
-                                    <i class="fas fa-clock me-1"></i>Expires 12/15/23
-                                </div>
-                                <div class="usage-count">
-                                    <i class="fas fa-users"></i> 1.2k used
-                                </div>
+                    <!-- Coupon Stats -->
+                    <div class="mt-4 pt-3 border-top">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <small class="text-muted">Last Updated:</small>
+                                <div class="fw-bold coupon-data">Today</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="coupon-code-panel" data-full-code="HOME10CB">
-                        <div class="hidden-code-container">
-                            <div class="hidden-part"></div>
-                            <div class="visible-part">CB</div>
-                        </div>
-                        <div class="revealed-code">
-                            <div class="coupon-code-label">Use Code</div>
-                            <div class="full-coupon-code">HOME10CB</div>
-                            <div class="coupon-action">Click to Copy</div>
-                        </div>
-                        <div class="click-hint">
-                            <i class="fas fa-mouse-pointer"></i>Click to reveal
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Brand Info Section - col-4 -->
-        <div class="col-12 col-lg-3">
-            <div class="brand-sidebar">
-                <!-- Brand Header -->
-                <div class="brand-header">
-                    <div class="brand-logo-container">
-                        <i class="fas fa-a fa-3x" style="color: white;"></i>
+    </div>
+    <div class="container">
+        <!-- Banner Area -->
+        <div class="banner-container mt-4">
+            <div class="banner-placeholder">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Main Content (col-9) -->
+            <div class="col-lg-9 col-md-12">
+
+                <!-- Section 1 -->
+                <div class="content-section">
+                    <h1 class="section-title">More about Amazon</h1>
+                    <div class="mb-4">
+                        <h2 class="section-heading">Amazon Web Services (AWS)</h2>
+                        <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud platform,
+                            offering over 200 fully featured services from data centers globally. Millions of
+                            customers—including the fastest-growing startups, largest enterprises, and leading government
+                            agencies—are using AWS to lower costs, become more agile, and innovate faster.</p>
+                        <p>AWS provides services such as compute power, database storage, content delivery, and other
+                            functionality to help businesses scale and grow. The platform is known for its high availability,
+                            scalability, and security features that meet the needs of enterprise-level applications.</p>
+                        <p>Key AWS services include Amazon EC2 for virtual servers, Amazon S3 for scalable storage, Amazon RDS
+                            for managed databases, and AWS Lambda for serverless computing.</p>
+                        <img src="{{ asset('assets/images/amazon_web_services_banner_1900x600.png') }}" height="300" alt=""
+                            class="img-fluid">
                     </div>
-                    <h2 class="brand-title">Amazon</h2>
-                    <div class="brand-category">
-                        <i class="fas fa-shopping-cart me-2"></i>E-commerce Giant
+                    <div class="mb-4">
+                        <h2 class="section-heading">E-commerce & Amazon Marketplace</h2>
+                        <p>Amazon's e-commerce platform is the largest online retailer in the world, serving customers in over
+                            20 countries. The Amazon Marketplace allows third-party sellers to list and sell their products
+                            alongside Amazon's own offerings, creating a vast selection for customers.</p>
+                        <p>Amazon Prime, the company's subscription service, offers members free two-day shipping, access to
+                            streaming of movies, TV shows and music, and other benefits. With over 200 million Prime members
+                            worldwide, this service has revolutionized customer expectations for delivery speed and convenience.
+                        </p>
+                        <p>The company's logistics network, including fulfillment centers, delivery stations, and last-mile
+                            delivery capabilities, enables Amazon to offer same-day and next-day delivery for millions of items
+                            in many metropolitan areas.</p>
+                        <img src="{{ asset('assets/images/amazon_marketplace_banner_1900x600.png') }}" height="300" alt=""
+                            class="img-fluid">
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="section-heading">Artificial Intelligence & Alexa</h2>
+                        <p>Amazon's AI capabilities are integrated across its services, most notably through Alexa, the
+                            cloud-based voice service that powers devices like Amazon Echo. Alexa can play music, answer
+                            questions, control smart home devices, and provide news, weather, and information.</p>
+                        <p>Beyond consumer devices, Amazon offers AI and machine learning services through AWS, including Amazon
+                            SageMaker for building, training, and deploying machine learning models, Amazon Lex for building
+                            conversational interfaces, and Amazon Rekognition for image and video analysis.</p>
+                        <p>These AI services are used by businesses across industries to enhance customer experiences, improve
+                            operational efficiency, and drive innovation in products and services.</p>
+                        <img src="{{ asset('assets/images/alexa_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="section-heading">Entertainment & Prime Video</h2>
+                        <p>Amazon Prime Video is a streaming service offering thousands of movies and TV shows, including
+                            award-winning Amazon Originals like "The Marvelous Mrs. Maisel," "The Boys," and "The Lord of the
+                            Rings: The Rings of Power." The service is included with Amazon Prime membership or available as a
+                            standalone subscription.</p>
+                        <p>In addition to Prime Video, Amazon operates Amazon Music, Twitch (a live streaming service for
+                            gamers), Audible (audiobooks and spoken-word entertainment), and Amazon Games. This entertainment
+                            ecosystem creates multiple touchpoints with customers and represents a significant growth area for
+                            the company.</p>
+                        <p>Amazon Studios produces and distributes original content globally, with a focus on creating
+                            high-quality series and films that attract and retain Prime members.</p>
+                        <img src="{{ asset('assets/images/amazon_prime_video_banner_1900x600.png') }}" height="300" alt=""
+                            class="img-fluid">
                     </div>
                 </div>
+            </div>
 
-                <!-- Brand Description -->
-                <p class="brand-description">
-                    World's largest online retailer offering everything from electronics and clothing to groceries and digital content. Known for fast shipping and competitive prices.
-                </p>
+            <!-- Newsletter Sidebar (col-3) -->
+            <div class="col-lg-3 col-md-12">
+                <div class="newsletter-sidebar">
+                    <h3 class="newsletter-title">Amazon Updates</h3>
+                    <p class="text-center mb-4">Subscribe to receive the latest news about Amazon services and features.</p>
 
-                <!-- Brand Stats -->
-                <div class="brand-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">Coupon Codes</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">42</div>
-                        <div class="stat-label">Deals</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98</div>
-                        <div class="stat-label">Free Shipping</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">90% Off</div>
-                        <div class="stat-label">Best Discount</div>
-                    </div>
-                </div>
-
-                <!-- Brand Website Button -->
-                <a href="https://www.amazon.com" class="brand-website-btn" target="_blank">
-                    <i class="fas fa-external-link-alt me-2"></i>Visit Amazon.com
-                </a>
-
-                <!-- Brand Features -->
-                <div class="brand-features">
-                    <h5 style="font-size: 1rem; margin-bottom: 15px; color: var(--primary);">
-                        <i class="fas fa-check-circle me-2"></i>Why Shop Here
-                    </h5>
-                    <div class="feature-item">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Fast & free shipping options</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-undo"></i>
-                        <span>Easy 30-day returns</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Secure payment & buyer protection</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-box-open"></i>
-                        <span>Millions of products</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-tv"></i>
-                        <span>Prime Video & Music included</span>
-                    </div>
-                </div>
-
-                <!-- Coupon Stats -->
-                <div class="mt-4 pt-3 border-top">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <small class="text-muted">Last Updated:</small>
-                            <div class="fw-bold coupon-data">Today</div>
+                    <form class="newsletter-form">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
                         </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn newsletter-btn">
+                                <i class="fas fa-envelope me-2"></i>Subscribe
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-4 text-center">
+                        <p class="small text-muted">We'll send you updates once a week. No spam, unsubscribe anytime.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</div>
-<div class="container">
-    <!-- Banner Area -->
-<div class="banner-container mt-4">
-    <div class="banner-placeholder">
-    </div>
-</div>
-
-<div class="content-section-blog">
-    <div class="row">
-    <!-- Main Content (col-9) -->
-    <div class="col-lg-9 col-md-12">
-        <h1 class="main-heading">More about Amazon</h1>
-
-        <!-- Section 1 -->
-        <div class="content-section">
-            <h2 class="section-heading">Amazon Web Services (AWS)</h2>
-            <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. Millions of customers—including the fastest-growing startups, largest enterprises, and leading government agencies—are using AWS to lower costs, become more agile, and innovate faster.</p>
-            <p>AWS provides services such as compute power, database storage, content delivery, and other functionality to help businesses scale and grow. The platform is known for its high availability, scalability, and security features that meet the needs of enterprise-level applications.</p>
-            <p>Key AWS services include Amazon EC2 for virtual servers, Amazon S3 for scalable storage, Amazon RDS for managed databases, and AWS Lambda for serverless computing.</p>
-            <img src="{{ asset('assets/images/amazon_web_services_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
-        </div>
-
-        <!-- Section 2 -->
-        <div class="content-section">
-            <h2 class="section-heading">E-commerce & Amazon Marketplace</h2>
-            <p>Amazon's e-commerce platform is the largest online retailer in the world, serving customers in over 20 countries. The Amazon Marketplace allows third-party sellers to list and sell their products alongside Amazon's own offerings, creating a vast selection for customers.</p>
-            <p>Amazon Prime, the company's subscription service, offers members free two-day shipping, access to streaming of movies, TV shows and music, and other benefits. With over 200 million Prime members worldwide, this service has revolutionized customer expectations for delivery speed and convenience.</p>
-            <p>The company's logistics network, including fulfillment centers, delivery stations, and last-mile delivery capabilities, enables Amazon to offer same-day and next-day delivery for millions of items in many metropolitan areas.</p>
-            <img src="{{ asset('assets/images/amazon_marketplace_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
-        </div>
-
-        <!-- Section 3 -->
-        <div class="content-section">
-            <h2 class="section-heading">Artificial Intelligence & Alexa</h2>
-            <p>Amazon's AI capabilities are integrated across its services, most notably through Alexa, the cloud-based voice service that powers devices like Amazon Echo. Alexa can play music, answer questions, control smart home devices, and provide news, weather, and information.</p>
-            <p>Beyond consumer devices, Amazon offers AI and machine learning services through AWS, including Amazon SageMaker for building, training, and deploying machine learning models, Amazon Lex for building conversational interfaces, and Amazon Rekognition for image and video analysis.</p>
-            <p>These AI services are used by businesses across industries to enhance customer experiences, improve operational efficiency, and drive innovation in products and services.</p>
-            <img src="{{ asset('assets/images/alexa_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
-        </div>
-
-        <!-- Section 4 -->
-        <div class="content-section">
-            <h2 class="section-heading">Entertainment & Prime Video</h2>
-            <p>Amazon Prime Video is a streaming service offering thousands of movies and TV shows, including award-winning Amazon Originals like "The Marvelous Mrs. Maisel," "The Boys," and "The Lord of the Rings: The Rings of Power." The service is included with Amazon Prime membership or available as a standalone subscription.</p>
-            <p>In addition to Prime Video, Amazon operates Amazon Music, Twitch (a live streaming service for gamers), Audible (audiobooks and spoken-word entertainment), and Amazon Games. This entertainment ecosystem creates multiple touchpoints with customers and represents a significant growth area for the company.</p>
-            <p>Amazon Studios produces and distributes original content globally, with a focus on creating high-quality series and films that attract and retain Prime members.</p>
-            <img src="{{ asset('assets/images/amazon_prime_video_banner_1900x600.png') }}" height="300" alt="" class="img-fluid">
-        </div>
-    </div>
-
-    <!-- Newsletter Sidebar (col-3) -->
-    <div class="col-lg-3 col-md-12">
-        <div class="newsletter-sidebar">
-            <h3 class="newsletter-title">Amazon Updates</h3>
-            <p class="text-center mb-4">Subscribe to receive the latest news about Amazon services and features.</p>
-
-            <form class="newsletter-form">
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Your email address" required>
-                </div>
-                <div class="d-grid">
-                    <button type="submit" class="btn newsletter-btn">
-                        <i class="fas fa-envelope me-2"></i>Subscribe
-                    </button>
-                </div>
-            </form>
-
-            <div class="mt-4 text-center">
-                <p class="small text-muted">We'll send you updates once a week. No spam, unsubscribe anytime.</p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 @endsection
 
 @section('scripts')
     <script>
         // Reveal coupon code on click
         document.querySelectorAll('.coupon-code-panel').forEach(panel => {
-            panel.addEventListener('click', function(e) {
+            panel.addEventListener('click', function (e) {
                 e.stopPropagation();
 
                 // Toggle revealed state
@@ -1046,7 +1122,7 @@
         });
 
         // Close revealed code when clicking elsewhere
-        document.addEventListener('click', function() {
+        document.addEventListener('click', function () {
             document.querySelectorAll('.coupon-code-panel.revealed').forEach(panel => {
                 panel.classList.remove('revealed');
                 panel.closest('.coupon-card')?.classList.remove('revealed');
@@ -1055,7 +1131,7 @@
 
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 // Remove active class from all buttons
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
@@ -1077,7 +1153,7 @@
                     couponCards.forEach(card => {
                         const hasBadge = card.querySelector('.coupon-badge');
                         if (hasBadge && (hasBadge.classList.contains('badge-limited') ||
-                                         hasBadge.textContent.includes('Ending'))) {
+                            hasBadge.textContent.includes('Ending'))) {
                             card.style.display = 'flex';
                         } else {
                             card.style.display = 'none';
@@ -1098,7 +1174,7 @@
         });
 
         // Simple animation on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const couponCards = document.querySelectorAll('.coupon-card');
             couponCards.forEach((card, index) => {
                 card.style.opacity = '0';
