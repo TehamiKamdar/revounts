@@ -498,10 +498,10 @@ h6,
     padding-top: 2rem;
 }
 
-.content-section {
+/* .content-section {
     padding: 2rem 0rem;
     margin-bottom: 3rem;
-}
+} */
 
 .site-footer {
     background: url("../images/revounts-footer-hd.png") center/cover no-repeat;
@@ -2836,6 +2836,7 @@ section {
 .section-header {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 25px;
     padding-bottom: 15px;
@@ -4060,11 +4061,11 @@ section {
 
 /* Content Writing Section */
 .content-section {
-    background: white;
+    background-color: var(--white);
     border-radius: 15px;
     padding: 50px;
-    margin: 60px 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 30px auto;
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); */
     border: 1px solid #f0f0f0;
 }
 
@@ -4527,7 +4528,6 @@ section {
     }
 
     .section-header {
-        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
@@ -4787,8 +4787,7 @@ section {
     }
 
     .content-section {
-        padding: 30px;
-        margin: 0;
+        padding: 30px 0;
     }
 
     .content-text {

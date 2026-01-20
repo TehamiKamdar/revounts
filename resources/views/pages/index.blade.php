@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <main class="content-section mb-0 pb-0 d-flex justify-content-center">
+    <main class="mb-0 pt-5 d-flex justify-content-center">
         <section class="carousel-container m-0 p-0">
             <div class="modern-carousel">
                 <div class="slide-counter d-none">
