@@ -429,18 +429,6 @@
             margin-bottom: 25px;
         }
 
-        /* .content-section {
-                    padding: 0px;
-                    border-radius: 10px;
-                    margin-bottom: 16px;
-                    margin-top: 3rem;
-                } */
-
-        .content-section p {
-            font-size: 1.05rem;
-            margin-bottom: 15px;
-        }
-
         /* Newsletter Sidebar */
         .newsletter-sidebar {
             background-color: white;
