@@ -1,0 +1,33 @@
+.table th, .table td {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #E3E3E3;
+  font-size: 1em;
+  padding: 8px 12px;
+  text-align: left;
+}
+input , select {
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+border:1px solid #CCCCCC;
+}
+.select {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid #E3E3E3;
+  border-radius: 5px;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 4px;
+  width: 150px;
+}
+.submit {
+  background:  repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid #BBBBBB;
+  border-radius: 3px;
+  color: #000000;
+  cursor: pointer;
+  margin-top: 2px;
+  padding: 3px 7px;
+}
+a{
+	
+text-decoration:none !important;	
+}

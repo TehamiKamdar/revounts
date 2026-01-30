@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CouponsController;
-use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\CouponsController;
+use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SeasonalController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,19 @@ Route::get('/privacy', [PagesController::class , 'privacy'])->name('privacy');
 Route::get('/contact', [PagesController::class , 'contact'])->name('contact');
 Route::get('/categories', [PagesController::class , 'categories'])->name('categories');
 Route::get('/stores', [PagesController::class , 'stores'])->name('stores');
+
+Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () {
+        Route::get('/', [DashboardController::class,'index'])->name('index');
+        Route::get('/stores', [StoreController::class,'index'])->name('store-index');
+        Route::get('/create-store',[StoreController::class,'create'])->name('create-store');
+        Route::post('/stores-store',[StoreController::class,'store'])->name('stores.store');
+        Route::get('/store-delete/{id}',[StoreController::class,'destroy'])->name('store-destroy');
+        Route::get('/store-edit',[StoreController::class,'editForm'])->name('store-edit-form');
+        Route::get('/store/{id}/edit',[StoreController::class,'edit'])->name('store-edit');
+        Route::post('/store/update',[StoreController::class,'update'])->name('store-update');
+
+
+        // Reviews
+        Route::get('/create-review',[ReviewsController::class,'create'])->name('create-review');
+        Route::post('/review-store',[ReviewsController::class,'store'])->name('reviews.store');
+});

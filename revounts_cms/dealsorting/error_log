@@ -1,0 +1,31 @@
+[20-Sep-2017 12:40:52 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:41:22 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:41:22 UTC] PHP Notice:  Undefined index: season in /home/couponsperk/public_html/saving_cms/dealsorting/index.php on line 66
+[20-Sep-2017 12:41:23 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:41:23 UTC] PHP Notice:  Undefined index: season in /home/couponsperk/public_html/saving_cms/dealsorting/index.php on line 66
+[20-Sep-2017 12:41:59 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:42:44 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:43:40 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:43:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:43:56 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:47:11 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:47:18 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:47:30 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:48:37 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:48:43 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:48:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:49:01 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:50:29 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 12:50:40 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[20-Sep-2017 13:01:15 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[22-Jan-2018 07:47:17 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/couponsperk/public_html/saving_cms/dealsorting/include/connect.php on line 6
+[28-Sep-2021 07:46:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/include/connect.php:6
+Stack trace:
+#0 /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/index.php(1): include()
+#1 {main}
+  thrown in /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/include/connect.php on line 6
+[28-Sep-2021 07:46:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/include/connect.php:6
+Stack trace:
+#0 /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/index.php(1): include()
+#1 {main}
+  thrown in /home/pgfodi4y33ij/public_html/revounts_cms/dealsorting/include/connect.php on line 6
