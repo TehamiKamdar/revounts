@@ -93,7 +93,7 @@
             <a class="nav-link" href="{{ route('revounts_cms.create-review') }}">Create Reviews</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="{{ url('/basic-ui/typography') }}">All Reviews</a>
+            <a class="nav-link" href="{{ route('revounts_cms.review-index') }}">All Reviews</a>
           </li>
         </ul>
       </div>

@@ -57,6 +57,8 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
 
 
         // Reviews
+        Route::get('/reviews',[ReviewsController::class,'fetch'])->name('review-index');
         Route::get('/create-review',[ReviewsController::class,'create'])->name('create-review');
         Route::post('/review-store',[ReviewsController::class,'store'])->name('reviews.store');
+        Route::delete('/reviews/{id}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
 });
