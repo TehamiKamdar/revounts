@@ -108,7 +108,7 @@
       <div class="collapse " id="blog">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/basic-ui/buttons') }}">Create Blogs</a>
+            <a class="nav-link" href="{{ route('revounts_cms.create-blog') }}">Create Blogs</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="{{ route('revounts_cms.blog-index') }}">All Blogs</a>

@@ -68,5 +68,6 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
         // Blogs
         Route::get('/blogs',[BlogsController::class,'fetch'])->name('blog-index');
         Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+        Route::get('create/blogs', [BlogsController::class, 'create'])->name('create-blog');
         Route::post('/blogs', [BlogsController::class, 'store'])->name('store-blog');
     });

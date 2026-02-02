@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
+use App\Models\Stores;
+use App\Models\BlogCat;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
@@ -22,5 +24,11 @@ class BlogsController extends Controller
         Blogs::findOrFail($id)->delete();
 
         return response()->json(['success' => true]);
+    }
+
+    public function create(){
+        $categories = BlogCat::all();
+        $stores = Stores::all();
+        return view('admin.blog.create', compact('categories', 'stores'));
     }
 }

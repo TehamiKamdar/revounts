@@ -8,10 +8,6 @@
     <link href="{{ asset('assets/plugins/bootstrap-select/css/bootstrap-select.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css') }}"
         rel="stylesheet" />
-
-
-
-
     <link href="{{ asset('assets/plugins/summernote/summernote.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
