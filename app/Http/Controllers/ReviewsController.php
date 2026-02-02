@@ -109,7 +109,7 @@ class ReviewsController extends Controller
     public function edit($id)
     {
         $stores = Stores::all();
-        $review = Review::findOrFail($id)->first();
+        $review = Review::findOrFail($id);
 
         // return $review;
         return view('admin.review.edit', compact('review', 'stores'));

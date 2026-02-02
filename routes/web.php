@@ -61,13 +61,16 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
         Route::get('/create-review',[ReviewsController::class,'create'])->name('create-review');
         Route::post('/review-store',[ReviewsController::class,'store'])->name('store-review');
         Route::delete('/reviews/{id}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
-        Route::get('/store-edit/{id}',[ReviewsController::class,'edit'])->name('review-edit');
+        Route::get('/review-edit/{id}',[ReviewsController::class,'edit'])->name('review-edit');
         Route::post('/review/update', [ReviewsController::class, 'update'])->name('update-review');
 
 
         // Blogs
         Route::get('/blogs',[BlogsController::class,'fetch'])->name('blog-index');
-        Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
         Route::get('create/blogs', [BlogsController::class, 'create'])->name('create-blog');
         Route::post('/blogs', [BlogsController::class, 'store'])->name('store-blog');
+        Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+        Route::get('/blog-edit/{id}',[BlogsController::class,'edit'])->name('blog-edit');
+        Route::post('/blog/update', [BlogsController::class, 'update'])->name('update-blog');
+
     });

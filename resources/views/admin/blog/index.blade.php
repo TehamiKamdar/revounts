@@ -67,10 +67,9 @@
                                                     Delete
                                                 </button>
 
-                                                {{-- <a href="{{ route('blogs.edit', $blog->id) }}"
-                                                    class="btn btn-primary waves-effect">
+                                                <a href="{{ route('revounts_cms.blog-edit', $blog->id) }}" class="btn btn-primary waves-effect">
                                                     Edit
-                                                </a> --}}
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
