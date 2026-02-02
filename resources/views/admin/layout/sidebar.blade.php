@@ -111,7 +111,7 @@
             <a class="nav-link" href="{{ url('/basic-ui/buttons') }}">Create Blogs</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="{{ url('/basic-ui/typography') }}">All Blogs</a>
+            <a class="nav-link" href="{{ route('revounts_cms.blog-index') }}">All Blogs</a>
           </li>
         </ul>
       </div>

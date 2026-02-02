@@ -63,4 +63,10 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
         Route::delete('/reviews/{id}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
         Route::get('/store-edit/{id}',[ReviewsController::class,'edit'])->name('review-edit');
         Route::post('/review/update', [ReviewsController::class, 'update'])->name('update-review');
-});
+
+
+        // Blogs
+        Route::get('/blogs',[BlogsController::class,'fetch'])->name('blog-index');
+        Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+        Route::post('/blogs', [BlogsController::class, 'store'])->name('store-blog');
+    });
