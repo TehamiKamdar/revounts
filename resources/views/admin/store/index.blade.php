@@ -49,7 +49,7 @@
                                         id="t_users">{{ count($stores) }}</span></b></h4>
                             <h3 id="status_response"></h3>
 
-                            <table class="table table-striped table-bordered">
+                            <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Sr</th>
@@ -102,20 +102,9 @@
                 </div><!-- /.modal -->
 
 
-                <script>
+            </div>
 
-                    $('#response).load().fadeIn("slow");
-
-                </script>
-
-            </div> <!-- container -->
-
-        </div> <!-- content -->
-
-        <footer class="footer">
-            © 2016. All rights reserved.
-        </footer>
-
+        </div>
     </div>
 @endsection
 
@@ -142,9 +131,9 @@
     <script src="{{asset('assets/js/jquery.app.js')}}"></script>
     <script src="{{asset('assets/plugins/notifyjs/js/notify.js')}}"></script>
     <script src="{{asset('assets/plugins/notifications/notify-metro.js')}}"></script>
-    <!--Custom Ajax-->
+
     <script src="{{asset('assets/js/ajax_request.js" type="text/javascript')}}"></script>
-    <!-- Modal-Effect -->
+
     <script src="{{asset('assets/plugins/custombox/js/custombox.min.js')}}"></script>
     <script src="{{asset('assets/plugins/custombox/js/legacy.min.js')}}"></script>
 @endpush

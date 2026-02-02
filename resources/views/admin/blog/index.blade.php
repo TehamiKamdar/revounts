@@ -29,7 +29,7 @@
                                         id="t_users">{{ count($blogs) }}</span></b></h4>
                             <h3 id="status_response"></h3>
 
-                            <table class="table table-striped table-bordered">
+                            <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Sr</th>
@@ -40,7 +40,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="update_table_blog">
                                     @foreach ($blogs as $key => $blog)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
