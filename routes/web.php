@@ -46,31 +46,35 @@ Route::get('/categories', [PagesController::class , 'categories'])->name('catego
 Route::get('/stores', [PagesController::class , 'stores'])->name('stores');
 
 Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () {
-        Route::get('/', [DashboardController::class,'index'])->name('index');
-        Route::get('/stores', [StoreController::class,'index'])->name('store-index');
-        Route::get('/create-store',[StoreController::class,'create'])->name('create-store');
-        Route::post('/stores-store',[StoreController::class,'store'])->name('stores.store');
-        Route::get('/store-delete/{id}',[StoreController::class,'destroy'])->name('store-destroy');
-        Route::get('/store-edit',[StoreController::class,'editForm'])->name('store-edit-form');
-        Route::get('/store/{id}/edit',[StoreController::class,'edit'])->name('store-edit');
-        Route::post('/store/update',[StoreController::class,'update'])->name('store-update');
+    Route::get('/', [DashboardController::class,'index'])->name('index');
+    Route::get('/stores', [StoreController::class,'index'])->name('store-index');
+    Route::get('/create-store',[StoreController::class,'create'])->name('create-store');
+    Route::post('/stores-store',[StoreController::class,'store'])->name('stores.store');
+    Route::get('/store-delete/{id}',[StoreController::class,'destroy'])->name('store-destroy');
+    Route::get('/store-edit',[StoreController::class,'editForm'])->name('store-edit-form');
+    Route::get('/store/{id}/edit',[StoreController::class,'edit'])->name('store-edit');
+    Route::post('/store/update',[StoreController::class,'update'])->name('store-update');
 
 
-        // Reviews
-        Route::get('/reviews',[ReviewsController::class,'fetch'])->name('review-index');
-        Route::get('/create-review',[ReviewsController::class,'create'])->name('create-review');
-        Route::post('/review-store',[ReviewsController::class,'store'])->name('store-review');
-        Route::delete('/reviews/{id}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
-        Route::get('/review-edit/{id}',[ReviewsController::class,'edit'])->name('review-edit');
-        Route::post('/review/update', [ReviewsController::class, 'update'])->name('update-review');
+    // Reviews
+    Route::get('/reviews',[ReviewsController::class,'fetch'])->name('review-index');
+    Route::get('/create-review',[ReviewsController::class,'create'])->name('create-review');
+    Route::post('/review-store',[ReviewsController::class,'store'])->name('store-review');
+    Route::delete('/reviews/{id}', [ReviewsController::class, 'destroy'])->name('reviews.destroy');
+    Route::get('/review-edit/{id}',[ReviewsController::class,'edit'])->name('review-edit');
+    Route::post('/review/update', [ReviewsController::class, 'update'])->name('update-review');
 
 
-        // Blogs
-        Route::get('/blogs',[BlogsController::class,'fetch'])->name('blog-index');
-        Route::get('create/blogs', [BlogsController::class, 'create'])->name('create-blog');
-        Route::post('/blogs', [BlogsController::class, 'store'])->name('store-blog');
-        Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
-        Route::get('/blog-edit/{id}',[BlogsController::class,'edit'])->name('blog-edit');
-        Route::post('/blog/update', [BlogsController::class, 'update'])->name('update-blog');
+    // Blogs
+    Route::get('/blogs',[BlogsController::class,'fetch'])->name('blog-index');
+    Route::get('create/blogs', [BlogsController::class, 'create'])->name('create-blog');
+    Route::post('/blogs', [BlogsController::class, 'store'])->name('store-blog');
+    Route::post('/blogs/{id}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+    Route::get('/blog-edit/{id}',[BlogsController::class,'edit'])->name('blog-edit');
+    Route::post('/blog/update', [BlogsController::class, 'update'])->name('update-blog');
 
-    });
+
+    // Coupons
+    Route::get('/coupons', [CouponsController::class , 'fetch'])->name('coupon-index');
+
+});
