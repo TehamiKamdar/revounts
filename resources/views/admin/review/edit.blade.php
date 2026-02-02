@@ -80,20 +80,18 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title"><b>Add Review</b></h4>
+                        <h4 class="m-t-0 header-title"><b>Edit Review</b></h4>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-horizontal" action="{{ route('revounts_cms.store-review') }}" method="POST" role="form" enctype="multipart/form-data" id="reviewform"  name="review_form">
-
+                                <form class="form-horizontal" action="{{ route('revounts_cms.update-review') }}" method="POST" role="form" enctype="multipart/form-data" id="reviewform"  name="review_form">
                                     @csrf
-
-
+                                    <input type="hidden" name="review_id" value="{{ $review->id }}">
 
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Product Name</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" name="r_product">
+                                            <input type="text" class="form-control" value="{{ $review->product }}" name="r_product">
                                         </div>
                                     </div>
 
@@ -104,7 +102,10 @@
                                                 <option>Select</option>
 
                                                 @foreach ($stores as $store)
-                                                        <option value="{{$store->id}}">{{ $store->name }}</option>
+                                                    <option value="{{ $store->id }}"
+                                                        {{ $review->store_id == $store->id ? 'selected' : '' }}>
+                                                        {{ $store->name }}
+                                                    </option>
                                                 @endforeach
 
 
@@ -116,7 +117,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Slug</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" value="" name="r_slug" oncontextmenu="return false;" onkeyup="nametourl();" id="slugText" >
+                                            <input type="text" class="form-control" value="{{ $review->slug }}" name="r_slug" oncontextmenu="return false;" onkeyup="nametourl();" id="slugText" readonly/>
                                         </div>
                                     </div>
 
@@ -125,14 +126,14 @@
                                         <label class="col-md-2 control-label">Short Description</label>
                                         <div class="col-md-10">
 
-                                                <textarea type="text" id="sum" class="summernote" value="" name="r_short_description" ></textarea>
+                                                <textarea type="text" id="sum" class="summernote" name="r_short_description" >{!! $review->short_desc !!}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Review</label>
                                         <div class="col-md-10">
-                                            <textarea type="text" class="summernote" value="" name="r_description" ></textarea>
+                                            <textarea type="text" class="summernote" name="r_description" >{!! $review->long_desc !!}</textarea>
                                         </div>
                                     </div>
 
@@ -149,7 +150,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Image Alt</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" name="img_alt" value="">
+                                            <input type="text" class="form-control" name="img_alt" value="{{ $review->img_alt }}">
                                         </div>
                                     </div>
 
@@ -157,14 +158,14 @@
                                         <div class="form-group">
                                         <label class="col-md-2 control-label">Meta Title</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" name="r_meta_title" value="">
+                                            <input type="text" class="form-control" name="r_meta_title" value="{{ $review->meta_title }}">
                                         </div>
                                     </div>
 
                                         <div class="form-group">
                                         <label class="col-md-2 control-label">Meta Description</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" name="r_meta_desc" value="">
+                                            <input type="text" class="form-control" name="r_meta_desc" value="{{ $review->meta_desc }}">
                                         </div>
                                     </div>
 
@@ -172,7 +173,7 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Date</label>
                                         <div class="col-md-4">
-                                            <input type="date" class="form-control" name="date">
+                                            <input type="date" class="form-control" name="date" value="{{ $review->date }}">
                                         </div>
                                     </div>
 
@@ -181,26 +182,45 @@
                                     <hr>
 
                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Featured For Home</label>
+                                        <label class="col-md-2 control-label">Featured Check</label>
                                         <div class="col-md-10">
-                                            <input type="checkbox" name="r_feature" id="feature"  value="1" checked data-plugin="switchery"  data-color="#81c868">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-2 control-label">Product Review</label>
-                                        <div class="col-md-10">
-                                            <input type="checkbox" name="product_review" id="product_review"  value="1"  data-plugin="switchery"  data-color="#81c868">
+                                            <input type="checkbox"
+                                                name="r_feature"
+                                                value="1"
+                                                {{ $review->featured == 1 ? 'checked' : '' }}
+                                                data-plugin="switchery"
+                                                data-color="#81c868">
+                                            <input type="hidden" name="r_feature" value="0">
                                         </div>
                                     </div>
 
-                                        <div class="form-group">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Product Check</label>
+                                        <div class="col-md-10">
+                                            <input type="checkbox"
+                                                name="product_review"
+                                                value="1"
+                                                {{ $review->product_review == 1 ? 'checked' : '' }}
+                                                data-plugin="switchery"
+                                                data-color="#81c868">
+                                            <input type="hidden" name="product_review" value="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="col-md-2 control-label">Editor Choice</label>
                                         <div class="col-md-10">
-                                            <input type="checkbox" name="editor_choice" id="editor_choice"  value="1"  data-plugin="switchery"  data-color="#81c868">
+                                            <input type="checkbox"
+                                                name="editor_choice"
+                                                value="1"
+                                                {{ $review->editor_choice == 1 ? 'checked' : '' }}
+                                                data-plugin="switchery"
+                                                data-color="#81c868">
+                                            <input type="hidden" name="editor_choice" value="0">
                                         </div>
                                     </div>
 
-                                        <div class="form-group">
+                                    <div class="form-group">
                                         <label class="col-md-2 control-label">Draft</label>
                                         <div class="col-md-10">
                                             <input type="checkbox" name="is_draft" id="is_draft"  value="1"  data-plugin="switchery"  data-color="#81c868">
@@ -209,7 +229,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Save Review</label>
+                                        <label class="col-md-2 control-label">Update Review</label>
                                         <div class="col-md-10">
                                             <button type="submit" id="save_btn" class="btn btn-purple waves-effect waves-light">Submit</button>
                                             <img src="images/spinner.gif" style="no-repeat center center;width:32px;height:32px; display:none;" id="loader">
@@ -293,140 +313,119 @@
 </div>
 @endsection
 
-
-
 @push('plugin-scripts')
-    <script src="{{ asset('/assets/plugins/chartjs/chart.min.js') }}"></script>
-    <script src="{{ asset('/assets/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-    <!-- jQuery  -->
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/detect.js') }}"></script>
-    <script src="{{ asset('assets/js/fastclick.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
-    <script src="{{ asset('assets/js/waves.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.scrollTo.min.js') }}"></script>
+<script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
 
 
-    <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/switchery/js/switchery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js') }}"></script>
-    <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}" type="text/javascript">
-    </script>
+        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/plugins/switchery/js/switchery.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+        <script src="assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
-    <script src="{{ asset('assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js') }}"
-        type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js') }}" type="text/javascript">
-    </script>
+        <script type="text/javascript" src="assets/plugins/autocomplete/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="assets/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/autocomplete/countries.js"></script>
+        <script type="text/javascript" src="assets/pages/autocomplete.js"></script>
 
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.autocomplete.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/countries.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/pages/autocomplete.js') }}"></script>
-
-
-
-    <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
+        <script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
 
 
 
 
-    <script src="{{ asset('assets/plugins/custombox/js/custombox.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custombox/js/legacy.min.js') }}"></script>
+		<!-- Modal-Effect -->
+        <script src="assets/plugins/custombox/js/custombox.min.js"></script>
+        <script src="assets/plugins/custombox/js/legacy.min.js"></script>
 
 
-    <script src="{{ asset('assets/plugins/summernote/summernote.min.js') }}"></script>
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
 
-    <script>
-        jQuery(document).ready(function() {
+		<script src="assets/plugins/summernote/summernote.min.js"></script>
+		 <script type="text/javascript" src="assets/js/imagealt.js"></script>
+		 <script>
+            jQuery(document).ready(function(){
 
-            $('.summernote').summernote({
-                height: 350, // set editor height
-                minHeight: null, // set minimum height of editor
-                maxHeight: null, // set maximum height of editor
-                focus: false // set focus to editable area after initializing summernote
+                $('.summernote').summernote({
+					fontNames: ['Century Gothic', 'Verdana', 'Arial', 'Arial Black', 'Roboto','Montserrat','Lato','Helvetica','Droid Sans','Noto Sans','Fira Sans'],
+					 imageTitle: {
+          specificAltField: true,
+        },
+        lang: 'en',
+        popover: {
+            image: [
+                ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                ['remove', ['removeMedia']],
+                ['custom', ['imageTitle','imageAlt']],
+            ],
+        },
+                    height: 350,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: false,
+					dialogsFade: true	// set focus to editable area after initializing summernote
+                });
+
+                $('.inline-editor').summernote({
+                    airMode: true
+                });
+
             });
 
-            $('.inline-editor').summernote({
-                airMode: true
-            });
 
-        });
-    </script>
+        </script>
+        <script>
 
-    <script>
-        function nametourl() {
-            var text = document.getElementById("slugText").value;
+			function nametourl()
+			{
+				var text=document.getElementById("slugText").value;
 
-            var url = ToSeoUrl(text);
+				var url=ToSeoUrl(text);
 
-            document.getElementById("slugText").value = url;
+				document.getElementById("slugText").value=url;
 
 
-        }
+			}
 
-        function ToSeoUrl(url) {
+			function ToSeoUrl(url) {
 
-            // make the url lowercase
-            var encodedUrl = url.toString().toLowerCase();
+  // make the url lowercase
+  var encodedUrl = url.toString().toLowerCase();
 
-            // replace & with and
-            encodedUrl = encodedUrl.split(/\&+/).join("-and-")
+  // replace & with and
+  encodedUrl = encodedUrl.split(/\&+/).join("-and-")
 
-            // remove invalid characters
-            encodedUrl = encodedUrl.split(/[^a-z0-9]/).join("-");
+  // remove invalid characters
+  encodedUrl = encodedUrl.split(/[^a-z0-9]/).join("-");
 
-            // remove duplicates
-            encodedUrl = encodedUrl.split(/-+/).join("-");
+  // remove duplicates
+  encodedUrl = encodedUrl.split(/-+/).join("-");
 
-            // trim leading & trailing characters
-            encodedUrl = encodedUrl.trim('-');
+  // trim leading & trailing characters
+  encodedUrl = encodedUrl.trim('-');
 
-            return encodedUrl;
-        }
-
-        // $(document).ready(function(){
-        // var maxChars = $("#title");
-        // var max_length = maxChars.attr('maxlength');
-        // if (max_length > 0) {
-        //     maxChars.on('keyup', function(e){
-        //         length = new Number(maxChars.val().length);
-        //         counter = max_length-length;
-        //         $("#sessionNum_counter").text(counter);
-        //     });
-        // }
-        // });
+  return encodedUrl;
+}
 
 
-        function edit_store_form(id) {
-            document.getElementById('edit_store_response').innerHTML = '<center><img src="images/spinner.gif"></center>';
-            var timestamp = new Date().getTime();
-            // Return Request
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-
-                    document.getElementById('edit_store_response').innerHTML = this.responseText;
-                    $('.summernote').summernote({
-                        height: 350, // set editor height
-                        minHeight: null, // set minimum height of editor
-                        maxHeight: null, // set maximum height of editor
-                        focus: false // set focus to editable area after initializing summernote
-                    });
-                }
-            };
-            //Make Request
-            xhttp.open("GET", "php_scripts/ajax_data.php?edit_store_form=" + id + "&timeuniq=" + timestamp, true);
-            xhttp.send();
-        }
-    </script>
-@endpush
-
-@push('custom-scripts')
-    <script src="{{ asset('/assets/js/dashboard.js') }}"></script>
+		</script>
 @endpush

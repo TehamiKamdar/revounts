@@ -29,10 +29,10 @@
                                                 <button type="button" class="btn btn-danger" onclick="deleteReview({{ $review->id }})">
                                                     Delete
                                                 </button>
-                                                {{-- <a href="{{ route('revounts_cms.reviews.edit', $review->id) }}"
+                                                <a href="{{ route('revounts_cms.review-edit', $review->id) }}"
                                                 class="btn btn-primary">
                                                     Edit
-                                                </a> --}}
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
