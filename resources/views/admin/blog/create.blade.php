@@ -58,6 +58,12 @@
 @endpush
 
 @section('content')
+@if (session('success'))
+    <p style="color:green;">{{ session('success') }}</p>
+@endif
+@if (session('error'))
+    <p style="color:red;">{{ session('error') }}</p>
+@endif
     <div class="content-page">
         <!-- Start content -->
         <div class="content">
@@ -70,9 +76,8 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form class="form-horizontal" role="form" enctype="multipart/form-data" id="blogform"
-                                        name="blog_form">
-
+                                    <form class="form-horizontal" role="form" action="{{ route('revounts_cms.store-blog') }}" enctype="multipart/form-data" id="blogform" name="blog_form" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Title</label>
                                             <div class="col-md-10">
@@ -195,11 +200,8 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Save Your Blog</label>
                                             <div class="col-md-10">
-                                                <button type="button" onclick="add_blog()"
-                                                    class="btn btn-purple waves-effect waves-light">Submit</button>
-                                                <img src="images/spinner.gif"
-                                                    style="no-repeat center center;width:32px;height:32px; display:none;"
-                                                    id="loader">
+                                                <button type="submit" onclick="document.getElementById('loader').style.display = 'block'" class="btn btn-purple waves-effect waves-light">Submit</button>
+                                                <img src="{{ asset('assets/images/sp-loading.gif') }}" style="no-repeat center center;width:32px;height:32px; display:none;" id="loader">
                                             </div>
                                         </div>
 
