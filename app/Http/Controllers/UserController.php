@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -31,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.user.create', ['networks' => DB::table('tblnetwork')->get()]);
     }
 
     /**
@@ -39,7 +40,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'uname'   => 'required|string|max:255|unique:tbluser,uname',
+            'pwd'     => 'required|min:6',
+            'type'    => 'required|in:1,2',
+            'network' => 'nullable'
+        ]);
+
+        User::create([
+            'uname'   => $request->uname,
+            'pwd'     => $request->pwd,
+            'type'     => $request->type,
+            'network' => $request->network ?? '',
+            'status'  => 1
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'User added successfully'
+        ]);
     }
 
     /**
@@ -69,8 +88,13 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+
+        return response()->json([
+            "success" => true,
+            "message" => "User Deleted"
+        ]);
     }
 }

@@ -126,7 +126,7 @@
       <div class="collapse " id="storeuser">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link" href="">Create Users</a>
+            <a class="nav-link" href="{{ route('revounts_cms.create-users') }}">Create Users</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="{{ route('revounts_cms.user-index') }}">All Users</a>
