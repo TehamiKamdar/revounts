@@ -50,4 +50,8 @@ class Stores extends Model
         'updated_by_at',
         'no_coupons'
     ];
+    public function coupons()
+    {
+        return $this->hasMany(Coupons::class);
+    }
 }

@@ -1,4 +1,0 @@
-[25-Mar-2025 04:56:30 Australia/Sydney] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/pgfodi4y33ij/public_html/revounts_cms/top_store_sorting/include/connect.php:6
-Stack trace:
-#0 {main}
-  thrown in /home/pgfodi4y33ij/public_html/revounts_cms/top_store_sorting/include/connect.php on line 6
