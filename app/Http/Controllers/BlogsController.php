@@ -36,8 +36,8 @@ class BlogsController extends Controller
 
     public function create()
     {
-        $categories = BlogCat::all();
-        $stores = Stores::all();
+        $categories = BlogCat::orderBy('name', 'asc')->get();
+        $stores = Stores::orderBy('name', 'asc')->get();
 
         return view('admin.blog.create', compact('categories', 'stores'));
     }
@@ -100,8 +100,8 @@ class BlogsController extends Controller
     {
         $blog = Blogs::findOrFail($id);
         // return $blog;
-        $stores = Stores::all();
-        $categories = BlogCat::all();
+        $stores = Stores::orderBy('name', 'asc')->get();
+        $categories = BlogCat::orderBy('name', 'asc')->get();
 
         return view('admin.blog.edit', compact('blog', 'stores', 'categories'));
     }

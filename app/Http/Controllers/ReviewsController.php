@@ -108,7 +108,7 @@ class ReviewsController extends Controller
 
     public function edit($id)
     {
-        $stores = Stores::all();
+        $stores = Stores::orderBy('name', 'asc')->get();
         $review = Review::findOrFail($id);
 
         // return $review;

@@ -13,7 +13,7 @@ class StoreController extends Controller
 {
     public function index()
     {
-        $stores = Stores::all();
+        $stores = Stores::orderBy('name', 'asc')->get();
 
         return view('admin.store.index', compact('stores'));
     }
@@ -118,7 +118,7 @@ class StoreController extends Controller
 
     public function editForm()
     {
-        $stores = Stores::all();
+        $stores = Stores::orderBy('name', 'asc')->get();
 
         return view('admin.store.edit', compact('stores'));
     }
@@ -126,7 +126,7 @@ class StoreController extends Controller
     public function edit($id)
     {
         $store = Stores::findOrFail($id);
-        $categories = Category::all();
+        $categories = Category::orderBy('name', 'asc')->get();
 
         return view('admin.store.editform', compact('store', 'categories'));
     }

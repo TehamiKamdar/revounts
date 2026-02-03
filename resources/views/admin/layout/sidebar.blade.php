@@ -72,7 +72,7 @@
       <div class="collapse " id="coupon">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/basic-ui/buttons') }}">Create Coupons</a>
+            <a class="nav-link" href="{{ route('revounts_cms.create-coupon') }}">Create Coupons</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="{{ route('revounts_cms.coupon-index') }}">All Coupons</a>

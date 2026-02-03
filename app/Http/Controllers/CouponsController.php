@@ -21,18 +21,65 @@ class CouponsController extends Controller
 
     public function create()
     {
-        return view('pages.coupons.create',[]);
+        return view('admin.coupon.create',
+            [
+                'stores' => Stores::orderBy('name', 'asc')->get(),
+                'categories' => Category::orderBy('name', 'asc')->get(),
+            ]);
     }
 
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'offer' => 'required|string|max:255',
+            'offer_details' => 'nullable|string|max:255',
+            'offer_description' => 'nullable|string',
+            'tracking_url' => 'nullable|url',
+            'expiry_date' => 'nullable|date',
+            'code_type' => 'required|in:true,false',
+            'code' => 'nullable|string|max:50',
+            'store' => 'required|exists:tblstores,id',
+            'category' => 'required|exists:tblcategory,id',
+            'coupon_image' => 'nullable|string|max:255',
+            'featured' => 'nullable|boolean',
+            'popular' => 'nullable|boolean',
+            'store_feature' => 'nullable|boolean',
+            'expired_cpn' => 'nullable|boolean',
+            'addbyuser_cpn' => 'nullable|boolean',
+        ]);
+
+        $coupon = new Coupons;
+        $coupon->name = $request->offer;
+        $coupon->offer = $request->offer_details;
+        $coupon->offer_desc = $request->offer_description;
+        $coupon->tracking_url = $request->tracking_url;
+        $coupon->expdate = $request->expiry_date;
+        $coupon->store = $request->store;
+        $coupon->category = $request->category;
+        $coupon->img = $request->coupon_image;
+
+        $coupon->chk_active = $request->code_type;
+        $coupon->coupon_code = $request->code_type === 'false' ? $request->code : null;
+
+        // Checkboxes
+        $coupon->featured = $request->has('featured') ? 1 : 0;
+        $coupon->popular = $request->has('popular') ? 1 : 0;
+        $coupon->store_feature = $request->has('store_feature') ? 1 : 0;
+        $coupon->exp_chk = $request->has('expired_cpn') ? 1 : 0;
+        $coupon->addbyuser = $request->has('addbyuser_cpn') ? 1 : 0;
+
+        $coupon->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Coupon added successfully!',
+        ]);
     }
 
     public function fetch()
     {
         return view('admin.coupon.index', [
-            'stores' => Stores::all(),
+            'stores' => Stores::orderBy('name', 'asc')->get(),
             'totalCoupons' => Coupons::count(),
         ]);
     }
@@ -60,8 +107,8 @@ class CouponsController extends Controller
     {
         return view('admin.coupon.partials.edit-modal', [
             'coupon' => Coupons::findOrFail($id),
-            'stores' => Stores::all(),
-            'categories' => Category::all(),
+            'stores' => Stores::orderBy('name', 'asc')->get(),
+            'categories' => Category::orderBy('name', 'asc')->get(),
         ]);
     }
 
@@ -86,7 +133,6 @@ class CouponsController extends Controller
         ]);
 
         $coupon = Coupons::findOrFail($request->coupon_id);
-
 
         // Basic fields
         $coupon->name = $request->update_offer;
