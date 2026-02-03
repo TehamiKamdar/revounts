@@ -19,6 +19,16 @@ class CouponsController extends Controller
         return view('pages.coupons.details');
     }
 
+    public function create()
+    {
+        return view('pages.coupons.create',[]);
+    }
+
+    public function store(Request $request)
+    {
+        
+    }
+
     public function fetch()
     {
         return view('admin.coupon.index', [
@@ -103,7 +113,7 @@ class CouponsController extends Controller
         $coupon->exp_chk = $request->has('exp_chk') ? 1 : 0;
 
         $coupon->save();
-        
+
         return response()->json([
             'status' => 'success',
             'message' => 'Coupon updated successfully',
