@@ -72,17 +72,34 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.user.partials.edit-modal', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'uname' => 'required|unique:tbluser,uname,' . $request->user_id,
+            'pwd' =>   'required',
+            'status'=> 'required'
+        ]);
+
+        $user = User::findOrFail($request->user_id);
+
+        return response()->json([
+            'success' => true,
+            'message' => $user
+        ]);
+        $user->uname = $request->uname;
+        $user->pwd = $request->pwd;
+        $user->status = $request->status;
+        $user->save();
+
     }
 
     /**
