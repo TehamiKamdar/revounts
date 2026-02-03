@@ -287,6 +287,35 @@ $(document).on('click', '.editCouponBtn', function(){
         }
     })
 })
+
+function updateCoupon() {
+    let form = $('#updateCouponForm');
+    $.ajax({
+        url: '/revounts_cms/coupon/update',
+        method: 'POST',
+        data: form.serialize(),
+        beforeSend: function() {
+            form.find('button').prop('disabled', true).html('<i class="fa fa-spinner fa-spin"></i> Saving...');
+        },
+        success: function(res) {
+            alert(res.message); // or show in modal
+            $('.modal-backdrop').remove();
+            $('#editCouponModalBody').html(`
+                <div class="text-center p-4">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </div>
+            `)
+            $('#editCouponModal').modal('hide');
+            form.find('button').prop('disabled', false).html('Save Changes');
+
+            // Optionally refresh the coupon list
+        },
+        error: function(err) {
+            alert('Something went wrong!');
+            form.find('button').prop('disabled', false).html('Save Changes');
+        }
+    });
+}
 </script>
 
 @endpush
