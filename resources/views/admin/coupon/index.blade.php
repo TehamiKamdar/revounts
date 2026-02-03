@@ -15,12 +15,18 @@
     <link href="{{ asset('assets/plugins/summernote/summernote.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
 
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
 
     <!--Modal Css-->
     <link href="{{ asset('assets/plugins/custombox/css/custombox.css') }}" rel="stylesheet">
+
+    <style>
+        .modal-header .close {
+            padding: 0rem 0rem !important;
+            margin: 0px 0px 0px auto !important;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -68,8 +74,23 @@
                     </div>
                 </div>
             </div>
-            <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                aria-hidden="true" style="display: none;">
+        </div>
+    </div>
+    <div class="modal fade" id="editCouponModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Coupon</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body" id="editCouponModalBody">
+                    <div class="text-center p-4">
+                        <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -146,6 +167,8 @@ $('#store').select2({
                 rightColumns: 1
             }
         });
+        // Toggle Enter Code field based on radio selection
+
     });
     TableManageButtons.init();
 
@@ -183,7 +206,7 @@ $('#store').on('change', function () {
                             : '<span class="label label-danger">Disabled</span>'}
                     </td>
                     <td>
-                        <a href="/coupons/edit/${coupon.id}" class="btn btn-sm btn-primary">Edit</a>
+                        <button type="button" data-id="${coupon.id}" class="btn btn-sm btn-info editCouponBtn" data-target="#editCouponModal" data-toggle="modal">Edit</button>
                         <button type="button" data-id="${coupon.id}" class="btn btn-sm btn-danger deleteCouponBtn">Delete</button>
                     </td>
                 </tr>`;
@@ -219,6 +242,48 @@ $(document).on('click', '.deleteCouponBtn', function(e){
         error: function(){
             btn.prop('disabled', false);
             btn.text('Delete');
+        }
+    })
+})
+$(document).on('change', 'input[name="update_code_type"]', function() {
+    if ($(this).val() === 'false') {
+        $('#couponCodeRow').slideDown();
+    } else {
+        $('#couponCodeRow').slideUp();
+    }
+});
+$(document).on('click', '.close', function(){
+    $('#editCouponModalBody').html(`
+        <div class="text-center p-4">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
+        </div>
+    `)
+})
+$(document).on('click', '.editCouponBtn', function(){
+    let btn = $(this);
+    let couponId = btn.data('id');
+
+    $.ajax({
+        url: "/revounts_cms/coupons/edit/" + couponId,
+        method: "GET",
+        beforeSend: function(){
+            btn.prop('disabled', true);
+            btn.html('<i class="fa fa-spinner fa-spin"></i> Loading...');
+        },
+        success: function(response){
+            // 1️⃣ Inject HTML into modal
+            $('#editCouponModalBody').html(response);
+
+            // 2️⃣ Open modal
+            $('#editCouponModal').modal('show');
+
+            btn.prop('disabled', false);
+            btn.html('Edit');
+        },
+        error: function(){
+            btn.prop('disabled', false);
+            btn.html('Edit');
+            alert('Something Went Wrong')
         }
     })
 })

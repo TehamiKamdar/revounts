@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Stores;
 use App\Models\Coupons;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CouponsController extends Controller
@@ -36,6 +37,15 @@ class CouponsController extends Controller
         return response()->json([
             'success' => true,
             'message' => "Coupon Deleted"
+        ]);
+    }
+
+    public function edit($id)
+    {
+        return view('admin.coupon.partials.edit-modal', [
+            'coupon'     => Coupons::findOrFail($id),
+            'stores'     => Stores::all(),
+            'categories' => Category::all(),
         ]);
     }
 }

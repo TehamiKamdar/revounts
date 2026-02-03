@@ -14,6 +14,7 @@
    <!-- plugin css -->
 <link rel="stylesheet" href="{{ asset('assets/plugins/@mdi/font/css/materialdesignicons.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}">
+<link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
 <!-- end plugin css -->
 
 
