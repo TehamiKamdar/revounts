@@ -87,5 +87,5 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
 
     // Users
     Route::get('/users', [UserController::class , 'index'])->name('user-index');
-    Route::post('/users/status', [UserController::class, 'status']) ->name('users.status.change');
+    Route::post('/user/status', [UserController::class, 'status']) ->name('users.status.change');
 });

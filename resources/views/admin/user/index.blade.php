@@ -38,7 +38,7 @@
                                                 @if ($user->status == 1)
                                                     <span class="label label-table label-success">Active</span>
                                                 @else
-                                                    <span class="label label-table label-danger">Disabled</span>
+                                                    <span class="label label-table label-danger">Inactive</span>
                                                 @endif
                                             </td>
 
@@ -56,13 +56,13 @@
                                                 </button>
 
                                                 @if ($user->status == 1)
-                                                    <a href="#" class="btn btn-inverse waves-effect waves-light" onclick="user_status_switch(this, {{ $user->id }}, 0)">
+                                                    <button type="button" class="btn btn-inverse waves-effect waves-light" onclick="user_status_switch(this, {{ $user->id }}, 0)">
                                                         Disable
-                                                    </a>
+                                                    </button>
                                                 @else
-                                                    <a href="#" class="btn btn-success waves-effect waves-light" onclick="user_status_switch(this, {{ $user->id }}, 1)">
+                                                    <button type="button" class="btn btn-success waves-effect waves-light" onclick="user_status_switch(this, {{ $user->id }}, 1)">
                                                         Enable
-                                                    </a>
+                                                    </button>
                                                 @endif
                                             </td>
                                         </tr>
@@ -94,7 +94,8 @@ function user_status_switch(el, userId, status) {
             btn.prop('disabled', true);
             btn.html(`<i class="fa fa-spinner fa-spin"></i> Saving...`);
         },
-        success: function () {
+        success: function (res) {
+            alert(res.message);
             location.reload();
         }
     });

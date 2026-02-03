@@ -12,7 +12,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index', ['users' => User::orderBy('type', 'asc')->get()]);
+        return view('admin.user.index', ['users' => User::orderBy('status', 'desc')->get()]);
+    }
+
+    public function status(Request $request){
+        $user = User::findOrFail($request->id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json([
+            "success" => true,
+            "message" => "User status updated"
+        ]);
     }
 
     /**
@@ -20,7 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
