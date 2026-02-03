@@ -221,7 +221,7 @@
 
     let form = $(this);
     let btn = $('#updateUserBtn');
-
+    console.log(form.serialize()); 
     $.ajax({
         url: "{{ route('revounts_cms.update-user') }}",
         type: "POST",
@@ -234,7 +234,8 @@
                .html('<i class="fa fa-spinner fa-spin"></i> Updating...');
         },
         success: function (res) {
-            console.log(res.message);
+            alert(res.message);
+            window.location.reload();
         },
         error: function (xhr) {
             console.error(xhr.responseText);

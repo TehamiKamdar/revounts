@@ -92,5 +92,5 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     Route::post('/users', [UserController::class, 'store'])->name('store-users');
     Route::post('/user/{id}', [UserController::class, 'destroy']) ->name('users.destroy');
     Route::get('/users/{id}/edit', [UserController::class, 'edit']);
-    Route::post('/user/update', [UserController::class, 'update'])->name('update-user');
+    Route::post('/users/update', [UserController::class, 'update'])->name('update-user');
 });

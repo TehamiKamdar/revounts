@@ -84,22 +84,22 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'uname' => 'required|unique:tbluser,uname,' . $request->user_id,
+            'uname' => 'required|unique:tbluser,uname,' . $request->user_id . ',id',
             'pwd' =>   'required',
             'status'=> 'required'
         ]);
 
         $user = User::findOrFail($request->user_id);
 
-        return response()->json([
-            'success' => true,
-            'message' => $user
-        ]);
         $user->uname = $request->uname;
         $user->pwd = $request->pwd;
         $user->status = $request->status;
         $user->save();
-
+        
+        return response()->json([
+            'success' => true,
+            'message' => "User updated"
+        ]);
     }
 
     /**
