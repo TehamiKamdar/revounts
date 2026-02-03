@@ -32,7 +32,7 @@
                 <div class="col-sm-9">
                     <select name="store" class="form-control">
                         @foreach($stores as $store)
-                            <option value="{{ $store->id }}" {{ $coupon->store_id == $store->id ? 'selected' : '' }}>
+                            <option value="{{ $store->id }}" {{ $coupon->store == $store->id ? 'selected' : '' }}>
                                 {{ $store->name }}
                             </option>
                         @endforeach

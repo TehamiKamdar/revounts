@@ -77,6 +77,7 @@ class CouponsController extends Controller
 
         $coupon = Coupons::findOrFail($request->coupon_id);
 
+
         // Basic fields
         $coupon->name = $request->update_offer;
         $coupon->offer = $request->update_offer_details;
@@ -102,7 +103,7 @@ class CouponsController extends Controller
         $coupon->exp_chk = $request->has('exp_chk') ? 1 : 0;
 
         $coupon->save();
-
+        
         return response()->json([
             'status' => 'success',
             'message' => 'Coupon updated successfully',
