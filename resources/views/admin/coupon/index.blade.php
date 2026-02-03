@@ -48,7 +48,7 @@
                     <div class="card-box table-responsive">
                         <h4>
                             Total Coupons:
-                            <span class="label label-pink" id="t_users">{{ $totalCoupons }}</span>
+                            <span class="badge bg-success" id="t_users">{{ $totalCoupons }}</span>
                         </h4>
 
                         <table class="table table-bordered table-hover table-light">
@@ -98,6 +98,7 @@
 <script src="{{asset('assets/plugins/datatables/dataTables.scroller.min.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables/dataTables.colVis.js')}}"></script>
 <script src="{{asset('assets/plugins/datatables/dataTables.fixedColumns.min.js')}}"></script>
+<script src="{{asset('assets/pages/datatables.init.js')}}"></script>
 {{--
 <script src="{{asset('assets/js/detect.js')}}"></script>
 <script src="{{asset('assets/js/fastclick.js')}}"></script>
@@ -117,36 +118,36 @@ $('#store').select2({
     width: '100%'
 });
 
-    // $(document).ready(function () {
-    //     $('#datatable').dataTable();
-    //     $('#datatable-keytable').DataTable({keys: true});
-    //     $('#datatable-responsive').DataTable();
-    //     $('#datatable-colvid').DataTable({
-    //         "dom": 'C<"clear">lfrtip',
-    //         "colVis": {
-    //             "buttonText": "Change columns"
-    //         }
-    //     });
-    //     $('#datatable-scroller').DataTable({
-    //         ajax: "assets/plugins/datatables/json/scroller-demo.json",
-    //         deferRender: true,
-    //         scrollY: 380,
-    //         scrollCollapse: true,
-    //         scroller: true
-    //     });
-    //     var table = $('#datatable-fixed-header').DataTable({fixedHeader: true});
-    //     var table = $('#datatable-fixed-col').DataTable({
-    //         scrollY: "300px",
-    //         scrollX: true,
-    //         scrollCollapse: true,
-    //         paging: false,
-    //         fixedColumns: {
-    //             leftColumns: 1,
-    //             rightColumns: 1
-    //         }
-    //     });
-    // });
-    // TableManageButtons.init();
+    $(document).ready(function () {
+        $('#datatable').dataTable();
+        $('#datatable-keytable').DataTable({keys: true});
+        $('#datatable-responsive').DataTable();
+        $('#datatable-colvid').DataTable({
+            "dom": 'C<"clear">lfrtip',
+            "colVis": {
+                "buttonText": "Change columns"
+            }
+        });
+        $('#datatable-scroller').DataTable({
+            ajax: "assets/plugins/datatables/json/scroller-demo.json",
+            deferRender: true,
+            scrollY: 380,
+            scrollCollapse: true,
+            scroller: true
+        });
+        var table = $('#datatable-fixed-header').DataTable({fixedHeader: true});
+        var table = $('#datatable-fixed-col').DataTable({
+            scrollY: "300px",
+            scrollX: true,
+            scrollCollapse: true,
+            paging: false,
+            fixedColumns: {
+                leftColumns: 1,
+                rightColumns: 1
+            }
+        });
+    });
+    TableManageButtons.init();
 
 </script>
 <script src="{{asset('assets/plugins/switchery/js/switchery.min.js')}}"></script>
@@ -195,23 +196,29 @@ $('#store').on('change', function () {
 $(document).on('click', '.deleteCouponBtn', function(e){
     e.preventDefault();
 
-    let couponId = $(this).data('id');
-    console.log(couponId);
+    let btn = $(this);
+    let couponId = btn.data('id');
 
     $.ajax({
-        url: ,
-        method: ,
+        url: '/revounts_cms/coupons/'+couponId,
+        method: "POST",
         headers:{
-
+            "X-CSRF-TOKEN" : "{{ csrf_token() }}"
         },
         beforeSend: function(){
-
+            btn.attr('disabled', true);
+            btn.html('<i class="fa fa-spinner fa-spin"></i> Deleting...');
         },
         success: function(){
-
+            btn.closest('tr').fadeOut(300, function () {
+                // 🔽 update counter after row removed
+                let total = parseInt($('#t_users').text());
+                $('#t_users').text(total - 1);
+            });
         },
         error: function(){
-
+            btn.prop('disabled', false);
+            btn.text('Delete');
         }
     })
 })

@@ -77,4 +77,5 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     // Coupons
     Route::get('/coupons', [CouponsController::class , 'fetch'])->name('coupon-index');
     Route::get('/coupons/by-store/{store}', [CouponsController::class, 'byStore'])->name('coupons.byStore');
+    Route::post('/coupons/{id}', [CouponsController::class, 'destroy'])->name('coupons.destroy');
 });

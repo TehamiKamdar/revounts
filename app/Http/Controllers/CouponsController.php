@@ -30,4 +30,12 @@ class CouponsController extends Controller
 
         return response()->json($coupons);
     }
+
+    public function destroy($id){
+        Coupons::findOrFail($id)->delete();
+        return response()->json([
+            'success' => true,
+            'message' => "Coupon Deleted"
+        ]);
+    }
 }
