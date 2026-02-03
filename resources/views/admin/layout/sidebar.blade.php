@@ -46,12 +46,12 @@
       </a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link" data-toggle="collapse" href="#store" aria-expanded="" aria-controls="store">
+      <a class="nav-link" data-toggle="collapse" href="#createstore" aria-expanded="" aria-controls="store">
         <i class="menu-icon mdi mdi-dna"></i>
         <span class="menu-title">Stores</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse ">
+      <div class="collapse " id="createstore">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
             <a class="nav-link" href="{{ route('revounts_cms.create-store') }}">Create Stores</a>
@@ -112,6 +112,24 @@
           </li>
            <li class="nav-item">
             <a class="nav-link" href="{{ route('revounts_cms.blog-index') }}">All Blogs</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#storeuser" aria-expanded="" aria-controls="blog">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Users</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse " id="storeuser">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="">Create Users</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="{{ route('revounts_cms.user-index') }}">All Users</a>
           </li>
         </ul>
       </div>

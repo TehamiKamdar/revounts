@@ -20,9 +20,10 @@
 
 
 
-  @stack('plugin-styles')
+@stack('plugin-styles')
 
- <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+<link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
 
 
   @stack('style')

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StoreController;
@@ -82,4 +83,9 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     Route::post('/coupons/{id}', [CouponsController::class, 'destroy'])->name('coupons.destroy');
     Route::get('/coupons/edit/{id}',[CouponsController::class,'edit'])->name('coupons-edit');
     Route::post('/coupon/update',[CouponsController::class,'update'])->name('update-coupon');
+
+
+    // Users
+    Route::get('/users', [UserController::class , 'index'])->name('user-index');
+    Route::post('/users/status', [UserController::class, 'status']) ->name('users.status.change');
 });
