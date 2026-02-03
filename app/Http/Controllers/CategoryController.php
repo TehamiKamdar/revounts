@@ -12,17 +12,17 @@ class CategoryController extends Controller
         return view('admin.category.create', ['categories' => Category::orderBy('name', 'asc')->get()]);
     }
 
-    public function storeCategory(Request $request)
+    public function store(Request $request)
     {
         // Validation
         $request->validate([
             'cat_name' => 'required|string|max:255',
-            'cat_slug' => 'required|string|max:255|unique:categories,slug',
+            'cat_slug' => 'required|string|max:255|unique:tblcategory,slug',
             'cat_title' => 'nullable|string|max:255',
             'cat_meta_desc' => 'nullable|string|max:255',
             'cat_desc' => 'nullable|string',
             'type_radio' => 'required|in:0,1', // 0 = parent, 1 = sub
-            'parent' => 'nullable|exists:categories,id', // agar sub-category
+            'parent' => 'nullable|exists:tblcategory,id', // agar sub-category
         ]);
 
         // Determine parent

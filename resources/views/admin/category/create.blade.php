@@ -66,8 +66,7 @@
                             <h4 class="m-t-0 header-title"><b>ADD CATEGORY</b></h4>
                             <div class="row">
                                 <div class="col-md-8">
-                                    <form class="form-horizontal" role="form" name="add_cat_form" method="POST" action="{{ route('revounts_cms.store-category') }}" enctype="multipart/form-data">
-                                        @csrf
+                                    <form class="form-horizontal" id="addCategoryForm" role="form" name="add_cat_form" enctype="multipart/form-data">
 
                                         {{-- Hidden field --}}
                                         <input type="hidden" name="add_cat" value="1">
@@ -159,7 +158,7 @@
                                         <div class="form-group">
                                             <div class="col-md-offset-2 col-md-10">
                                                 <button type="submit" id="save_btn" class="btn btn-purple">
-                                                    Submit
+                                                    Save
                                                 </button>
                                             </div>
                                         </div>
@@ -214,30 +213,6 @@
     <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js') }}"></script>
     <script src="{{ asset('assets/plugins/select2/js/select2.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}" type="text/javascript">
-    </script>
-
-    <script src="{{ asset('assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js') }}"
-        type="text/javascript"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js') }}" type="text/javascript">
-    </script>
-
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.autocomplete.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/countries.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/pages/autocomplete.js') }}"></script>
-
-
-
-    <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
-
-
-
-
-    <script src="{{ asset('assets/plugins/custombox/js/custombox.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custombox/js/legacy.min.js') }}"></script>
-
-
     <script src="{{ asset('assets/plugins/summernote/summernote.min.js') }}"></script>
 
     <script>
@@ -260,7 +235,37 @@
             e.preventDefault();
 
             let btn = $(this);
-            
+            let form = $('#addCategoryForm');
+
+            $.ajax({
+                url: "/revounts_cms/category",
+                method: "POST",
+                data: form.serialize(),
+                headers:{"X-CSRF-TOKEN":"{{ csrf_token() }}"},
+                beforeSend:function(){
+                    btn.prop('disabled', true);
+                    btn.html('<i class="fa fa-spinner fa-spin"></i> Saving...')
+                },
+                success:function(res){
+                    alert(res.message)
+                    window.location.reload();
+                },
+                error:function(xhr){
+                    btn.prop('disabled', false);
+                    btn.html('Save');
+
+                    if (xhr.status === 422) {
+                        let errors = xhr.responseJSON.errors;
+
+                        console.error('Validation Errors:', errors);
+
+                        // clean readable format
+                        Object.keys(errors).forEach(function (field) {
+                            console.error(field + ': ' + errors[field][0]);
+                        });
+                    }
+                }
+            })
         })
     </script>
 @endpush
