@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -93,4 +94,9 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     Route::post('/user/{id}', [UserController::class, 'destroy']) ->name('users.destroy');
     Route::get('/users/{id}/edit', [UserController::class, 'edit']);
     Route::post('/users/update', [UserController::class, 'update'])->name('update-user');
+
+
+    // Category
+    Route::get('/create/category', [CategoryController::class , 'create'])->name('create-categories');
+    Route::post('/category', [CategoryController::class , 'store'])->name('store-category');
 });

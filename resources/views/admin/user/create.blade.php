@@ -52,8 +52,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-10">
-                                            <button type="button" class="btn btn-purple waves-effect waves-light"
-                                                id="addUserBtn">Submit</button>
+                                            <button type="button" class="btn btn-purple waves-effect waves-light" id="addUserBtn">Submit</button>
                                         </div>
                                     </div>
                                 </form>
