@@ -91,10 +91,12 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     Route::post('/user/status', [UserController::class, 'status']) ->name('users.status.change');
     Route::get('/create/users', [UserController::class, 'create'])->name('create-users');
     Route::post('/users', [UserController::class, 'store'])->name('store-users');
-    Route::post('/user/{id}', [UserController::class, 'destroy']) ->name('users.destroy');
     Route::get('/users/{id}/edit', [UserController::class, 'edit']);
     Route::post('/users/update', [UserController::class, 'update'])->name('update-user');
-
+    Route::get('/user/{id}/roles', [UserController::class, 'getUserRoles']);
+    Route::get('/user/assign-roles', [UserController::class, 'rolesIndex'])->name('user-roles-index');
+    Route::post('/user/assign-roles', [UserController::class, 'assignRoles']);
+    Route::post('/user/{id}', [UserController::class, 'destroy']) ->name('users.destroy');
 
     // Category
     Route::get('/category', [CategoryController::class , 'index'])->name('category-index');

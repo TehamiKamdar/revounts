@@ -151,6 +151,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('revounts_cms.user-index') }}">All Users</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('revounts_cms.user-roles-index') }}">Assign Roles</a>
+                    </li>
                 </ul>
             </div>
         </li>

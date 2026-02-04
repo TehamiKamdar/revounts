@@ -95,7 +95,7 @@ class UserController extends Controller
         $user->pwd = $request->pwd;
         $user->status = $request->status;
         $user->save();
-        
+
         return response()->json([
             'success' => true,
             'message' => "User updated"
@@ -112,6 +112,34 @@ class UserController extends Controller
         return response()->json([
             "success" => true,
             "message" => "User Deleted"
+        ]);
+    }
+
+    public function rolesIndex(){
+        return view('admin.user.role', ['users'=>User::orderBy('id', 'asc')->get()]);
+    }
+
+    public function getUserRoles($id)
+    {
+        $roles = DB::table('user_role')
+                    ->where('userid', $id)
+                    ->first();
+
+        return response()->json($roles);
+    }
+
+    public function assignRoles(Request $request)
+    {
+        $data = $request->except('_token');
+
+        DB::table('user_role')->updateOrInsert(
+            ['userid' => $request->userid],
+            $data
+        );
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Roles assigned to user'
         ]);
     }
 }
