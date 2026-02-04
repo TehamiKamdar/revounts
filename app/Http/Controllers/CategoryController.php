@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function index(){
+        return view('admin.category.index', ['categories' => Category::orderBy('name', 'asc')->get()]);
+    }
     public function create()
     {
         return view('admin.category.create', ['categories' => Category::orderBy('name', 'asc')->get()]);
@@ -44,4 +47,23 @@ class CategoryController extends Controller
             'message' => "Category Added"
         ]);
     }
+
+    public function show($id)
+    {
+        $category = Category::find($id);
+
+        if (!$category) {
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        return response()->json([
+            'id'          => $category->id,
+            'name'        => $category->name,
+            'slug'        => $category->slug,
+            'title'       => $category->meta,
+            'meta_desc'   => $category->meta_des,
+            'description'=> $category->des,
+        ]);
+    }
+
 }

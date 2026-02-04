@@ -131,7 +131,7 @@
                         <a class="nav-link" href="{{ route('revounts_cms.create-categories') }}">Create Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">All Categories</a>
+                        <a class="nav-link" href="{{ route('revounts_cms.category-index') }}">All Categories</a>
                     </li>
                 </ul>
             </div>

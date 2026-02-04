@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -9,6 +8,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CouponsController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SeasonalController;
 use App\Http\Controllers\DashboardController;
 
@@ -97,6 +97,9 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
 
 
     // Category
+    Route::get('/category', [CategoryController::class , 'index'])->name('category-index');
     Route::get('/create/category', [CategoryController::class , 'create'])->name('create-categories');
     Route::post('/category', [CategoryController::class , 'store'])->name('store-category');
+    Route::get('/category/{id}', [CategoryController::class, 'show']);
+
 });
