@@ -324,15 +324,13 @@
                                             <label class="col-md-2 control-label">Save Your Store</label>
                                             <div class="col-md-10">
                                                 <center>
-                                                    <button type="submit"
-                                                        class="btn btn-purple waves-effect waves-light">Save</button>
-                                                    <img src="{{ asset('assets/images/spinner.gif') }}"
+                                                    <button type="submit" onclick="document.getElementById('loader').style.display = 'block'" class="btn btn-purple waves-effect waves-light">Save</button>
+                                                    <img src="{{ asset('assets/images/sp-loading.gif') }}"
                                                         style="no-repeat center center;width:32px;height:32px; display:none;"
                                                         id="loader">
                                                 </center>
                                             </div>
                                         </div>
-
 
                                     </form>
                                 </div>

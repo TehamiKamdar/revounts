@@ -211,8 +211,8 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">Save Review</label>
                                         <div class="col-md-10">
-                                            <button type="submit" id="save_btn" class="btn btn-purple waves-effect waves-light">Submit</button>
-                                            <img src="images/spinner.gif" style="no-repeat center center;width:32px;height:32px; display:none;" id="loader">
+                                            <button type="submit" onclick="document.getElementById('loader').style.display = 'block'" id="save_btn" class="btn btn-purple waves-effect waves-light">Submit</button>
+                                            <img src="{{ asset('assets/images/sp-loading.gif') }}" style="no-repeat center center;width:32px;height:32px; display:none;" id="loader">
                                         </div>
                                     </div>
 
