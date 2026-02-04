@@ -83,6 +83,7 @@ class CategoryController extends Controller
         $category->meta = $request->cat_title;
         $category->meta_des = $request->cat_meta_desc;
         $category->des = $request->cat_desc;
+        $category->update_date = \Carbon\Carbon::parse(now())->format('Y-m-d');
 
         $category->save();
 
