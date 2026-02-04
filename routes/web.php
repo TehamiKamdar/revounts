@@ -100,6 +100,7 @@ Route::group(['prefix' => 'revounts_cms', 'as' => 'revounts_cms.'], function () 
     Route::get('/category', [CategoryController::class , 'index'])->name('category-index');
     Route::get('/create/category', [CategoryController::class , 'create'])->name('create-categories');
     Route::post('/category', [CategoryController::class , 'store'])->name('store-category');
+    Route::post('/category/update', [CategoryController::class, 'update']);
     Route::get('/category/{id}', [CategoryController::class, 'show']);
 
 });

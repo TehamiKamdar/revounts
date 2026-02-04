@@ -68,7 +68,7 @@
             <div class="container">
                 <div class="col-sm-12">
 
-                    <form class="form-horizontal" role="form" name="editCat_form" method="post">
+                    <form class="form-horizontal" role="form" id="editCat_form" name="editCat_form" method="post">
                         <div class="form-group">
                             <label class="col-md-2 control-label">Choose Category</label>
                             <div class="col-md-10">
@@ -201,5 +201,37 @@ $('#category').on('change', function () {
         }
     });
 });
+
+$('#save_btn').on('click', function(){
+    let btn = $(this);
+    let form = $('#editCat_form');
+
+    $.ajax({
+        url: "/revounts_cms/category/update",
+        method: "POST",
+        data: form.serialize(),
+        headers: {
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+        },
+        beforeSend:function(){
+            btn.prop('disabled', true)
+               .html('<i class="fa fa-spinner fa-spin"></i> Updating...');
+        },
+        success: function(res){
+            alert(res.message);
+            btn.prop('disabled', false).html('Update');
+        },
+        error: function(){
+            btn.prop('disabled', false).html('Update');
+
+            if (xhr.status === 422) {
+                let errors = xhr.responseJSON.errors;
+                Object.keys(errors).forEach(field => {
+                    console.error(field + ': ' + errors[field][0]);
+                });
+            }
+        }
+    })
+})
 </script>
 @endpush
